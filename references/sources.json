@@ -15,5 +15,5 @@
   "Nordic_pin_assignments": "https://docs.nordicsemi.com/bundle/ps_nrf52840/page/pin.html",
   "WSON_assembly_part": "https://jlcpcb.com/partdetail/WinbondElec-W25Q128JVPIQ/C190862",
   "WSON_land_pattern": "Winbond W25Q128JV Revision M section 10.3, package P",
-  "firmware_pin_map_branch": "https://github.com/disarmyouwitha/zmk-javelin-steno/tree/steno-squid/locked-pin-map"
+  "firmware_pin_map_branch": "https://github.com/disarmyouwitha/StenoSquid/tree/main/config/boardsource-wireless-corne"
 }

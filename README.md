@@ -27,7 +27,7 @@ Steno Squid adds 16 MB of QSPI flash for Javelin stenography to the left half of
 | 7 | P0.19 | CLK | 6 |
 | 8 | P0.05 | IO2 | 3 |
 
-Use this map for the Adafruit flash breakout proof of concept. The left expansion header serves QSPI. The right half can retain its display. The Boardsource firmware branch `steno-squid/locked-pin-map` builds the Studio-enabled left, logging left, right, and both flash probe targets in CI, and it carries the current `main` firmware: the start-up retry, three-image upload and logging diagnostics. Runtime testing is pending. [Boardsource host documentation](https://boardsource.xyz/blogs/guides/wireless-smt-corne-docs) · [Firmware CI for that branch](https://github.com/disarmyouwitha/StenoSquid/actions/workflows/build.yml?query=branch%3Asteno-squid%2Flocked-pin-map)
+Use this map for the Adafruit flash breakout proof of concept. The left expansion header serves QSPI. The right half can retain its display. The firmware's `Boardsource-*` builds cover the Boardsource board: the default and no-display halves, the logging left and both flash probes. They build in CI, and runtime testing is pending. [Boardsource host documentation](https://boardsource.xyz/blogs/guides/wireless-smt-corne-docs) · [Firmware builds](https://github.com/disarmyouwitha/StenoSquid/actions/workflows/build.yml)
 
 ## Prototype status
 
