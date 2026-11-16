@@ -3,9 +3,10 @@ import json
 import math
 from pathlib import Path
 import re
+import sys
 from kicad_sexpr import nodes, kind
 
-project=Path(__file__).resolve().parents[1] / 'pcb'
+project=Path(sys.argv[1]).resolve() if len(sys.argv)>1 else Path(__file__).resolve().parents[1] / 'pcb'
 board=(project/'steno-squid.kicad_pcb').read_text()
 frame=json.loads((project/'interface.json').read_text())['plate_frame']
 pin1=frame['pin_1_x_mm']
@@ -30,7 +31,7 @@ for _,_,node in nodes(board):
 assert shapes, 'Edge.Cuts must contain a board outline'
 parts=[]
 contact_pads=[]
-sizes={'U1':(6,5),'R1':(1.6,.8),'C1':(1.6,.8),'C2':(1.6,.8),'R2':(1.6,.8)}
+sizes={'U1':tuple(json.loads((project/'interface.json').read_text()).get('flash_body_mm',[6,5])),'R1':(1.6,.8),'C1':(1.6,.8),'C2':(1.6,.8),'R2':(1.6,.8)}
 for _,_,node in nodes(board):
     if kind(node)!='footprint': continue
     ref=re.search(r'\(property "Reference" "(\w+)"',node)[1]

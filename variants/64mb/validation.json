@@ -1,0 +1,69 @@
+{
+  "revision": "D-64MB draft",
+  "review_date": "2026-11-16",
+  "ERC_violations": 0,
+  "DRC_violations": 0,
+  "unconnected_items": 0,
+  "schematic_parity_issues": 0,
+  "all_eight_contacts_verified_against_schematic_and_PCB": true,
+  "exposed_pad_grounded": true,
+  "power_and_contact_labels_on_both_faces": true,
+  "configured_ignored_DRC_categories": [],
+  "configured_ignored_ERC_categories": [],
+  "supply_minimum_width_rule_mm": 0.4,
+  "copper_track_lengths_mm": {
+    "/CS_N": 12.341,
+    "/IO1": 13.705,
+    "/IO2": 23.425,
+    "/GND": 4.25,
+    "/IO0": 10.285,
+    "/CLK": 9.648,
+    "/IO3": 12.641,
+    "/VCC_SW": 35.069
+  },
+  "minimum_track_widths_mm": {
+    "/CS_N": 0.2,
+    "/IO1": 0.2,
+    "/IO2": 0.2,
+    "/GND": 0.2,
+    "/IO0": 0.2,
+    "/CLK": 0.2,
+    "/IO3": 0.2,
+    "/VCC_SW": 0.4
+  },
+  "track_segment_counts": {
+    "/CS_N": 5,
+    "/IO1": 5,
+    "/IO2": 8,
+    "/GND": 1,
+    "/IO0": 1,
+    "/CLK": 3,
+    "/IO3": 4,
+    "/VCC_SW": 9
+  },
+  "via_counts": {
+    "/CS_N": 2,
+    "/IO1": 1,
+    "/IO2": 2,
+    "/GND": 4,
+    "/CLK": 1,
+    "/IO3": 2
+  },
+  "host_pitch_verified": false,
+  "host_fit_verified": false,
+  "host_power_qualified": false,
+  "hashes": {
+    "steno-squid.kicad_pcb": "3afd28b0a0b421a4d7d1f34659347850909a471180487844fe5397d83722d92e",
+    "steno-squid.kicad_sch": "63fd406d286e4f25b98749a0064114873d74ac63fc17466ae842e4acc9b6f0df",
+    "steno-squid.kicad_pro": "d22541ef2a281bba3f32b3e5871885ef5f3ab497c49ef2972f96558bc6245c31",
+    "steno-squid.kicad_dru": "eb415e35e78c1826e2ea2c81ed40d9b24f728510251829f95a14e4257e80b9f0",
+    "models/WSON-8_8x6mm_EP3.4x4.3mm.step": "8e39ee873163d9a82446aaf24cbff851041cf21433b7c5fd232365fc324eee63"
+  },
+  "capacity_bytes": 67108864,
+  "baseline_outline_preserved": true,
+  "baseline_pop_artwork_preserved": true,
+  "footprint_pad_geometry_matches_local_library": true,
+  "fabrication_release": false,
+  "baseline_tag": "rev-d",
+  "baseline_board_sha256": "ae672434e2f90ba7da9939c09812a080d108b34032b2e349eba9439ddb11c847"
+}

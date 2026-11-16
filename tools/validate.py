@@ -3,10 +3,11 @@ from pathlib import Path
 import hashlib
 import json
 import re
+import sys
 import xml.etree.ElementTree as ET
 from kicad_sexpr import nodes, kind
 
-output = Path(__file__).resolve().parents[1] / 'pcb'
+output = Path(sys.argv[1]).resolve() if len(sys.argv)>1 else Path(__file__).resolve().parents[1] / 'pcb'
 interface = json.loads((output / 'interface.json').read_text())
 drc = json.loads((output / 'checks/drc.json').read_text())
 erc = json.loads((output / 'checks/erc.json').read_text())
@@ -108,7 +109,7 @@ report = {
     'hashes': {str(p.relative_to(output)): hashlib.sha256(p.read_bytes()).hexdigest()
                for p in [output / 'steno-squid.kicad_pcb', output / 'steno-squid.kicad_sch',
                          output / 'steno-squid.kicad_pro', output / 'steno-squid.kicad_dru',
-                         output / 'models/WSON-8_6x5mm_EP3.4x4.3mm.step']}
+                         *sorted((output / 'models').glob('*.step'))]}
 }
 (output / 'validation.json').write_text(json.dumps(report, indent=2) + '\n')
 print('ERC, DRC, unconnected and parity all zero. All eight contacts match the schematic and PCB.')

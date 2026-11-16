@@ -1,5 +1,7 @@
 # Electrical, mechanical and RF review
 
+This review describes the 16 MB Rev D baseline. The complete [32 MB and 64 MB drafts](../variants/README.md) have a separate [package and power review](capacity-variants.md), including the 64 MB chip's higher read-current limit.
+
 ## Mechanical basis
 
 The daughterboard sits on top of the left Choc switch plate, with eight bare pins through the plate slot. The 2.54 mm pitch and top-view contact order are inferred from Boardsource's expansion pinout and its nice!view compatibility. The plate envelope comes from a scaled image. Verify the host pin-1 position, slot width, USB plug clearance and plate-to-host stack on the actual keyboard. [Boardsource documentation](https://boardsource.xyz/blogs/guides/wireless-smt-corne-docs) · [nice!view drawing](https://nicekeyboards.com/docs/nice-view/pinout-schematic/) · [Board and fit template](../pcb/README.md)

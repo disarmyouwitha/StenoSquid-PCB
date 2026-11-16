@@ -7,6 +7,8 @@ Steno Squid adds 16 MB of QSPI flash for Javelin stenography to the left half of
 
 [KiCad project](pcb/steno-squid.kicad_pro) · [Actual-size fit template](pcb/previews/plate-fit-1to1.svg) · [STEP model](pcb/steno-squid.step) · [BOM](pcb/BOM.csv)
 
+**Larger-capacity options:** complete [32 MB and 64 MB KiCad drafts](variants/README.md) use a shared 8 × 6 mm WSON footprint and the same eight host contacts. Choose the matching BOM for the desired capacity. The 16 MB baseline below retains its original footprint. [Package and power review](docs/capacity-variants.md)
+
 ## Hardware
 
 - The 22.9 × 46.32 mm board is 1.0 mm thick. The stepped outline clears the estimated USB-C notch, and the components and Pop silkscreen face up.
