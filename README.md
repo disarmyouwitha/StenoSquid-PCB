@@ -1,7 +1,7 @@
 # StenoSquid-PCB
-https://github.com/disarmyouwitha/StenoSquid (Custom ZMK firmware)
+**https://github.com/disarmyouwitha/StenoSquid (Custom ZMK firmware for StenoSquid-PCB!)**
 
-Steno Squid adds 16 MB of QSPI flash for Javelin stenography to the left half of the Boardsource Wireless Corne SMT. It is an independent community accessory designed to sit flush on top of the Choc switch plate.
+Steno Squid adds 16 MB of QSPI flash for Javelin stenography to the left half of the Boardsource Wireless Corne SMT. It is an independent community accessory designed to sit flush on top of the switch plate.
 
 <img src="pcb/previews/front-pop.png" alt="Steno Squid PCB with Pop on the front silkscreen" width="420">
 
