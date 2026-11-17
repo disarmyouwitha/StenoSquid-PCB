@@ -1,6 +1,6 @@
 {
   "revision": "D",
-  "status": "Rev D full-length no-ears outline, right edge widened 0.88 mm to match the pin-1 silkscreen gap on the pin-8 side; powered, RF, assembled daughterboard and revised-template fit qualification pending",
+  "status": "Rev D full-length no-ears outline, right edge widened 0.88 mm to match the pin-1 silkscreen gap on the pin-8 side; ground pour now extends under the full Pop artwork for a uniform soldermask finish (the small splat dots were removed from the shared artwork); powered, RF, assembled daughterboard and revised-template fit qualification pending",
   "preferred_connection": "eight soldered pins into owner-tested host sockets; daughterboard flush on top of plate",
   "header_pitch_mm": 2.54,
   "header_drill_mm": 1.0,
@@ -95,8 +95,7 @@
   "antenna": {
     "location_verified": false,
     "candidate_cutback_region": "x > 14 mm, y < 3 mm",
-    "contact_row_ground": "retained on both layers for QSPI return paths",
-    "artwork_copper_keepout_from_y_mm": 15
+    "contact_row_ground": "retained on both layers for QSPI return paths"
   },
   "optional_bulk": {
     "reference": "C2",

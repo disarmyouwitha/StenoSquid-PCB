@@ -1,6 +1,6 @@
 # Capacity options
 
-These complete 32 MB and 64 MB drafts derive from the locked Rev D electrical design and the owner's 2026-11-16 fit update. All capacities share the 20.9 × 46.32 mm full-length, no-ears outline, with 2 mm removed from the switch-facing edge. Header centres stay fixed and Pop is recentered. The 16 MB project remains in [pcb](../pcb/README.md).
+These complete 32 MB and 64 MB drafts derive from the locked Rev D electrical design and the owner's 2026-11-16 fit update. All capacities share the 21.78 × 46.32 mm full-length, no-ears outline, with a net 1.12 mm trim from the switch-facing edge (the pin-8 edge was widened 0.88 mm from the original 2 mm cut to match the pin-1 silkscreen gap). Header centres stay fixed and Pop is recentered; the ground pour extends under the whole board and the 6 small splat dots were removed from the shared artwork. The 16 MB project remains in [pcb](../pcb/README.md); its [ENIG gold-artwork variant](enig/README.md) applies the same capacity-16 MB copper design with Pop exposed as gold copper instead of silkscreen.
 
 | Capacity | Flash to populate | Project | BOM | Checks |
 |---|---|---|---|---|

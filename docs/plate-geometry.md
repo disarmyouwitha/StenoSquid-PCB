@@ -20,7 +20,7 @@ The plate-frame origin is the left end of the plate slot on its centreline. In t
 
 The nominal header coordinates are confirmed by the owner's template fit and are not moved to recenter the row after trimming. The new straight edge leaves 1.15 mm to pin 1's copper. On the 32/64 MB layout it leaves about 1.08 mm to the nearest resistor pad; the rounded corners are also checked by native KiCad DRC. Ground pours are refilled to the new edge. Signal tracks and component placements are retained.
 
-Pop and its splashes move 1 mm toward the new board centre, without scaling or changing the artwork. The source SVG is unchanged. The artwork area remains copper-free on both layers.
+Pop and its splashes move 1 mm toward the new board centre, without scaling or changing the artwork. The source SVG is unchanged. The ground pour now extends under the artwork area on both layers instead of keeping it copper-free, except on the [ENIG variant](../variants/enig/README.md) where the exposed gold shapes keep a 1 mm keepout halo.
 
 ## Connector and final assembly
 

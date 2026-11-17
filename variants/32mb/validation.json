@@ -97,7 +97,7 @@
   "host_fit_verified": false,
   "host_power_qualified": false,
   "hashes": {
-    "steno-squid.kicad_pcb": "eeedea2d032b32d56aff5065a842874ad94b1704015f34f294222b746f2a9d53",
+    "steno-squid.kicad_pcb": "ed0bad6d7e3799c0c13a639ecc99db3c1ab4bacfd69825879e451e9a24d73c67",
     "steno-squid.kicad_sch": "4f38387884607fd44f4ac017c01d2ad4eb1a8a2fdaa07c5dfe1c6df314bc2b6c",
     "steno-squid.kicad_pro": "aa54616dcc26caa28d54d304529cf1dcedab95c86b0459104c6a2942fb4eb902",
     "steno-squid.kicad_dru": "3bffc12fab832b186b3dc21fa5bf534cae8ab243759386476c7eedbbe81a9f73",
@@ -110,5 +110,5 @@
   "fabrication_release": false,
   "electrical_baseline_tag": "rev-d",
   "mechanical_update_date": "2026-11-17",
-  "baseline_board_sha256": "38af010a1fbb66530a032c8e09bdc213487b1877dda788164f2b08a3c5902066"
+  "baseline_board_sha256": "e0b75ddb33a9062109359d562fcda3c6694b91600cb3984759d87992ae3ec00d"
 }
