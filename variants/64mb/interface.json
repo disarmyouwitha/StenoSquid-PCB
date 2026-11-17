@@ -1,12 +1,12 @@
 {
   "revision": "D-64MB",
-  "status": "routed capacity option; header template and socket stack owner-checked; powered, RF and assembled daughterboard qualification pending",
+  "status": "Routed capacity option, right edge widened 0.88 mm to match the pin-1 silkscreen gap on the pin-8 side; header template and socket stack owner-checked at the prior width; revised-template fit, powered, RF and assembled daughterboard qualification pending",
   "preferred_connection": "eight soldered pins into owner-tested host sockets; daughterboard flush on top of plate",
   "header_pitch_mm": 2.54,
   "header_drill_mm": 1.0,
   "mating_face": "top view with USB-C at the top: contacts along the bottom, pin 1 at the left",
   "module_outline_mm": [
-    20.9,
+    21.78,
     46.32
   ],
   "flash_ordering_code": "W25Q512JVEIQ / WSON-8 8x6 mm",
@@ -107,11 +107,11 @@
   "board_bounds_kicad_mm": [
     25.2,
     25.6,
-    46.1,
+    46.98,
     71.92
   ],
-  "switch_facing_edge_trim_mm": 2.0,
-  "artwork_center_x_mm": 35.65,
+  "switch_facing_edge_trim_mm": 1.12,
+  "artwork_center_x_mm": 36.09,
   "fit_evidence": {
     "date": "2026-11-16",
     "header_template_alignment_verified": true,

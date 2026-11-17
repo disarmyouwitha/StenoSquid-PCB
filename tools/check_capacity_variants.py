@@ -57,7 +57,7 @@ for size in (16,32,64):
     report=json.loads((out/'validation.json').read_text())
     report.update(capacity_bytes=size*1024*1024, baseline_outline_preserved=True,
                   baseline_pop_artwork_preserved=True, footprint_pad_geometry_matches_local_library=True,
-                  fabrication_release=False,electrical_baseline_tag='rev-d',mechanical_update_date='2026-11-16',
+                  fabrication_release=False,electrical_baseline_tag='rev-d',mechanical_update_date=report['review_date'],
                   baseline_board_sha256=hashlib.sha256((ROOT/'pcb/steno-squid.kicad_pcb').read_bytes()).hexdigest())
     (out/'validation.json').write_text(json.dumps(report,indent=2)+'\n')
     run(CLI,'sch','export','svg','--output',str(out/'previews')+'/',sch)

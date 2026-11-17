@@ -97,10 +97,18 @@
   "host_fit_verified": false,
   "host_power_qualified": false,
   "hashes": {
-    "steno-squid.kicad_pcb": "c5f2673444cece0a760d875dc3b5baed193c0a52770c28a7249f625c601f49a7",
+    "steno-squid.kicad_pcb": "38af010a1fbb66530a032c8e09bdc213487b1877dda788164f2b08a3c5902066",
     "steno-squid.kicad_sch": "bde5e3cd45841f620da17df3cc25fc63fc38cc83a196bf48b581a6aa348dff48",
     "steno-squid.kicad_pro": "aa54616dcc26caa28d54d304529cf1dcedab95c86b0459104c6a2942fb4eb902",
     "steno-squid.kicad_dru": "3bffc12fab832b186b3dc21fa5bf534cae8ab243759386476c7eedbbe81a9f73",
     "models\\WSON-8_6x5mm_EP3.4x4.3mm.step": "4dd2219cec27974804ca8fb3f8d41133295066cdda0d09d9102d685492c43dbb"
-  }
+  },
+  "capacity_bytes": 16777216,
+  "baseline_outline_preserved": true,
+  "baseline_pop_artwork_preserved": true,
+  "footprint_pad_geometry_matches_local_library": true,
+  "fabrication_release": false,
+  "electrical_baseline_tag": "rev-d",
+  "mechanical_update_date": "2026-11-17",
+  "baseline_board_sha256": "38af010a1fbb66530a032c8e09bdc213487b1877dda788164f2b08a3c5902066"
 }
