@@ -11,10 +11,10 @@ Steno Squid adds 16 MB of QSPI flash for Javelin stenography to the left half of
 
 ## Hardware
 
-- Rev D uses a **20.9 × 46.32 mm full-length outline with no ears or USB notch**, 1 mm corner radii and 1.0 mm board thickness. The switch-facing edge is trimmed by 2 mm; the opposite edge and all header centres stay fixed. Components and the recentered Pop silkscreen face up.
+- Rev D uses a **21.78 × 46.32 mm full-length outline with no ears or USB notch**, 1 mm corner radii and 1.0 mm board thickness. The switch-facing edge keeps a net 1.12 mm trim from the original full-ear outline; the pin-8 edge is widened 0.88 mm so its silkscreen gap matches the one at pin 1. The opposite edge and all header centres stay fixed. Components face up, with STENO SQUID silkscreened above Pop and the 16 MB flash capacity below it.
 - Eight soldered pins mate with the host sockets through the plate slot. Viewed from above with USB-C at the top, the contact row is at the bottom and pin 1 is on the left. The owner confirmed all eight template contacts align and checked that their socket stack allows the daughterboard to sit flush on the plate. The 2.54 mm pitch and nominal 2.20 mm pin-1 offset are retained. [Fit record](docs/plate-geometry.md)
 - The W25Q128JVPIQ WSON flash, 100 nF decoupling capacitor C1 and 10 kΩ CS pull-up R1 are fitted. The optional bulk capacitor C2 and bleed resistor R2 start unpopulated. The breadboard rail test determines whether either is needed.
-- The 0.40 mm supply path from the header through C1 to the flash stays on the top copper layer. Ground pours on both layers cover the flash circuit and contact row. The artwork area is copper-free on both layers.
+- The 0.40 mm supply path from the header through C1 to the flash stays on the top copper layer. Ground pours on both layers now extend under the whole board, including the Pop artwork area, for a uniform soldermask finish; the Pop artwork itself dropped its 6 small splat dots. An [ENIG gold-artwork variant](variants/enig/README.md) exposes Pop and the two remaining splats as isolated gold copper behind a 1 mm keepout halo, while this baseline board keeps Pop, STENO SQUID and 16 MB as plain silkscreen for lower-cost manufacture. The same gold treatment is also available for the [32 MB](variants/32mb-enig/README.md) and [64 MB](variants/64mb-enig/README.md) capacity options.
 
 ## Host interface
 

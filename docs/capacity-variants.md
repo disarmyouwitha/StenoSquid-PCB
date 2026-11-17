@@ -30,7 +30,7 @@ Select the **EIQ WSON parts** when ordering assembly for these layouts. The **FI
 | 7 | P0.19 | CLK | 6 |
 | 8 | P0.05 | IO2 | 3 |
 
-No additional GPIO or reset header is needed. Local exposed pad 9 is grounded. The larger body required new pad escapes and repositioned passives. Both layouts keep the 0.40 mm front-layer supply, ground pours through the contact area, four ground stitching vias and copper-free artwork area. All fitted components remain on the front.
+No additional GPIO or reset header is needed. Local exposed pad 9 is grounded. The larger body required new pad escapes and repositioned passives. Both layouts keep the 0.40 mm front-layer supply, ground pours through the contact area and four ground stitching vias; the ground pour extends under the whole board, including the artwork area, for a uniform soldermask finish. All fitted components remain on the front.
 
 ## Power qualification
 

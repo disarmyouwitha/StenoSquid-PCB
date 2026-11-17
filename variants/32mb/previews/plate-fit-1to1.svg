@@ -14,12 +14,12 @@
   <g fill="none" stroke="#111" stroke-width=".20">
     <path d="M 42.20000 64.60000 A 1.00000 1.00000 0 0 1 43.20000 63.60000"/>
     <path d="M 42.20000 108.92000 L 42.20000 64.60000"/>
-    <path d="M 43.20000 63.60000 L 62.10000 63.60000"/>
+    <path d="M 43.20000 63.60000 L 62.98000 63.60000"/>
     <path d="M 43.20000 109.92000 A 1.00000 1.00000 0 0 1 42.20000 108.92000"/>
-    <path d="M 62.10000 63.60000 A 1.00000 1.00000 0 0 1 63.10000 64.60000"/>
-    <path d="M 62.10000 109.92000 L 43.20000 109.92000"/>
-    <path d="M 63.10000 64.60000 L 63.10000 108.92000"/>
-    <path d="M 63.10000 108.92000 A 1.00000 1.00000 0 0 1 62.10000 109.92000"/>
+    <path d="M 62.98000 63.60000 A 1.00000 1.00000 0 0 1 63.98000 64.60000"/>
+    <path d="M 62.98000 109.92000 L 43.20000 109.92000"/>
+    <path d="M 63.98000 64.60000 L 63.98000 108.92000"/>
+    <path d="M 63.98000 108.92000 A 1.00000 1.00000 0 0 1 62.98000 109.92000"/>
   </g>
   <g fill="none" stroke="#1d5787" stroke-width=".18">
     <rect x="47.200" y="97.000" width="8" height="6"/>
@@ -59,7 +59,7 @@
     <circle cx="61.980" cy="108" r=".5"/>
     <text x="61.980" y="112.7" text-anchor="middle" fill="#111" stroke="none" font-size="1.8">8</text>
   </g>
-  <text x="73" y="88" font-size="2.7">20.9 Ã— 46.32 mm overall; 2 mm trimmed on switch side</text>
+  <text x="73" y="88" font-size="2.7">21.78 × 46.32 mm overall; 2 mm trimmed on switch side</text>
   <text x="73" y="94" font-size="2.7">1.0 mm drills on 2.54 mm pitch</text>
   <text x="73" y="100" font-size="2.7">Pin 1 is 2.2 mm from slot left; header fit owner-checked</text>
   <text x="73" y="109" font-size="2.7">Shaded band shows the estimated 2.5 mm slot.</text>
