@@ -8,7 +8,8 @@ from kicad_sexpr import nodes, kind
 
 project=Path(sys.argv[1]).resolve() if len(sys.argv)>1 else Path(__file__).resolve().parents[1] / 'pcb'
 board=(project/'steno-squid.kicad_pcb').read_text()
-frame=json.loads((project/'interface.json').read_text())['plate_frame']
+interface=json.loads((project/'interface.json').read_text())
+frame=interface['plate_frame']
 pin1=frame['pin_1_x_mm']
 ox,oy=frame['kicad_origin_mm']
 page_x,page_y=42,108
@@ -75,7 +76,7 @@ svg='''<svg xmlns="http://www.w3.org/2000/svg" width="185mm" height="140mm" view
   <path d="M 10 49 H 60 M 10 47.5 V 50.5 M 60 47.5 V 50.5" stroke="#111" fill="none" stroke-width=".25"/>
   <rect x="81" y="42" width="10" height="10" stroke="#111" fill="none" stroke-width=".25"/>
   <text x="94" y="48" font-size="2.5">10 mm square</text>
-  <text x="51.65" y="59.5" text-anchor="middle" font-size="2">USB-C notch</text>
+  <text x="51.65" y="59.5" text-anchor="middle" font-size="2">Full length / no ears</text>
   <rect x="42" y="106.75" width="21.9" height="2.5" fill="#dbe4ec"/>
   <g fill="none" stroke="#111" stroke-width=".20">
 OUTLINE
@@ -86,13 +87,14 @@ PARTS
   <g fill="none" stroke="#111" stroke-width=".14">
 CONTACTS
   </g>
-  <text x="73" y="88" font-size="2.7">22.9 × 46.32 mm overall</text>
+  <text x="73" y="88" font-size="2.7">BOARD_SIZE mm overall; 2 mm trimmed on switch side</text>
   <text x="73" y="94" font-size="2.7">1.0 mm drills on 2.54 mm pitch</text>
-  <text x="73" y="100" font-size="2.7">Pin 1 is PIN_X mm from the slot’s left end (provisional)</text>
+  <text x="73" y="100" font-size="2.7">Pin 1 is PIN_X mm from slot left; header fit owner-checked</text>
   <text x="73" y="109" font-size="2.7">Shaded band shows the estimated 2.5 mm slot.</text>
-  <text x="10" y="128" font-size="2.7">Check keycap overhang, USB plug clearance, slot alignment and plate support.</text>
+  <text x="10" y="128" font-size="2.7">Header and socket stack owner-checked. Recheck revised outline and keycap/USB clearance.</text>
 </svg>
 '''
-for key,value in {'OUTLINE':'\n'.join(shapes),'PARTS':'\n'.join(parts),'CONTACTS':'\n'.join(contacts),'PIN_X':str(pin1)}.items():
+for key,value in {'OUTLINE':'\n'.join(shapes),'PARTS':'\n'.join(parts),'CONTACTS':'\n'.join(contacts),'PIN_X':str(pin1),
+                  'BOARD_SIZE':' × '.join('%g'%v for v in interface['module_outline_mm'])}.items():
     svg=svg.replace(key,value)
 (project/'previews/plate-fit-1to1.svg').write_text(svg)

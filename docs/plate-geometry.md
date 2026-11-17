@@ -1,19 +1,31 @@
-# Plate geometry
+# Rev D plate fit
 
-The [actual-size template](../pcb/previews/plate-fit-1to1.svg) comes from the current KiCad outline and contact row. The [plate-fit estimate](plate-fit-estimate.svg) shows the original photo-derived envelope. Plate dimensions are approximate and can be off by 1–2 mm.
+On 2026-11-16 the owner fitted the full-length paper template to the delivered Boardsource keyboard and confirmed that all eight contacts align. The owner also checked available sockets and reported that the resulting stack allows the daughterboard to sit flush on top of the switch plate. The supplied photos were IMG_5313.heic and IMG_5311.HEIC. These are owner-reported physical checks, not a test of a fabricated, populated StenoSquid board.
 
-The coordinate origin is the left end of the plate slot on its centerline. In top view on the left half, USB-C is at the top, x increases to the right, and y increases toward USB-C.
+The owner selected a full-length outline with **no ears**, removing **2 mm from the switch-facing edge only**. The tighter opposite edge and all header centres remain fixed. The top is solid, with no USB notch. The final mechanical envelope is **20.9 × 46.32 mm**, with 1 mm corner radii and 1.0 mm PCB thickness. The same outline is used for 16, 32 and 64 MB.
 
-| Feature | Estimated geometry |
+## Fixed coordinates
+
+The plate-frame origin is the left end of the plate slot on its centreline. In top view with USB-C above, x increases to the right and y increases toward USB-C. Its KiCad origin remains (25, 70) mm.
+
+| Feature | Current design |
 |---|---|
-| Solid plate next to the keys | x = −2.5 to 21.9 mm |
-| Top plate edge | y = 45.0 mm |
-| Header slot | x = 0 to 21.9 mm, y = ±1.25 mm, open on the right |
-| Wide USB-C notch | x = 2.9 to 17.1 mm, y = 42.3 to 45.0 mm |
-| Narrow USB-C notch | x = 5.2 to 14.8 mm, y = 35.2 to 40.6 mm |
+| Switch-facing edge | Plate x = 0.20 mm; KiCad x = 25.20 mm |
+| Opposite edge | Plate x = 21.10 mm; KiCad x = 46.10 mm |
+| Top edge | Plate y = 44.40 mm; KiCad y = 25.60 mm |
+| Bottom edge | Plate y = −1.92 mm; KiCad y = 71.92 mm |
+| Pin 1 centre | Plate (2.20, 0) mm; KiCad (27.20, 70) mm |
+| Contacts 2–8 | +2.54 mm in x per contact, same y |
+| Contact pads / drills | 1.7 mm / 1.0 mm |
 
-The 22.9 × 46.32 mm outline wraps around the notch. Its lower edge extends 1.92 mm below the row. Pin 1 is provisionally at x = 2.20 mm and the remaining seven pads follow at 2.54 mm pitch. Each pad is 1.7 mm wide with a 1.0 mm drill. Verify that the underside pad rings and solder fillets clear the slot edges so the board can sit flat.
+The nominal header coordinates are confirmed by the owner's template fit and are not moved to recenter the row after trimming. The new straight edge leaves 1.15 mm to pin 1's copper. On the 32/64 MB layout it leaves about 1.08 mm to the nearest resistor pad; the rounded corners are also checked by native KiCad DRC. Ground pours are refilled to the new edge. Signal tracks and component placements are retained.
 
-Measure the plate thickness, plate-to-host gap, host PCB thickness and needed solder tail before choosing pin length. The photo-based stack estimate is 1.2 mm plate + 3.0 mm gap + 1.6 mm host PCB + 1.0 mm tail, or 6.8 mm below the daughterboard. Allow for the daughterboard’s 1.0 mm thickness and its top-side solder joint as well. Check whether the plate is conductive and verify keycap overhang and USB plug clearance on the assembled keyboard.
+Pop and its splashes move 1 mm toward the new board centre, without scaling or changing the artwork. The source SVG is unchanged. The artwork area remains copper-free on both layers.
 
-A white strip near host contacts 7 and 8 is a candidate antenna based on the host photo. Its identity and clearance remain unverified. Ground remains around the contact row for QSPI. The artwork area is copper-free on both layers. [RF review and test plan](design-review.md#antenna-clearance-and-bluetooth-test)
+## Connector and final assembly
+
+The socket-stack check is recorded as confirmed by the owner. The exact socket manufacturer part number, height and mating pin length have not been supplied; record those for procurement and repeatability. STEP exports show the daughterboard and fitted SMT components, without the host socket stack.
+
+The [revised actual-size template](../pcb/previews/plate-fit-1to1.svg) comes directly from the current KiCad outline and pad coordinates. Check its 50 mm scale bar and 10 mm square when printing. The 2 mm trim and solid top should be rechecked with the USB plug and keycaps installed; the revised template and final populated board have not yet been tested. Keep the previously confirmed header positions fixed.
+
+The earlier [photo-derived plate estimate](plate-fit-estimate.svg) is historical context and is not the current PCB outline. Antenna identity, RF performance and the host switched supply still require their separate checks. [Electrical and RF review](design-review.md)

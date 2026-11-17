@@ -86,6 +86,24 @@ assert '(constraint track_width (min 0.4mm))' in (output / 'steno-squid.kicad_dr
 assert '(rev "' + interface['revision'] + '")' in board
 assert '(rev "' + interface['revision'] + '")' in (output / 'steno-squid.kicad_sch').read_text()
 
+# Header centres are fixed by the owner-confirmed fit; trimming the outline must
+# never translate J1 to recenter it on the narrower PCB.
+header_at=re.search(r'\(at ([-\d.]+) ([-\d.]+) ([-\d.]+)\)',footprints['J1'])
+assert tuple(map(float,header_at.groups()))==(27.2,70.0,90.0)
+header_positions=[]
+for _,_,pad in nodes(footprints['J1']):
+    if kind(pad)!='pad': continue
+    number=int(re.search(r'\(pad "(\d+)"',pad)[1])
+    x,y=map(float,re.search(r'\(at ([-\d.]+) ([-\d.]+)',pad).groups())
+    assert abs(27.2+y-(27.2+2.54*(number-1)))<1e-7 and abs(x)<1e-7
+    header_positions.append([number,round(27.2+y,3),70.0])
+if 'board_bounds_kicad_mm' in interface:
+    edges=[n for _,_,n in nodes(board) if kind(n) in ('gr_line','gr_arc') and '(layer "Edge.Cuts")' in n]
+    pts=[tuple(map(float,p)) for n in edges for p in re.findall(r'\((?:start|end) ([-\d.]+) ([-\d.]+)\)',n)]
+    bounds=[min(x for x,y in pts),min(y for x,y in pts),max(x for x,y in pts),max(y for x,y in pts)]
+    assert bounds==interface['board_bounds_kicad_mm']
+    assert len(edges)==8 and sum(kind(n)=='gr_arc' for n in edges)==4
+
 report = {
     'revision': interface['revision'],
     'review_date': drc['date'].split('T')[0],
@@ -103,7 +121,10 @@ report = {
     'minimum_track_widths_mm': minimum_widths,
     'track_segment_counts': segment_counts,
     'via_counts': via_counts,
-    'host_pitch_verified': False,
+    'host_pitch_verified': interface['header_pitch_verified_on_host'],
+    'header_centres_kicad_mm': sorted(header_positions),
+    'paper_header_alignment_verified': interface.get('fit_evidence',{}).get('header_template_alignment_verified',False),
+    'socket_stack_fit_checked_by_owner': interface.get('fit_evidence',{}).get('socket_stack_checked',False),
     'host_fit_verified': False,
     'host_power_qualified': False,
     'hashes': {str(p.relative_to(output)): hashlib.sha256(p.read_bytes()).hexdigest()

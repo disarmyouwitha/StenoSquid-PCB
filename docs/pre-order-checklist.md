@@ -1,6 +1,6 @@
 # Pre-order checklist
 
-Updated 2026-11-13 after implementing the KiCad review.
+Updated 2026-11-16 after the owner's physical template and socket-stack check.
 
 ## Applied review items
 
@@ -10,7 +10,8 @@ Updated 2026-11-13 after implementing the KiCad review.
 | Silkscreen | Visible labels are at least 1.0 mm high with 0.15 mm strokes. Footprint lines use 0.15 mm. The project enforces 0.15 mm silkscreen clearance. |
 | Pop silkscreen | Imported the centered-gaze SVG. All eleven ink regions remain connected within each region after a 0.15 mm diameter erosion check. |
 | Supply width | Added a Power netclass and a custom DRC rule enforcing 0.40 mm on VCC_SW. A temporary 0.20 mm supply segment was rejected by the rule. |
-| Revision | The schematic, board title block, interface and validation identify D provisional. |
+| Revision | The schematic, board title block, interface and validation identify D, with D-32MB and D-64MB capacity options. The existing `rev-d` Git tag remains the earlier electrical freeze. |
+| Outline and host fit | Owner confirmed eight-contact paper alignment and a flush socket stack. Applied the full-length no-ears outline, 2 mm switch-side trim and recentered artwork to all capacities. Header coordinates and the opposite edge stay fixed. |
 | Portable netlist | Validation removes the absolute machine path from the exported schematic source field. |
 | Flash model | Added a local STEP model with its exposed-pad face extended to 3.4 × 4.3 mm. |
 | Assembly sourcing | BOM includes C190862 for U1, C45000 for C1 and C98220 for R1. Confirm stock and assembly eligibility when quoting. |
@@ -22,10 +23,10 @@ CAD reports, validation hashes, STEP, previews and the actual-size fit template 
 
 ## Physical checks and assembly quote
 
-- Measure the plate slot, pin-1 alignment and stack on the delivered host. The 1.7 mm pads and 1.0 mm drills remain the working geometry. Select pad size from the measured alignment and solder-fillet clearance.
+- Header template alignment and the owner's socket stack are confirmed. Record the exact socket MPN and mating pin length. Recheck the revised 2 mm trim and solid top with USB and keycaps fitted, then confirm the fabricated, populated assembly. The 1.7 mm pads and 1.0 mm drills are retained. [Fit record](plate-geometry.md)
 - Keep the ground pour near the suspected antenna for the first prototype. Compare both Bluetooth links with the Squid fitted and removed. The earlier cutback is available in [design history](history.md).
 - Check the switched supply on USB and battery, including load voltage and fall time. Keep C2 and R2 unpopulated for the breadboard test.
-- Confirm the WSON stencil and exposed-pad paste coverage with the assembler. Arrange rails or a carrier for the notched outline. [Assembly notes](design-review.md#assembly-handling-and-panelization)
+- Confirm the WSON stencil and exposed-pad paste coverage with the assembler. Arrange rails or a carrier for the 20.9 mm wide rounded outline. [Assembly notes](design-review.md#assembly-handling-and-panelization)
 - Test flash ID, quad reads and dictionary integrity across power cycles and sleep.
 
 IO2 and IO3 use the host's internal pull-ups while QSPI is active. If the rail test calls for hand-fitting R2, inspect for solder bridges to the adjacent supply trace.

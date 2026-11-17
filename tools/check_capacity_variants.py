@@ -1,4 +1,4 @@
-"""Check both capacity drafts and refresh review/assembly-preview artifacts.
+"""Check Rev D and both capacity options; refresh review/assembly previews.
 
 No Gerbers or drill files are generated. Set KICAD_CLI if it is not on PATH.
 """
@@ -29,8 +29,8 @@ def artwork(board):
             [tuple(map(float,p)) for p in re.findall(r'\(xy ([-\d.]+) ([-\d.]+)\)',n)]
             for _,_,n in nodes(board) if kind(n)=='gr_poly' and '(layer "F.SilkS")' in n}
 base_art=artwork(baseline)
-for size in (32,64):
-    out=ROOT/'variants'/('%dmb'%size)
+for size in (16,32,64):
+    out=ROOT/'pcb' if size==16 else ROOT/'variants'/('%dmb'%size)
     pcb=out/'steno-squid.kicad_pcb';sch=out/'steno-squid.kicad_sch'
     run(CLI,'sch','erc','--format','json','--severity-all','--exit-code-violations','-o',out/'checks/erc.json',sch)
     run(CLI,'sch','export','netlist','--format','kicadxml','-o',out/'checks/netlist.xml',sch)
@@ -44,7 +44,8 @@ for size in (32,64):
     # Verify local footprint exactly agrees with the board pad sizes/centres/layers.
     import re
     footprint=next(n for _,_,n in nodes(board) if kind(n)=='footprint' and '(property "Reference" "U1"' in n)
-    land=(out/'footprints/StenoSquid.pretty/WSON-8_8x6mm_P1.27mm_EP3.4x4.3mm.kicad_mod').read_text()
+    package='6x5' if size==16 else '8x6'
+    land=(out/('footprints/StenoSquid.pretty/WSON-8_%smm_P1.27mm_EP3.4x4.3mm.kicad_mod'%package)).read_text()
     def pad_geometry(fp):
         return [(re.search(r'\(pad "([^"]*)"',n)[1],
                  *[re.search(r'\('+p+r' ([^)]*)\)',n)[1] for p in ('at','size','layers')])
@@ -56,17 +57,20 @@ for size in (32,64):
     report=json.loads((out/'validation.json').read_text())
     report.update(capacity_bytes=size*1024*1024, baseline_outline_preserved=True,
                   baseline_pop_artwork_preserved=True, footprint_pad_geometry_matches_local_library=True,
-                  fabrication_release=False,baseline_tag='rev-d',
+                  fabrication_release=False,electrical_baseline_tag='rev-d',mechanical_update_date='2026-11-16',
                   baseline_board_sha256=hashlib.sha256((ROOT/'pcb/steno-squid.kicad_pcb').read_bytes()).hexdigest())
     (out/'validation.json').write_text(json.dumps(report,indent=2)+'\n')
     run(CLI,'sch','export','svg','--output',str(out/'previews')+'/',sch)
     run(CLI,'pcb','export','pos','--format','csv','--units','mm','--side','front',
         '--smd-only','--exclude-dnp','--output',out/'assembly-positions-draft.csv',pcb)
     run(CLI,'pcb','export','step','--force','--no-dnp','--output',out/'steno-squid.step',pcb)
-    for side,name in [('top','front'),('bottom','back')]:
+    for artifact in ('assembly-positions-draft.csv','steno-squid.step'):
+        p=out/artifact
+        p.write_text('\n'.join(line.rstrip() for line in p.read_text().splitlines())+'\n')
+    for side,name in [('top','front-pop' if size==16 else 'front'),('bottom','back')]:
         run(CLI,'pcb','render','--width','1000','--height','1400','--side',side,
             '--quality','high','--use-board-stackup-colors','--background','opaque',
             '--output',out/'previews'/('%s.png'%name),pcb)
 
 assert geometry(ROOT/'variants/32mb/steno-squid.kicad_pcb')==geometry(ROOT/'variants/64mb/steno-squid.kicad_pcb'), 'Capacity variants must share copper'
-print('Both drafts passed; shared copper and outline verified. No fabrication files generated.')
+print('All three capacities passed; shared 32/64 MB copper and common outline verified. No fabrication files generated.')

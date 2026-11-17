@@ -1,12 +1,12 @@
 {
-  "revision": "D-64MB draft",
-  "status": "capacity draft; host mechanical, RF and switched rail qualification pending",
-  "preferred_connection": "eight bare soldered pins through the switch-plate slot",
+  "revision": "D-64MB",
+  "status": "routed capacity option; header template and socket stack owner-checked; powered, RF and assembled daughterboard qualification pending",
+  "preferred_connection": "eight soldered pins into owner-tested host sockets; daughterboard flush on top of plate",
   "header_pitch_mm": 2.54,
   "header_drill_mm": 1.0,
   "mating_face": "top view with USB-C at the top: contacts along the bottom, pin 1 at the left",
   "module_outline_mm": [
-    22.9,
+    20.9,
     46.32
   ],
   "flash_ordering_code": "W25Q512JVEIQ / WSON-8 8x6 mm",
@@ -61,7 +61,7 @@
       "flash_pad": 3
     }
   ],
-  "header_pitch_verified_on_host": false,
+  "header_pitch_verified_on_host": true,
   "header_drill_is_design_choice": true,
   "pcb_thickness_mm": 1.0,
   "pin_map_status": "locked by owner 2026-11-11",
@@ -87,9 +87,10 @@
       70
     ],
     "pin_1_x_mm": 2.2,
-    "pin_1_x_verified": false,
+    "pin_1_x_verified": true,
     "slot_height_mm": 2.5,
-    "dimensions_from_photos": true
+    "dimensions_from_photos": true,
+    "pin_1_x_verification_method": "Owner-confirmed physical paper-template alignment; nominal coordinates retained"
   },
   "antenna": {
     "location_verified": false,
@@ -102,12 +103,36 @@
     "farads": 1e-06,
     "population": "DNP"
   },
+  "outline_shape": "full-length rounded rectangle, no ears, no USB notch",
+  "board_bounds_kicad_mm": [
+    25.2,
+    25.6,
+    46.1,
+    71.92
+  ],
+  "switch_facing_edge_trim_mm": 2.0,
+  "artwork_center_x_mm": 35.65,
+  "fit_evidence": {
+    "date": "2026-11-16",
+    "header_template_alignment_verified": true,
+    "socket_stack_checked": true,
+    "method": "Owner physically aligned all eight paper-template contacts to delivered host; owner reports socket stack allows board flush on plate.",
+    "photos": [
+      "IMG_5313.heic",
+      "IMG_5311.HEIC"
+    ],
+    "socket_part_number": null,
+    "socket_height_mm": null,
+    "revised_trimmed_template_checked": false,
+    "assembled_daughterboard_fit_verified": false
+  },
+  "fabrication_release": false,
   "flash_body_mm": [
     8,
     6
   ],
   "capacity_bytes": 67108864,
   "jedec_id": "EF4020",
-  "baseline": "rev-d electrical and mechanical design; current Pop artwork",
+  "baseline": "rev-d electrical design plus owner-selected full-length no-ears fit update, 2026-11-16",
   "datasheet": "https://www.mouser.com/datasheet/2/949/Winbond_W25Q512JV_Datasheet-3240039.pdf"
 }

@@ -1,5 +1,5 @@
 {
-  "revision": "D-64MB draft",
+  "revision": "D-64MB",
   "review_date": "2026-11-16",
   "ERC_violations": 0,
   "DRC_violations": 0,
@@ -49,12 +49,56 @@
     "/CLK": 1,
     "/IO3": 2
   },
-  "host_pitch_verified": false,
+  "host_pitch_verified": true,
+  "header_centres_kicad_mm": [
+    [
+      1,
+      27.2,
+      70.0
+    ],
+    [
+      2,
+      29.74,
+      70.0
+    ],
+    [
+      3,
+      32.28,
+      70.0
+    ],
+    [
+      4,
+      34.82,
+      70.0
+    ],
+    [
+      5,
+      37.36,
+      70.0
+    ],
+    [
+      6,
+      39.9,
+      70.0
+    ],
+    [
+      7,
+      42.44,
+      70.0
+    ],
+    [
+      8,
+      44.98,
+      70.0
+    ]
+  ],
+  "paper_header_alignment_verified": true,
+  "socket_stack_fit_checked_by_owner": true,
   "host_fit_verified": false,
   "host_power_qualified": false,
   "hashes": {
-    "steno-squid.kicad_pcb": "3afd28b0a0b421a4d7d1f34659347850909a471180487844fe5397d83722d92e",
-    "steno-squid.kicad_sch": "63fd406d286e4f25b98749a0064114873d74ac63fc17466ae842e4acc9b6f0df",
+    "steno-squid.kicad_pcb": "dc05b199d2f2708e8e53391bd104666bd17a0ed1dc280e347582229683e0fd05",
+    "steno-squid.kicad_sch": "d6d51731cd2e10407b1d7de58e8a8e972ca8605e49c6b9a68160002a5d716180",
     "steno-squid.kicad_pro": "d22541ef2a281bba3f32b3e5871885ef5f3ab497c49ef2972f96558bc6245c31",
     "steno-squid.kicad_dru": "eb415e35e78c1826e2ea2c81ed40d9b24f728510251829f95a14e4257e80b9f0",
     "models/WSON-8_8x6mm_EP3.4x4.3mm.step": "8e39ee873163d9a82446aaf24cbff851041cf21433b7c5fd232365fc324eee63"
@@ -64,6 +108,7 @@
   "baseline_pop_artwork_preserved": true,
   "footprint_pad_geometry_matches_local_library": true,
   "fabrication_release": false,
-  "baseline_tag": "rev-d",
-  "baseline_board_sha256": "ae672434e2f90ba7da9939c09812a080d108b34032b2e349eba9439ddb11c847"
+  "electrical_baseline_tag": "rev-d",
+  "mechanical_update_date": "2026-11-16",
+  "baseline_board_sha256": "61e8c96de355bdc1f5b7509c4d65419226b78d5907f9469da6dd0843c521f634"
 }

@@ -4,7 +4,7 @@ This review describes the 16 MB Rev D baseline. The complete [32 MB and 64 MB dr
 
 ## Mechanical basis
 
-The daughterboard sits on top of the left Choc switch plate, with eight bare pins through the plate slot. The 2.54 mm pitch and top-view contact order are inferred from Boardsource's expansion pinout and its nice!view compatibility. The plate envelope comes from a scaled image. Verify the host pin-1 position, slot width, USB plug clearance and plate-to-host stack on the actual keyboard. [Boardsource documentation](https://boardsource.xyz/blogs/guides/wireless-smt-corne-docs) · [nice!view drawing](https://nicekeyboards.com/docs/nice-view/pinout-schematic/) · [Board and fit template](../pcb/README.md)
+The daughterboard sits on top of the left Choc switch plate, with eight pins mating to host sockets through the plate slot. On 2026-11-16 the owner confirmed all eight paper-template contacts align on the delivered host and checked that their socket stack allows a flush-on-plate board. Rev D now uses the selected full-length no-ears shape, removes 2 mm from the switch-facing edge and keeps the opposite edge and header centres fixed. Pop is recentered without changing the artwork shape. Final populated-board fit, keycap/USB clearance with the revised outline and the exact connector procurement details remain to be checked. [Fit record](plate-geometry.md) · [Board and fit template](../pcb/README.md)
 
 ## Circuit and routing
 
@@ -48,4 +48,4 @@ The custom land pattern uses 1.15 × 0.60 mm terminal lands at 1.27 mm pitch and
 
 ## Assembly handling and panelization
 
-The stepped outline and 22.9 mm width need an assembler-approved carrier or panel arrangement. For JLCPCB standard assembly, allow at least 5 mm handling rails with fiducials and tooling holes as specified for the selected service. Have the assembler choose tab locations and routed spacing so separation preserves the fitted outline, USB notch and header pads. Panelization is pending the fit measurement and assembly quote. [JLCPCB rail guidance](https://jlcpcb.com/help/article/how-to-add-edge-rails-fiducials-for-pcb-assembly-order) · [Irregular board size guidance](https://jlcpcb.com/help/article/pcb-dimensions)
+The 20.9 mm board width needs an assembler-approved carrier or panel arrangement. For JLCPCB standard assembly, allow at least 5 mm handling rails with fiducials and tooling holes as specified for the selected service. Have the assembler choose tab locations and routed spacing so separation preserves the rounded outline and header pads. Panelization is pending the assembly quote. [JLCPCB rail guidance](https://jlcpcb.com/help/article/how-to-add-edge-rails-fiducials-for-pcb-assembly-order) · [Irregular board size guidance](https://jlcpcb.com/help/article/pcb-dimensions)

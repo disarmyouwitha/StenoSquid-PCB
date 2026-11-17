@@ -62,6 +62,7 @@ def grow_step(text):
                   text.replace('6x5mm', '8x6mm'))
 
 def build(size):
+    base_interface=json.loads((BASE/'interface.json').read_text())
     out = ROOT / 'variants' / ('%dmb' % size)
     for sub in ('checks', 'previews', 'models', 'footprints/StenoSquid.pretty'):
         (out / sub).mkdir(parents=True, exist_ok=True)
@@ -75,19 +76,19 @@ def build(size):
     (out/'models'/MODEL).write_text(grow_step((BASE/'models/WSON-8_6x5mm_EP3.4x4.3mm.step').read_text()))
     part = 'W25Q%dJVEIQ' % (size*8)
     symbol = 'W25Q%dJV' % (size*8)
-    revision = 'D-%dMB draft' % size
+    revision = 'D-%dMB' % size
     for filename in ('steno-squid.kicad_sch', 'steno-squid.kicad_sym'):
         content = (BASE/filename).read_text().replace('W25Q128JVPIQ', part).replace('W25Q128JV', symbol)
-        content = content.replace(OLD, NEW).replace('D provisional', revision)
+        content = content.replace(OLD, NEW).replace('(rev "%s")'%base_interface['revision'], '(rev "%s")'%revision)
         content = content.replace('Steno Squid - 8-contact QSPI electrical proposal',
                                   'Steno Squid - %d MB QSPI draft' % size)
         (out/filename).write_text(content)
-    interface = json.loads((BASE/'interface.json').read_text())
+    interface = base_interface.copy()
     interface.update(revision=revision, flash_ordering_code=part+' / WSON-8 8x6 mm',
                      flash_body_mm=[8,6], capacity_bytes=size*1024*1024,
                      jedec_id='EF4019' if size==32 else 'EF4020',
-                     baseline='rev-d electrical and mechanical design; current Pop artwork',
-                     status='capacity draft; host mechanical, RF and switched rail qualification pending',
+                     baseline='rev-d electrical design plus owner-selected full-length no-ears fit update, 2026-11-16',
+                     status='routed capacity option; header template and socket stack owner-checked; powered, RF and assembled daughterboard qualification pending',
                      datasheet=DATASHEETS[size])
     (out/'interface.json').write_text(json.dumps(interface,indent=2)+'\n')
     with (BASE/'BOM.csv').open() as f:
@@ -100,9 +101,9 @@ def build(size):
              Notes='Package E; 0.8mm max; Extended catalog candidate; stock and stencil review pending',
              LCSC_Part=lcsc,Assembly_Source=url)
     with (out/'BOM.csv').open('w') as f:
-        writer=csv.DictWriter(f,fieldnames=fields);writer.writeheader();writer.writerows(bom)
+        writer=csv.DictWriter(f,fieldnames=fields,lineterminator='\n');writer.writeheader();writer.writerows(bom)
     with (out/'assembly-bom-draft.csv').open('w') as f:
-        writer=csv.writer(f)
+        writer=csv.writer(f,lineterminator='\n')
         writer.writerow(['Comment','Designator','Footprint','LCSC Part #'])
         for r in bom:
             if r['Reference'] in ('U1','C1','R1'):
@@ -130,7 +131,7 @@ def build(size):
             child=child.replace('"STENO SQUID"','"STENO SQUID %dMB"' % size)
         return child
     board=replace_children((BASE/'steno-squid.kicad_pcb').read_text(),update)
-    board=board.replace('D provisional',revision)
+    board=board.replace('(rev "%s")'%base_interface['revision'], '(rev "%s")'%revision)
     added=[]
     def ident(s):
         return str(uuid.uuid5(uuid.NAMESPACE_URL,'StenoSquid-capacity-layout/'+s))

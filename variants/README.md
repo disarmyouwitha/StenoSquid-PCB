@@ -1,6 +1,6 @@
 # Capacity options
 
-These complete 32 MB and 64 MB drafts derive from the locked Rev D electrical and mechanical design, with the current Pop artwork. The original 16 MB project remains in [pcb](../pcb/README.md).
+These complete 32 MB and 64 MB drafts derive from the locked Rev D electrical design and the owner's 2026-11-16 fit update. All capacities share the 20.9 × 46.32 mm full-length, no-ears outline, with 2 mm removed from the switch-facing edge. Header centres stay fixed and Pop is recentered. The 16 MB project remains in [pcb](../pcb/README.md).
 
 | Capacity | Flash to populate | Project | BOM | Checks |
 |---|---|---|---|---|
@@ -15,7 +15,7 @@ Both use the same WSON-8 package-E footprint and copper routing. The capacity ma
 
 Each directory includes the native schematic and board, local symbols and footprints, flash STEP model, assembled-board STEP, schematic SVG, front/back renders, actual-size fit template, full BOM, draft SMT positions and ERC/DRC/netlist reports. Open the project from its own directory so its local libraries resolve.
 
-The designs are complete routed drafts. Host fit, switched supply, RF behavior and assembler approval remain pending. Production Gerbers and drill files are deferred. [Package, power and firmware handoff](../docs/capacity-variants.md)
+The designs are complete routed drafts. The owner checked paper-template header alignment and a flush socket stack. Revised-outline/populated-board fit, switched supply, RF behavior and assembler approval remain pending. Production Gerbers and drill files are deferred. [Package, power and firmware handoff](../docs/capacity-variants.md)
 
 To regenerate from the 16 MB baseline:
 
@@ -24,4 +24,4 @@ python3 tools/build_capacity_variants.py
 python3 tools/check_capacity_variants.py
 ```
 
-The build command replaces the generated CAD in both directories. Preserve any manual edits before rebuilding. The check command exports review artifacts and draft assembly positions; it generates no Gerbers. It verifies that both versions share copper, that the original outline and Pop artwork are preserved, and that the eight host contacts agree with the schematic and board.
+The build command replaces the generated CAD in both directories. Preserve any manual edits before rebuilding. The check command refreshes all three capacities, including review artifacts and draft assembly positions; it generates no Gerbers. It verifies that the 32/64 MB versions share copper, that all capacities match the current Rev D outline and Pop artwork placement, and that the eight host contacts agree with the schematic and board.

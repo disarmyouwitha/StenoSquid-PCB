@@ -2,13 +2,13 @@
 <export version="E">
   <design>
     <source>steno-squid.kicad_sch</source>
-    <date>2026-11-13T20:09:23</date>
+    <date>2026-11-16T20:24:38</date>
     <tool>Eeschema 10.0.7</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>Steno Squid - 8-contact QSPI electrical proposal</title>
         <company/>
-        <rev>D provisional</rev>
+        <rev>D</rev>
         <date/>
         <source>steno-squid.kicad_sch</source>
         <comment number="1" value=""/>

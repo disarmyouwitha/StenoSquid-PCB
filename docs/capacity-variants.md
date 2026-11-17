@@ -1,6 +1,6 @@
 # 32 MB and 64 MB hardware drafts
 
-The [capacity projects](../variants/README.md) extend locked Rev D without changing the host interface, 22.9 × 46.32 mm board envelope, 1.0 mm thickness, top-side mounting, USB notch or current Pop artwork. Each version has a complete native KiCad project and its own BOM. The 16 MB project in `pcb/` remains the baseline.
+The [capacity projects](../variants/README.md) extend the locked Rev D electrical interface. All three capacities now share the owner-selected **20.9 × 46.32 mm full-length, no-ears outline**, 1.0 mm thickness and top-side mounting. The 2026-11-16 mechanical update trims 2 mm from the switch-facing edge, fills the former USB notch and recenters Pop without changing its shape. All header centres and the opposite edge stay fixed. [Physical fit record](plate-geometry.md) Each version has a complete native KiCad project and its own BOM. The 16 MB project in `pcb/` remains the baseline.
 
 ## Package selection
 
@@ -50,4 +50,4 @@ Test distinct data around 0x00FFFFFF / 0x01000000 and, on 64 MB, 0x01FFFFFF / 0x
 
 The generated reports cover ERC, DRC, schematic parity, all eight nets, grounded EP, supply minimum width, local footprint pad geometry, shared copper, original outline and artwork. All rule categories remain enabled. The draft position CSV includes fitted SMT parts only; J1 is assembled manually and C2/R2 are excluded. Confirm footprint rotation with the assembler.
 
-Host pitch/offset, physical fit, switched supply, Bluetooth performance, panelization and stencil approval remain pending under the existing [pre-order checklist](pre-order-checklist.md). These drafts include no production Gerbers or drill files.
+The owner confirmed paper-template header alignment and the flush socket stack. The revised outline and final populated-board fit, switched supply, Bluetooth performance, panelization and stencil approval remain to be checked under the existing [pre-order checklist](pre-order-checklist.md). These drafts include no production Gerbers or drill files.

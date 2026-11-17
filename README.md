@@ -11,8 +11,8 @@ Steno Squid adds 16 MB of QSPI flash for Javelin stenography to the left half of
 
 ## Hardware
 
-- The 22.9 × 46.32 mm board is 1.0 mm thick. The stepped outline clears the estimated USB-C notch, and the components and Pop silkscreen face up.
-- Eight bare soldered pins pass through the plate slot into the host PCB. Viewed from above with USB-C at the top, the contact row is at the bottom and pin 1 is on the left. The 2.54 mm pitch and 2.20 mm pin-1 offset from the slot’s left end are provisional.
+- Rev D uses a **20.9 × 46.32 mm full-length outline with no ears or USB notch**, 1 mm corner radii and 1.0 mm board thickness. The switch-facing edge is trimmed by 2 mm; the opposite edge and all header centres stay fixed. Components and the recentered Pop silkscreen face up.
+- Eight soldered pins mate with the host sockets through the plate slot. Viewed from above with USB-C at the top, the contact row is at the bottom and pin 1 is on the left. The owner confirmed all eight template contacts align and checked that their socket stack allows the daughterboard to sit flush on the plate. The 2.54 mm pitch and nominal 2.20 mm pin-1 offset are retained. [Fit record](docs/plate-geometry.md)
 - The W25Q128JVPIQ WSON flash, 100 nF decoupling capacitor C1 and 10 kΩ CS pull-up R1 are fitted. The optional bulk capacitor C2 and bleed resistor R2 start unpopulated. The breadboard rail test determines whether either is needed.
 - The 0.40 mm supply path from the header through C1 to the flash stays on the top copper layer. Ground pours on both layers cover the flash circuit and contact row. The artwork area is copper-free on both layers.
 
@@ -33,9 +33,9 @@ Use this map for the Adafruit flash breakout proof of concept. The left expansio
 
 ## Prototype status
 
-KiCad reports zero ERC, DRC, unconnected items and schematic-parity issues with every ERC and DRC category enabled. Physical fit, power and Bluetooth performance still need verification. [CAD validation](pcb/validation.json)
+KiCad reports zero ERC, DRC, unconnected items and schematic-parity issues with every ERC and DRC category enabled. Paper-template header alignment and socket stack are owner-checked; final populated-board fit, power and Bluetooth performance remain to be verified. [CAD validation](pcb/validation.json)
 
-1. Print the fit template at 100% and check its 50 mm scale bar. Confirm the contact row and pin-1 position, USB plug and keycap clearance, plate material and mounting stack before choosing pin length.
+1. Use the revised fit template at 100% to check the trimmed edge and solid top with keycaps and USB plug fitted. Header alignment and the owner's socket stack are confirmed; record the exact socket part and mating pin length before procurement. Verify the final populated-board assembly.
 2. Check the switched rail on USB and battery. Measure voltage under load, control polarity, shared loads and discharge with the breakout before deciding whether to populate R2 or C2.
 3. Identify the host antenna and check its specified clearance against the plate, pins and daughterboard. Compare host and split Bluetooth performance with the module fitted and removed under the same conditions.
 4. Review the WSON land pattern and stencil with the assembler. On the prototype, confirm flash ID, quad mode, readback and dictionary integrity across power cycles.

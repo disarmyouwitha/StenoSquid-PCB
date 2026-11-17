@@ -2,4 +2,4 @@ Read README.md, docs/design-review.md and pcb/interface.json before editing. The
 
 Keep every DRC category enabled. Regenerate the actual-size template after mechanical changes with tools/make_fit_template.py.
 
-Host fit, antenna identification, Bluetooth performance and switched-rail qualification remain pending. Do not fabricate, generate production Gerbers or flash hardware without approval.
+The owner confirmed paper-template alignment of all eight contacts and a flush-on-plate socket stack on 2026-11-16. Keep the header centres fixed. Rev D uses the full-length no-ears outline with a 2 mm trim on the switch-facing edge. Final populated-board fit, antenna identification, Bluetooth performance and switched-rail qualification remain pending. Do not fabricate, generate production Gerbers or flash hardware without approval.
