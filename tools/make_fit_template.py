@@ -71,14 +71,14 @@ svg='''<svg xmlns="http://www.w3.org/2000/svg" width="185mm" height="140mm" view
   <text x="10" y="14" font-size="5" font-weight="bold">Steno Squid fit template</text>
   <text x="10" y="23" font-size="3">Print at actual size (100%). Verify the 50 mm bar and the 10 mm square.</text>
   <text x="10" y="29" font-size="3">Left half seen from above, with USB-C at the top and pin 1 at the bottom left.</text>
-  <text x="10" y="35" font-size="3">Cut on the black outline. Align the holes over the plate slot.</text>
+  <text x="10" y="35" font-size="3">Trace or cut on the bright red outline. Align the holes over the plate slot.</text>
   <text x="10" y="46" font-size="2.5">50 mm</text>
   <path d="M 10 49 H 60 M 10 47.5 V 50.5 M 60 47.5 V 50.5" stroke="#111" fill="none" stroke-width=".25"/>
   <rect x="81" y="42" width="10" height="10" stroke="#111" fill="none" stroke-width=".25"/>
   <text x="94" y="48" font-size="2.5">10 mm square</text>
   <text x="51.65" y="59.5" text-anchor="middle" font-size="2">Full length / no ears</text>
   <rect x="42" y="106.75" width="21.9" height="2.5" fill="#dbe4ec"/>
-  <g fill="none" stroke="#111" stroke-width=".20">
+  <g fill="none" stroke="#ff0000" stroke-width=".30">
 OUTLINE
   </g>
   <g fill="none" stroke="#1d5787" stroke-width=".18">
@@ -97,7 +97,7 @@ CONTACTS
 '''
 for key,value in {'OUTLINE':'\n'.join(shapes),'PARTS':'\n'.join(parts),'CONTACTS':'\n'.join(contacts),'PIN_X':str(pin1),
                   'BOARD_SIZE':' × '.join('%g'%v for v in interface['module_outline_mm']),
-                  'FIT_NOTE':('16 MB candidate: 0.5 mm shorter; plate radius R5.35' if interface.get('mechanical_candidate')
+                  'FIT_NOTE':('16 MB candidate: 0.75 mm shorter; plate radius R5.35' if interface.get('mechanical_candidate')
                               else 'Rev D / full length / no ears')}.items():
     svg=svg.replace(key,value)
 (project/'previews/plate-fit-1to1.svg').write_text(svg)

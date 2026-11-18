@@ -7,7 +7,7 @@
   "mating_face": "top view with USB-C at the top: contacts along the bottom, pin 1 at the left",
   "module_outline_mm": [
     21.78,
-    45.82
+    45.57
   ],
   "flash_ordering_code": "W25Q128JVPIQ / WSON-8 6x5 mm",
   "host_voltage_measured": false,
@@ -102,10 +102,10 @@
     "farads": 1e-06,
     "population": "DNP"
   },
-  "outline_shape": "16 MB review candidate: 0.5 mm shorter at non-header end; R5.35 top and R1 header-end corners",
+  "outline_shape": "16 MB review candidate: 0.75 mm shorter at non-header end; R5.35 top and R1 header-end corners",
   "board_bounds_kicad_mm": [
     25.2,
-    26.1,
+    26.35,
     46.98,
     71.92
   ],
@@ -128,7 +128,7 @@
   "fabrication_release": false,
   "mechanical_candidate": {
     "base_commit": "cb7d1fc",
-    "height_reduction_mm": 0.5,
+    "height_reduction_mm": 0.75,
     "trimmed_end": "away from header",
     "top_corner_radius_mm": 5.35,
     "header_end_corner_radius_mm": 1.0,
@@ -152,6 +152,6 @@
         48.119142
       ]
     ],
-    "length_restored_mm_from_first_candidate": 1.0
+    "length_restored_mm_from_first_candidate": 0.75
   }
 }

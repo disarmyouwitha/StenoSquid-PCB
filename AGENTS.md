@@ -1,6 +1,6 @@
 Read README.md, docs/design-review.md and pcb/interface.json before editing. The active KiCad project is in pcb. The owner locked the map CS P0.07, IO0 P0.21, IO3 P0.12, IO1 P0.23, CLK P0.19 and IO2 P0.05. Keep the schematic, layout, interface, validation and firmware pin states synchronized. C2 and R2 start unpopulated.
 
-This branch contains a 16 MB-only outline candidate pending owner approval: 0.5 mm shorter away from the header, with R5.35 corners taken from the native BLE plate CAD at that end. Do not regenerate or modify variants until the owner approves propagation. Use `python3 tools/check_capacity_variants.py --only 16` for this review.
+This branch contains a 16 MB-only outline candidate pending owner approval: 0.75 mm shorter away from the header, with R5.35 corners taken from the native BLE plate CAD at that end. Do not regenerate or modify variants until the owner approves propagation. Use `python3 tools/check_capacity_variants.py --only 16` for this review.
 
 Keep every DRC category enabled. Regenerate the actual-size template after mechanical changes with tools/make_fit_template.py.
 

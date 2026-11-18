@@ -97,7 +97,7 @@
   "host_fit_verified": false,
   "host_power_qualified": false,
   "hashes": {
-    "steno-squid.kicad_pcb": "f5308374e618d0c762ea93a813a261c3d7aff6f9145c94155c84765a72c31925",
+    "steno-squid.kicad_pcb": "9bddfcb6ad063ebeaa35ed4b61fa34c2b87c2f18234617f90612058335ac71e9",
     "steno-squid.kicad_sch": "8cc91a08d12d8546d7c5ef37d489d3f5fa98d677d55afa6670d132cbd1df5d5d",
     "steno-squid.kicad_pro": "d22541ef2a281bba3f32b3e5871885ef5f3ab497c49ef2972f96558bc6245c31",
     "steno-squid.kicad_dru": "eb415e35e78c1826e2ea2c81ed40d9b24f728510251829f95a14e4257e80b9f0",
@@ -110,10 +110,10 @@
   "fabrication_release": false,
   "electrical_baseline_tag": "rev-d",
   "mechanical_update_date": "2026-11-17",
-  "baseline_board_sha256": "f5308374e618d0c762ea93a813a261c3d7aff6f9145c94155c84765a72c31925",
+  "baseline_board_sha256": "9bddfcb6ad063ebeaa35ed4b61fa34c2b87c2f18234617f90612058335ac71e9",
   "mechanical_candidate": {
     "base_commit": "cb7d1fc",
-    "height_reduction_mm": 0.5,
+    "height_reduction_mm": 0.75,
     "trimmed_end": "away from header",
     "top_corner_radius_mm": 5.35,
     "header_end_corner_radius_mm": 1.0,
@@ -137,7 +137,7 @@
         48.119142
       ]
     ],
-    "length_restored_mm_from_first_candidate": 1.0
+    "length_restored_mm_from_first_candidate": 0.75
   },
   "matches_current_16mb_outline": true
 }
