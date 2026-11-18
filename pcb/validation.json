@@ -97,18 +97,46 @@
   "host_fit_verified": false,
   "host_power_qualified": false,
   "hashes": {
-    "steno-squid.kicad_pcb": "e0b75ddb33a9062109359d562fcda3c6694b91600cb3984759d87992ae3ec00d",
-    "steno-squid.kicad_sch": "bde5e3cd45841f620da17df3cc25fc63fc38cc83a196bf48b581a6aa348dff48",
-    "steno-squid.kicad_pro": "aa54616dcc26caa28d54d304529cf1dcedab95c86b0459104c6a2942fb4eb902",
-    "steno-squid.kicad_dru": "3bffc12fab832b186b3dc21fa5bf534cae8ab243759386476c7eedbbe81a9f73",
-    "models\\WSON-8_6x5mm_EP3.4x4.3mm.step": "4dd2219cec27974804ca8fb3f8d41133295066cdda0d09d9102d685492c43dbb"
+    "steno-squid.kicad_pcb": "e346784b1a65b81e0a7237edf89462dfe0e4a119565307f676d3a29239cf7f42",
+    "steno-squid.kicad_sch": "8cc91a08d12d8546d7c5ef37d489d3f5fa98d677d55afa6670d132cbd1df5d5d",
+    "steno-squid.kicad_pro": "d22541ef2a281bba3f32b3e5871885ef5f3ab497c49ef2972f96558bc6245c31",
+    "steno-squid.kicad_dru": "eb415e35e78c1826e2ea2c81ed40d9b24f728510251829f95a14e4257e80b9f0",
+    "models/WSON-8_6x5mm_EP3.4x4.3mm.step": "866abd97df7c1c3fd876c65898f89a8bad08b450c483ff7aa630ce27bf53b452"
   },
   "capacity_bytes": 16777216,
-  "baseline_outline_preserved": true,
+  "baseline_outline_preserved": false,
   "baseline_pop_artwork_preserved": true,
   "footprint_pad_geometry_matches_local_library": true,
   "fabrication_release": false,
   "electrical_baseline_tag": "rev-d",
   "mechanical_update_date": "2026-11-17",
-  "baseline_board_sha256": "e0b75ddb33a9062109359d562fcda3c6694b91600cb3984759d87992ae3ec00d"
+  "baseline_board_sha256": "e346784b1a65b81e0a7237edf89462dfe0e4a119565307f676d3a29239cf7f42",
+  "mechanical_candidate": {
+    "base_commit": "cb7d1fc",
+    "height_reduction_mm": 1.5,
+    "trimmed_end": "away from header",
+    "top_corner_radius_mm": 5.35,
+    "header_end_corner_radius_mm": 1.0,
+    "radius_basis": "Measured from native BLE plate CAD outer corner: circumcircle radius 5.350000 mm; mirrored at switch-facing top corner",
+    "approved_by_owner": false,
+    "propagate_to_variants": false,
+    "plate_source_repository": "https://github.com/disarmyouwitha/boardsource-wireless-plate-files",
+    "plate_source_revision": "8b61f1b",
+    "plate_source_path": "Kicad/ble_plate_scr.kicad_pcb",
+    "plate_arc_points_mm": [
+      [
+        182.540733,
+        42.776196
+      ],
+      [
+        186.145001,
+        44.434499
+      ],
+      [
+        187.616096,
+        48.119142
+      ]
+    ]
+  },
+  "matches_current_16mb_outline": true
 }

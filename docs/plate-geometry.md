@@ -1,5 +1,7 @@
 # Rev D plate fit
 
+**16 MB review branch:** the candidate is 21.78 × 44.82 mm, 1.5 mm shorter at the end away from the header, with R5.35 corners from the native plate CAD. Other variants are unchanged. [Dimensions, source and comparison](16mb-plate-fit-review.md).
+
 On 2026-11-16 the owner fitted the full-length paper template to the delivered Boardsource keyboard and confirmed that all eight contacts align. The owner also checked available sockets and reported that the resulting stack allows the daughterboard to sit flush on top of the switch plate. The supplied photos were IMG_5313.heic and IMG_5311.HEIC. These are owner-reported physical checks, not a test of a fabricated, populated StenoSquid board.
 
 The owner selected a full-length outline with **no ears**, removing **2 mm from the switch-facing edge only**. The tighter opposite edge and all header centres remain fixed. The top is solid, with no USB notch. The final mechanical envelope is **20.9 × 46.32 mm**, with 1 mm corner radii and 1.0 mm PCB thickness. The same outline is used for 16, 32 and 64 MB.

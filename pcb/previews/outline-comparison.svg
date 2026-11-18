@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="185mm" height="125mm" viewBox="0 0 185 125" font-family="sans-serif">
+<rect width="185" height="125" fill="white"/>
+<text x="10" y="13" font-size="5">16 MB plate-radius fit candidate</text>
+<text x="10" y="21" font-size="3">Grey dashed: main cb7d1fc / Blue: proposed outline / Black: fixed header</text>
+<g fill="none" stroke="#999" stroke-width=".25" stroke-dasharray="1 .7"><path d="M 40 41 A 0.999999 0.999999 0 0 1 41 40"/>
+<path d="M 40 85.32 L 40 41"/>
+<path d="M 41 40 L 60.78 40"/>
+<path d="M 41 86.32 A 0.999999 0.999999 0 0 1 40 85.32"/>
+<path d="M 60.78 40 A 0.999999 0.999999 0 0 1 61.78 41"/>
+<path d="M 60.78 86.32 L 41 86.32"/>
+<path d="M 61.78 41 L 61.78 85.32"/>
+<path d="M 61.78 85.32 A 0.999999 0.999999 0 0 1 60.78 86.32"/></g>
+<g fill="none" stroke="#1768c4" stroke-width=".3"><path d="M 40 46.85 A 5.35 5.35 0 0 1 45.35 41.5"/>
+<path d="M 40 85.32 L 40 46.85"/>
+<path d="M 41 86.32 A 0.999999 0.999999 0 0 1 40 85.32"/>
+<path d="M 45.35 41.5 L 56.43 41.5"/>
+<path d="M 56.43 41.5 A 5.35 5.35 0 0 1 61.78 46.85"/>
+<path d="M 60.78 86.32 L 41 86.32"/>
+<path d="M 61.78 46.85 L 61.78 85.32"/>
+<path d="M 61.78 85.32 A 0.999999 0.999999 0 0 1 60.78 86.32"/></g>
+<g fill="none" stroke="#111" stroke-width=".2"><circle cx="42" cy="84.4" r=".85"/><circle cx="42" cy="84.4" r=".5"/><circle cx="44.54" cy="84.4" r=".85"/><circle cx="44.54" cy="84.4" r=".5"/><circle cx="47.08" cy="84.4" r=".85"/><circle cx="47.08" cy="84.4" r=".5"/><circle cx="49.62" cy="84.4" r=".85"/><circle cx="49.62" cy="84.4" r=".5"/><circle cx="52.16" cy="84.4" r=".85"/><circle cx="52.16" cy="84.4" r=".5"/><circle cx="54.7" cy="84.4" r=".85"/><circle cx="54.7" cy="84.4" r=".5"/><circle cx="57.24" cy="84.4" r=".85"/><circle cx="57.24" cy="84.4" r=".5"/><circle cx="59.78" cy="84.4" r=".85"/><circle cx="59.78" cy="84.4" r=".5"/></g>
+<text x="85" y="44" font-size="3.5">1.5 mm shorter away from header</text>
+<text x="85" y="52" font-size="3.5">21.78 × 44.82 mm</text>
+<text x="85" y="63" font-size="3.5">Top corners R5.35 mm</text>
+<text x="85" y="70" font-size="2.8">Radius from native BLE plate CAD</text>
+<text x="85" y="81" font-size="3.5">Header-end corners remain R1 mm</text>
+<text x="85" y="89" font-size="2.8">All eight contacts and electrical routing fixed</text>
+<text x="10" y="109" font-size="3">Print at 100% for this overlay; use the separate fit template for the complete contact drawing.</text>
+<path d="M10 117 H60 M10 115 V119 M60 115 V119" stroke="black" stroke-width=".2"/>
+<text x="65" y="118" font-size="2.8">50 mm</text>
+</svg>

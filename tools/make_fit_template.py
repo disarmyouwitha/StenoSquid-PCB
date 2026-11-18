@@ -87,7 +87,8 @@ PARTS
   <g fill="none" stroke="#111" stroke-width=".14">
 CONTACTS
   </g>
-  <text x="73" y="88" font-size="2.7">BOARD_SIZE mm overall; 2 mm trimmed on switch side</text>
+  <text x="73" y="88" font-size="2.7">BOARD_SIZE mm overall</text>
+  <text x="73" y="83" font-size="2.7">FIT_NOTE</text>
   <text x="73" y="94" font-size="2.7">1.0 mm drills on 2.54 mm pitch</text>
   <text x="73" y="100" font-size="2.7">Pin 1 is PIN_X mm from slot left; header fit owner-checked</text>
   <text x="73" y="109" font-size="2.7">Shaded band shows the estimated 2.5 mm slot.</text>
@@ -95,6 +96,8 @@ CONTACTS
 </svg>
 '''
 for key,value in {'OUTLINE':'\n'.join(shapes),'PARTS':'\n'.join(parts),'CONTACTS':'\n'.join(contacts),'PIN_X':str(pin1),
-                  'BOARD_SIZE':' × '.join('%g'%v for v in interface['module_outline_mm'])}.items():
+                  'BOARD_SIZE':' × '.join('%g'%v for v in interface['module_outline_mm']),
+                  'FIT_NOTE':('16 MB candidate: 1.5 mm shorter; plate radius R5.35' if interface.get('mechanical_candidate')
+                              else 'Rev D / full length / no ears')}.items():
     svg=svg.replace(key,value)
 (project/'previews/plate-fit-1to1.svg').write_text(svg)
