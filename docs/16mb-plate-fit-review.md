@@ -5,13 +5,13 @@ Branch: `revise/16mb-plate-corners`, based on `main` at `cb7d1fc`. Only `pcb/` i
 | Dimension | Main | 16 MB candidate |
 |---|---|---|
 | Width | 21.78 mm | 21.78 mm |
-| Height | 46.32 mm | 44.82 mm |
-| End away from header | KiCad y = 25.60 mm | KiCad y = 27.10 mm |
+| Height | 46.32 mm | 45.82 mm |
+| End away from header | KiCad y = 25.60 mm | KiCad y = 26.10 mm |
 | Corners at that end | R1 mm | R5.35 mm |
 | Header-end corners | R1 mm | R1 mm |
 | Header centres, component positions and signal routing | Fixed | Unchanged |
 
-The 1.5 mm reduction is the midpoint of the owner's reported 1–2 mm excess height. It is removed only at the end away from the header, retaining the confirmed contact alignment and socket stack. This height reduction still needs approval from a new paper fit.
+The first candidate removed 1.5 mm. At the owner's request, this update restores 1.0 mm at the end away from the header, leaving a net 0.5 mm reduction from main. The R5.35 curve is retained. Header alignment and the socket stack stay fixed. The resulting length still needs approval from a new paper fit.
 
 ## Corner source
 

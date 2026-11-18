@@ -97,7 +97,7 @@ CONTACTS
 '''
 for key,value in {'OUTLINE':'\n'.join(shapes),'PARTS':'\n'.join(parts),'CONTACTS':'\n'.join(contacts),'PIN_X':str(pin1),
                   'BOARD_SIZE':' × '.join('%g'%v for v in interface['module_outline_mm']),
-                  'FIT_NOTE':('16 MB candidate: 1.5 mm shorter; plate radius R5.35' if interface.get('mechanical_candidate')
+                  'FIT_NOTE':('16 MB candidate: 0.5 mm shorter; plate radius R5.35' if interface.get('mechanical_candidate')
                               else 'Rev D / full length / no ears')}.items():
     svg=svg.replace(key,value)
 (project/'previews/plate-fit-1to1.svg').write_text(svg)

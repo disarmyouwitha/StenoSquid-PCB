@@ -10,17 +10,17 @@
 <path d="M 60.78 86.32 L 41 86.32"/>
 <path d="M 61.78 41 L 61.78 85.32"/>
 <path d="M 61.78 85.32 A 0.999999 0.999999 0 0 1 60.78 86.32"/></g>
-<g fill="none" stroke="#1768c4" stroke-width=".3"><path d="M 40 46.85 A 5.35 5.35 0 0 1 45.35 41.5"/>
-<path d="M 40 85.32 L 40 46.85"/>
-<path d="M 41 86.32 A 0.999999 0.999999 0 0 1 40 85.32"/>
-<path d="M 45.35 41.5 L 56.43 41.5"/>
-<path d="M 56.43 41.5 A 5.35 5.35 0 0 1 61.78 46.85"/>
+<g fill="none" stroke="#1768c4" stroke-width=".3"><path d="M 40 45.85 A 5.35004 5.35004 0 0 1 45.35 40.5"/>
+<path d="M 40 85.32 L 40 45.85"/>
+<path d="M 41 86.32 A 1.00001 1.00001 0 0 1 40 85.32"/>
+<path d="M 45.35 40.5 L 56.43 40.5"/>
+<path d="M 56.43 40.5 A 5.35004 5.35004 0 0 1 61.78 45.85"/>
 <path d="M 60.78 86.32 L 41 86.32"/>
-<path d="M 61.78 46.85 L 61.78 85.32"/>
-<path d="M 61.78 85.32 A 0.999999 0.999999 0 0 1 60.78 86.32"/></g>
+<path d="M 61.78 45.85 L 61.78 85.32"/>
+<path d="M 61.78 85.32 A 1.00001 1.00001 0 0 1 60.78 86.32"/></g>
 <g fill="none" stroke="#111" stroke-width=".2"><circle cx="42" cy="84.4" r=".85"/><circle cx="42" cy="84.4" r=".5"/><circle cx="44.54" cy="84.4" r=".85"/><circle cx="44.54" cy="84.4" r=".5"/><circle cx="47.08" cy="84.4" r=".85"/><circle cx="47.08" cy="84.4" r=".5"/><circle cx="49.62" cy="84.4" r=".85"/><circle cx="49.62" cy="84.4" r=".5"/><circle cx="52.16" cy="84.4" r=".85"/><circle cx="52.16" cy="84.4" r=".5"/><circle cx="54.7" cy="84.4" r=".85"/><circle cx="54.7" cy="84.4" r=".5"/><circle cx="57.24" cy="84.4" r=".85"/><circle cx="57.24" cy="84.4" r=".5"/><circle cx="59.78" cy="84.4" r=".85"/><circle cx="59.78" cy="84.4" r=".5"/></g>
-<text x="85" y="44" font-size="3.5">1.5 mm shorter away from header</text>
-<text x="85" y="52" font-size="3.5">21.78 × 44.82 mm</text>
+<text x="85" y="44" font-size="3.5">0.5 mm shorter away from header</text>
+<text x="85" y="52" font-size="3.5">21.78 × 45.82 mm</text>
 <text x="85" y="63" font-size="3.5">Top corners R5.35 mm</text>
 <text x="85" y="70" font-size="2.8">Radius from native BLE plate CAD</text>
 <text x="85" y="81" font-size="3.5">Header-end corners remain R1 mm</text>

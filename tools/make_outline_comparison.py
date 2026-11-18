@@ -50,8 +50,8 @@ svg='''<svg xmlns="http://www.w3.org/2000/svg" width="185mm" height="125mm" view
 <g fill="none" stroke="#999" stroke-width=".25" stroke-dasharray="1 .7">OLD</g>
 <g fill="none" stroke="#1768c4" stroke-width=".3">NEW</g>
 <g fill="none" stroke="#111" stroke-width=".2">PADS</g>
-<text x="85" y="44" font-size="3.5">1.5 mm shorter away from header</text>
-<text x="85" y="52" font-size="3.5">21.78 × 44.82 mm</text>
+<text x="85" y="44" font-size="3.5">0.5 mm shorter away from header</text>
+<text x="85" y="52" font-size="3.5">21.78 × 45.82 mm</text>
 <text x="85" y="63" font-size="3.5">Top corners R5.35 mm</text>
 <text x="85" y="70" font-size="2.8">Radius from native BLE plate CAD</text>
 <text x="85" y="81" font-size="3.5">Header-end corners remain R1 mm</text>
@@ -88,7 +88,7 @@ for i in range(8):
     draw.ellipse((x-rr,y-rr,x+rr,y+rr),outline='#202020',width=2)
     rr=.5*18;draw.ellipse((x-rr,y-rr,x+rr,y+rr),outline='#202020',width=2)
     draw.text((x-5,y+45),str(i+1),font=font(17),fill='#202020')
-labels=[('1.5 mm shorter',200),('Cut only at the end',241),('away from the header',272),('21.78 x 44.82 mm',350),('Top corners R5.35',450),('From native BLE plate CAD',491),('Header end remains R1',660),('Contacts, parts and',750),('signal routing unchanged',781),('16 MB only; other versions',880),('await your approval',911)]
+labels=[('0.5 mm shorter',200),('Cut only at the end',241),('away from the header',272),('21.78 x 45.82 mm',350),('Top corners R5.35',450),('From native BLE plate CAD',491),('Header end remains R1',660),('Contacts, parts and',750),('signal routing unchanged',781),('16 MB only; other versions',880),('await your approval',911)]
 for text,y in labels:draw.text((600,y),text,font=font(28 if y in (200,350,450,660) else 23),fill='#1768c4' if y in (200,350,450) else '#26384a')
 im.save(out/'outline-comparison.png')
 print('Wrote outline-comparison.svg and .png')
