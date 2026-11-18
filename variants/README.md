@@ -27,3 +27,7 @@ python3 tools/check_capacity_variants.py
 The build command replaces the generated CAD in both directories. Preserve any manual edits before rebuilding. The check command refreshes all six projects across three capacities, including review artifacts and draft assembly positions; it generates no Gerbers. It verifies that the 32/64 MB versions share copper, that all capacities match the current Rev D outline and Pop artwork placement, and that the eight host contacts agree with the schematic and board.
 
 The owner approved the shared outline on 2026-11-17: **1.5 mm total removed from the original 46.32 mm length**, leaving **44.82 mm**, with **R5.35 far-end corners**. Header centres, electrical routing and this project's artwork/finish are preserved. Final populated fit, powered and RF testing remain pending.
+
+## DIY hand-solderable option
+
+[16mb-diy-soic](16mb-diy-soic/README.md) is a separate, independent 16 MB project — not a capacity variant — built for assembly with a soldering iron instead of a hot plate: a **SOIC-8 208 mil Winbond W25Q128JVSIQ** replaces the WSON-8 flash, C1/R1 move to **0805**, and C2/R2 are omitted entirely (not just DNP). It shares this group's outline, header position and host net map, fully rerouted around the wider SOIC footprint, and validates with its own [tools/check_diy_soic.py](../tools/check_diy_soic.py) rather than `tools/validate.py` (which assumes a WSON pad 9 and C2/R2). It does not use `tools/build_capacity_variants.py` and is not touched by it.

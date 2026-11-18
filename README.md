@@ -10,6 +10,8 @@ Steno Squid adds 16 MB of QSPI flash for Javelin stenography to the left half of
 
 **Larger-capacity options:** complete [32 MB and 64 MB KiCad drafts](variants/README.md) use a shared 8 × 6 mm WSON footprint and the same eight host contacts. Choose the matching BOM for the desired capacity. The 16 MB baseline below retains its original footprint. [Package and power review](docs/capacity-variants.md)
 
+**DIY hand-solderable option:** [variants/16mb-diy-soic](variants/16mb-diy-soic/README.md) is an independent 16 MB project built around a SOIC-8 flash and 0805 passives instead of the WSON/0603 parts above, for assembly with a soldering iron instead of a hot plate. It shares the same outline, header and host contacts but is not a drop-in change to this project — see its own README for the net reroute, cost breakdown and open items.
+
 ## Hardware
 
 - Rev D uses a **21.78 × 44.82 mm approved outline with no ears or USB notch**, R5.35 corners away from the header, R1 header-end corners and 1.0 mm board thickness. The switch-facing edge keeps a net 1.12 mm trim from the original full-ear outline; the pin-8 edge is widened 0.88 mm so its silkscreen gap matches the one at pin 1. The opposite edge and all header centres stay fixed. Components face up, with STENO SQUID silkscreened above Pop and the 16 MB flash capacity below it.
