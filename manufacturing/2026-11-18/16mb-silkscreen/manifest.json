@@ -1,0 +1,31 @@
+{
+  "source_commit": "1ac578ef5b6617caa9f3f9deaaf1c2be2dd63435",
+  "source_project": "pcb",
+  "outline_mm": [
+    21.78,
+    44.82
+  ],
+  "board_thickness_mm": 1,
+  "assembly": [
+    "U1",
+    "C1",
+    "R1"
+  ],
+  "do_not_populate": [
+    "C2",
+    "R2"
+  ],
+  "manual_assembly": [
+    "J1"
+  ],
+  "host_test_status": "Owner reports Boardsource build passed all tests and authorizes JLCPCB order setup, 2026-11-18",
+  "not_yet_ordered": true,
+  "hashes": {
+    "BOM-jlc.csv": "30a4029a0034a8f380521751e25d3c7e30904259211ba33e54234b69313e7e53",
+    "CPL-jlc.csv": "eeb80b2481043b813715652d7feb017028cc60238e606fb426d09a3622b2ea56",
+    "drc.json": "1b4c477b6481013aefdadd9a828bfe630b4a8552f7f654ffca30ae68e9d8dda4",
+    "16mb-silkscreen-gerbers.zip": "af6e5f4c7ae203f70bd79c1fb16a3c5f876102ebc3a7a40eaba4421ce145ac58"
+  },
+  "ordered_thickness_mm": 1.6,
+  "order_status": "Saved quote in JLCPCB cart; not purchased"
+}
