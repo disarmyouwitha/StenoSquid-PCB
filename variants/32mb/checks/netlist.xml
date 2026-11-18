@@ -2,8 +2,8 @@
 <export version="E">
   <design>
     <source>steno-squid.kicad_sch</source>
-    <date>2026-11-17T15:25:55</date>
-    <tool>Eeschema 10.0.8</tool>
+    <date>2026-11-17T21:45:08</date>
+    <tool>Eeschema 10.0.7</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>Steno Squid - 32 MB QSPI draft</title>

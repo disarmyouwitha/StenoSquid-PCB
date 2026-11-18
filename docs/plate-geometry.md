@@ -1,10 +1,11 @@
 # Rev D plate fit
 
-**16 MB review branch:** the candidate is 21.78 × 45.57 mm, 0.75 mm shorter at the end away from the header, with R5.35 corners from the native plate CAD. Other variants are unchanged. [Dimensions, source and comparison](16mb-plate-fit-review.md).
+**Approved outline:** all six PCB projects use 21.78 × 44.82 mm, exactly 1.5 mm shorter than the original 46.32 mm, with R5.35 far-end corners and fixed headers. Owner approved on 2026-11-17.
+
 
 On 2026-11-16 the owner fitted the full-length paper template to the delivered Boardsource keyboard and confirmed that all eight contacts align. The owner also checked available sockets and reported that the resulting stack allows the daughterboard to sit flush on top of the switch plate. The supplied photos were IMG_5313.heic and IMG_5311.HEIC. These are owner-reported physical checks, not a test of a fabricated, populated StenoSquid board.
 
-The owner selected a full-length outline with **no ears**, removing **2 mm from the switch-facing edge only**. The tighter opposite edge and all header centres remain fixed. The top is solid, with no USB notch. The final mechanical envelope is **20.9 × 46.32 mm**, with 1 mm corner radii and 1.0 mm PCB thickness. The same outline is used for 16, 32 and 64 MB.
+The owner selected a full-length outline with **no ears**, initially removing **2 mm from one side**, with the subsequent 0.88 mm width correction retained. The tighter opposite edge and all header centres remain fixed. The top is solid, with no USB notch. The final mechanical envelope is **21.78 × 44.82 mm**, with R5.35 far-end and R1 header-end corner radii and 1.0 mm PCB thickness. The same approved outline is used for 16, 32 and 64 MB in both silkscreen and ENIG finishes. The length is reduced by 1.5 mm only at the end away from the header.
 
 ## Fixed coordinates
 
@@ -13,8 +14,8 @@ The plate-frame origin is the left end of the plate slot on its centreline. In t
 | Feature | Current design |
 |---|---|
 | Switch-facing edge | Plate x = 0.20 mm; KiCad x = 25.20 mm |
-| Opposite edge | Plate x = 21.10 mm; KiCad x = 46.10 mm |
-| Top edge | Plate y = 44.40 mm; KiCad y = 25.60 mm |
+| Opposite edge | Plate x = 21.98 mm; KiCad x = 46.98 mm |
+| Top edge | Plate y = 42.90 mm; KiCad y = 27.10 mm |
 | Bottom edge | Plate y = −1.92 mm; KiCad y = 71.92 mm |
 | Pin 1 centre | Plate (2.20, 0) mm; KiCad (27.20, 70) mm |
 | Contacts 2–8 | +2.54 mm in x per contact, same y |
@@ -22,7 +23,7 @@ The plate-frame origin is the left end of the plate slot on its centreline. In t
 
 The nominal header coordinates are confirmed by the owner's template fit and are not moved to recenter the row after trimming. The new straight edge leaves 1.15 mm to pin 1's copper. On the 32/64 MB layout it leaves about 1.08 mm to the nearest resistor pad; the rounded corners are also checked by native KiCad DRC. Ground pours are refilled to the new edge. Signal tracks and component placements are retained.
 
-Pop and its splashes move 1 mm toward the new board centre, without scaling or changing the artwork. The source SVG is unchanged. The ground pour now extends under the artwork area on both layers instead of keeping it copper-free, except on the [ENIG variant](../variants/enig/README.md) where the exposed gold shapes keep a 1 mm keepout halo.
+Pop and its splashes retain the current main artwork placement and shape; the length revision does not move them. The source SVG is unchanged. The ground pour now extends under the artwork area on both layers instead of keeping it copper-free, except on the [ENIG variant](../variants/enig/README.md) where the exposed gold shapes keep a 1 mm keepout halo.
 
 ## Connector and final assembly
 

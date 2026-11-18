@@ -152,5 +152,5 @@
 <path d="M10 131 H60 M10 129 V133 M60 129 V133" stroke="black" stroke-width=".25" fill="none"/>
 <rect x="96" y="124" width="10" height="10" fill="none" stroke="black" stroke-width=".25"/>
 <text x="110" y="130" font-size="2.8" fill="#172b42">10 mm square</text>
-<text x="10" y="142" font-size="2.4" fill="#172b42">Original = main cb7d1fc. Other outlines are fit studies only; no CAD variants were changed.</text>
+<text x="10" y="142" font-size="2.4" fill="#172b42">Original = main cb7d1fc. The -1.5 mm option is approved for all six PCB projects.</text>
 </svg>

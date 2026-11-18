@@ -1,6 +1,7 @@
 # Electrical, mechanical and RF review
 
-**16 MB review branch:** the candidate is 21.78 × 45.57 mm, 0.75 mm shorter at the end away from the header, with R5.35 corners from the native plate CAD. Other variants are unchanged. [Dimensions, source and comparison](16mb-plate-fit-review.md).
+**Approved outline:** all six PCB projects use 21.78 × 44.82 mm, exactly 1.5 mm shorter than the original 46.32 mm, with R5.35 far-end corners and fixed headers. Owner approved on 2026-11-17.
+
 
 This review describes the 16 MB Rev D baseline. The complete [32 MB and 64 MB drafts](../variants/README.md) have a separate [package and power review](capacity-variants.md), including the 64 MB chip's higher read-current limit.
 

@@ -12,3 +12,5 @@ The `rev-d` tag remains the earlier electrical-review freeze. The owner-selected
 | [Back-mounted comparison](https://github.com/disarmyouwitha/Boardsource-StenoSquid/tree/45ae03b/draft-3) | Components below the board and rotated front artwork |
 | [Plate-top layout with antenna cutback](https://github.com/disarmyouwitha/Boardsource-StenoSquid/tree/ed61a56/draft-4) | Fallback with ground pulled back near contacts 6–8, available for comparison if Bluetooth testing calls for it |
 | [Last snapshot before consolidation](https://github.com/disarmyouwitha/Boardsource-StenoSquid/tree/bc5cb17) | All previous folders, alternate paper templates and [review records](https://github.com/disarmyouwitha/Boardsource-StenoSquid/tree/bc5cb17/docs) |
+
+On 2026-11-17 the owner selected the **-1.5 mm total length** option, yielding **21.78 × 44.82 mm** with R5.35 far-end corners from the native plate CAD. The approved outline is propagated to all six silkscreen/ENIG projects while preserving the per-project electrical layout and artwork. [Approved fit revision](16mb-plate-fit-review.md)

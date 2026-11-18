@@ -97,7 +97,7 @@
   "host_fit_verified": false,
   "host_power_qualified": false,
   "hashes": {
-    "steno-squid.kicad_pcb": "9bddfcb6ad063ebeaa35ed4b61fa34c2b87c2f18234617f90612058335ac71e9",
+    "steno-squid.kicad_pcb": "a3c7296c1dc843f35bd8eed666fca5346959568d13defb56f681c55b0dd4c5f3",
     "steno-squid.kicad_sch": "8cc91a08d12d8546d7c5ef37d489d3f5fa98d677d55afa6670d132cbd1df5d5d",
     "steno-squid.kicad_pro": "d22541ef2a281bba3f32b3e5871885ef5f3ab497c49ef2972f96558bc6245c31",
     "steno-squid.kicad_dru": "eb415e35e78c1826e2ea2c81ed40d9b24f728510251829f95a14e4257e80b9f0",
@@ -110,16 +110,16 @@
   "fabrication_release": false,
   "electrical_baseline_tag": "rev-d",
   "mechanical_update_date": "2026-11-17",
-  "baseline_board_sha256": "9bddfcb6ad063ebeaa35ed4b61fa34c2b87c2f18234617f90612058335ac71e9",
-  "mechanical_candidate": {
+  "baseline_board_sha256": "a3c7296c1dc843f35bd8eed666fca5346959568d13defb56f681c55b0dd4c5f3",
+  "mechanical_revision": {
     "base_commit": "cb7d1fc",
-    "height_reduction_mm": 0.75,
+    "height_reduction_mm": 1.5,
     "trimmed_end": "away from header",
     "top_corner_radius_mm": 5.35,
     "header_end_corner_radius_mm": 1.0,
     "radius_basis": "Measured from native BLE plate CAD outer corner: circumcircle radius 5.350000 mm; mirrored at switch-facing top corner",
-    "approved_by_owner": false,
-    "propagate_to_variants": false,
+    "approved_by_owner": true,
+    "propagate_to_variants": true,
     "plate_source_repository": "https://github.com/disarmyouwitha/boardsource-wireless-plate-files",
     "plate_source_revision": "8b61f1b",
     "plate_source_path": "Kicad/ble_plate_scr.kicad_pcb",
@@ -138,7 +138,8 @@
       ]
     ],
     "original_height_mm": 46.32,
-    "target_height_mm": 45.57
+    "target_height_mm": 44.82,
+    "approval_date": "2026-11-17"
   },
-  "matches_current_16mb_outline": true
+  "matches_approved_outline": true
 }

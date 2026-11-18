@@ -1,13 +1,13 @@
 {
   "revision": "D-32MB",
-  "status": "Routed capacity option, right edge widened 0.88 mm to match the pin-1 silkscreen gap on the pin-8 side; ENIG gold-finish variant: Pop and the splats are exposed, isolated front copper (own F.Mask opening) surrounded by a 1 mm no-copper/no-via/no-track halo keepout, with the ground pour otherwise extending under the rest of the board for a uniform finish; STENO SQUID/32 MB stay plain silkscreen; header template and socket stack owner-checked at the prior width; revised-template fit, powered, RF and assembled daughterboard qualification pending",
+  "status": "Owner-approved 44.82 mm outline; header and socket stack owner-checked; final populated fit, power and RF qualification pending",
   "preferred_connection": "eight soldered pins into owner-tested host sockets; daughterboard flush on top of plate",
   "header_pitch_mm": 2.54,
   "header_drill_mm": 1.0,
   "mating_face": "top view with USB-C at the top: contacts along the bottom, pin 1 at the left",
   "module_outline_mm": [
     21.78,
-    46.32
+    44.82
   ],
   "flash_ordering_code": "W25Q256JVEIQ / WSON-8 8x6 mm",
   "host_voltage_measured": false,
@@ -102,10 +102,10 @@
     "farads": 1e-06,
     "population": "DNP"
   },
-  "outline_shape": "full-length rounded rectangle, no ears, no USB notch",
+  "outline_shape": "owner-approved no-ears outline; 1.5 mm shorter from original 46.32 mm; R5.35 far-end and R1 header-end corners",
   "board_bounds_kicad_mm": [
     25.2,
-    25.6,
+    27.1,
     46.98,
     71.92
   ],
@@ -140,5 +140,35 @@
     "copper_keepout_halo_mm": 1.0,
     "silkscreen_text": "STENO SQUID / 32 MB stay plain white silkscreen",
     "dots_removed": true
+  },
+  "mechanical_revision": {
+    "base_commit": "cb7d1fc",
+    "height_reduction_mm": 1.5,
+    "trimmed_end": "away from header",
+    "top_corner_radius_mm": 5.35,
+    "header_end_corner_radius_mm": 1.0,
+    "radius_basis": "Measured from native BLE plate CAD outer corner: circumcircle radius 5.350000 mm; mirrored at switch-facing top corner",
+    "approved_by_owner": true,
+    "propagate_to_variants": true,
+    "plate_source_repository": "https://github.com/disarmyouwitha/boardsource-wireless-plate-files",
+    "plate_source_revision": "8b61f1b",
+    "plate_source_path": "Kicad/ble_plate_scr.kicad_pcb",
+    "plate_arc_points_mm": [
+      [
+        182.540733,
+        42.776196
+      ],
+      [
+        186.145001,
+        44.434499
+      ],
+      [
+        187.616096,
+        48.119142
+      ]
+    ],
+    "original_height_mm": 46.32,
+    "target_height_mm": 44.82,
+    "approval_date": "2026-11-17"
   }
 }

@@ -36,3 +36,7 @@ IO2 and IO3 use the host's internal pull-ups while QSPI is active. If the rail t
 The silkscreen targets follow JLCPCB's 1.0 mm text, 0.15 mm line and 0.15 mm pad-clearance guidance. The existing 0.25 mm copper-to-edge margin is retained. [PCB capabilities](https://jlcpcb.com/capabilities/pcb-capabilities)
 
 The capacitor and resistor catalog entries match the existing BOM manufacturer parts. [C1 GRM188R71C104KA01D](https://jlcpcb.com/partdetail/MurataElectronics-GRM188R71C104KA01D/C45000) · [R1 RC0603FR-0710KL](https://jlcpcb.com/partdetail/RC0603FR-0710KL/C98220)
+
+## Approved length update — 2026-11-17
+
+The owner selected -1.5 mm total from the original 46.32 mm outline. All six silkscreen/ENIG projects now share 21.78 × 44.82 mm with R5.35 far-end and R1 header-end corners. Headers, component placements and signal tracks remain fixed. Reports, STEP models, front/back previews and red 1:1 fit templates are regenerated for each project. Fabrication release remains pending powered, RF and final assembly qualification.

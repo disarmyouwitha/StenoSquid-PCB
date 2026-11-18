@@ -97,10 +97,49 @@
   "host_fit_verified": false,
   "host_power_qualified": false,
   "hashes": {
-    "steno-squid.kicad_pcb": "f1870290c762d73b5e1416735b68e995b9ad8cb56a75cd923e0fd5da421ba364",
-    "steno-squid.kicad_sch": "4f38387884607fd44f4ac017c01d2ad4eb1a8a2fdaa07c5dfe1c6df314bc2b6c",
-    "steno-squid.kicad_pro": "aa54616dcc26caa28d54d304529cf1dcedab95c86b0459104c6a2942fb4eb902",
-    "steno-squid.kicad_dru": "3bffc12fab832b186b3dc21fa5bf534cae8ab243759386476c7eedbbe81a9f73",
-    "models\\WSON-8_8x6mm_EP3.4x4.3mm.step": "781ac684ae476255323de3eed60ca81754147056b5997b1f665ebb56719a5554"
-  }
+    "steno-squid.kicad_pcb": "f2c74976ed696eb0179cf0b14cd315c33f1221bdf63e18585f53bd11e16144c3",
+    "steno-squid.kicad_sch": "a0040663d1e3112c79b9b6bd834aa1e9ef7d2dd064207615c7d6decb3363a314",
+    "steno-squid.kicad_pro": "d22541ef2a281bba3f32b3e5871885ef5f3ab497c49ef2972f96558bc6245c31",
+    "steno-squid.kicad_dru": "eb415e35e78c1826e2ea2c81ed40d9b24f728510251829f95a14e4257e80b9f0",
+    "models/WSON-8_8x6mm_EP3.4x4.3mm.step": "8e39ee873163d9a82446aaf24cbff851041cf21433b7c5fd232365fc324eee63"
+  },
+  "capacity_bytes": 33554432,
+  "baseline_outline_preserved": false,
+  "baseline_pop_artwork_preserved": true,
+  "footprint_pad_geometry_matches_local_library": true,
+  "fabrication_release": false,
+  "electrical_baseline_tag": "rev-d",
+  "mechanical_update_date": "2026-11-17",
+  "baseline_board_sha256": "a3c7296c1dc843f35bd8eed666fca5346959568d13defb56f681c55b0dd4c5f3",
+  "mechanical_revision": {
+    "base_commit": "cb7d1fc",
+    "height_reduction_mm": 1.5,
+    "trimmed_end": "away from header",
+    "top_corner_radius_mm": 5.35,
+    "header_end_corner_radius_mm": 1.0,
+    "radius_basis": "Measured from native BLE plate CAD outer corner: circumcircle radius 5.350000 mm; mirrored at switch-facing top corner",
+    "approved_by_owner": true,
+    "propagate_to_variants": true,
+    "plate_source_repository": "https://github.com/disarmyouwitha/boardsource-wireless-plate-files",
+    "plate_source_revision": "8b61f1b",
+    "plate_source_path": "Kicad/ble_plate_scr.kicad_pcb",
+    "plate_arc_points_mm": [
+      [
+        182.540733,
+        42.776196
+      ],
+      [
+        186.145001,
+        44.434499
+      ],
+      [
+        187.616096,
+        48.119142
+      ]
+    ],
+    "original_height_mm": 46.32,
+    "target_height_mm": 44.82,
+    "approval_date": "2026-11-17"
+  },
+  "matches_approved_outline": true
 }

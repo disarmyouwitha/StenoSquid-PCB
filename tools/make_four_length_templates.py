@@ -13,7 +13,7 @@ from PIL import Image,ImageDraw,ImageFont
 
 ROOT=Path(__file__).resolve().parents[1]
 info=json.loads((ROOT/'pcb/interface.json').read_text())
-candidate=info['mechanical_candidate']
+candidate=info.get('mechanical_revision') or info['mechanical_candidate']
 original=subprocess.check_output(['git','show',candidate['base_commit']+':pcb/steno-squid.kicad_pcb'],cwd=ROOT,text=True)
 current=(ROOT/'pcb/steno-squid.kicad_pcb').read_text()
 PAGE_W,PAGE_H,SCALE=185,145,8
@@ -79,7 +79,7 @@ for x in (10,60):draw.line((x*SCALE,129*SCALE,x*SCALE,133*SCALE),fill='black',wi
 svg.append('<rect x="96" y="124" width="10" height="10" fill="none" stroke="black" stroke-width=".25"/>')
 draw.rectangle((96*SCALE,124*SCALE,106*SCALE,134*SCALE),outline='black',width=2)
 label(110,130,'10 mm square',2.8)
-label(10,142,'Original = main cb7d1fc. Other outlines are fit studies only; no CAD variants were changed.',2.4)
+label(10,142,'Original = main cb7d1fc. The -1.5 mm option is approved for all six PCB projects.',2.4)
 svg.append('</svg>')
 out=ROOT/'pcb/previews'
 (out/'four-lengths-1to1.svg').write_text('\n'.join(svg)+'\n')
