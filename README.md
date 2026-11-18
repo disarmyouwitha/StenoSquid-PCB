@@ -1,7 +1,5 @@
 # StenoSquid-PCB
 
-**Approved outline:** all six PCB projects use 21.78 × 44.82 mm, exactly 1.5 mm shorter than the original 46.32 mm, with R5.35 far-end corners and fixed headers. Owner approved on 2026-11-17.
-
 **ZMK firmware for StenoSquid-PCB!: https://github.com/disarmyouwitha/StenoSquid**
 
 Steno Squid adds 16 MB of QSPI flash for Javelin stenography to the left half of the Boardsource Wireless Corne SMT. It is an independent community accessory designed to sit flush on top of the switch plate.
