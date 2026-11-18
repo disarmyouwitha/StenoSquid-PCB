@@ -152,6 +152,7 @@
         48.119142
       ]
     ],
-    "length_restored_mm_from_first_candidate": 0.75
+    "original_height_mm": 46.32,
+    "target_height_mm": 45.57
   }
 }

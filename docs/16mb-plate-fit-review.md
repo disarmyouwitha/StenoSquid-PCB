@@ -11,7 +11,7 @@ Branch: `revise/16mb-plate-corners`, based on `main` at `cb7d1fc`. Only `pcb/` i
 | Header-end corners | R1 mm | R1 mm |
 | Header centres, component positions and signal routing | Fixed | Unchanged |
 
-The first candidate removed 1.5 mm. At the owner's request, this update restores 0.75 mm at the end away from the header, leaving a net 0.75 mm reduction from main. The R5.35 curve is retained. Header alignment and the socket stack stay fixed. The resulting length still needs approval from a new paper fit.
+The original main outline is 46.32 mm tall. Remove 0.75 mm total from its non-header end: the target height is exactly 45.57 mm. This is an absolute change from the original, not a cumulative addition to any intermediate candidate. The R5.35 curve and fixed header positions are retained. Approval is still pending from a new paper fit.
 
 ## Corner source
 
