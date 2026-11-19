@@ -14,7 +14,6 @@ Both DIY boards use exposed SOIC leads and 0805 passives. Order a bare PCB using
 |---|---|---|---|---:|
 | **16 MB** | [Winbond W25Q128JVSIQ, SOIC-8 (208 mil)](https://www.digikey.com/en/products/detail/winbond-electronics/W25Q128JVSIQ-TR/5803944) | [Bare-board ZIP](manufacturing/2026-11-18/diy-bare/stenosquid-16mb-diy-bare.zip) · [KiCad and fit template](variants/16mb-diy-soic/README.md) | [16 MB BOM](variants/16mb-diy-soic/BOM.csv) | **~$25** |
 | **64 MB** | [Winbond W25Q512JVFIQ, SOIC-16 (300 mil)](https://www.digikey.com/en/products/detail/winbond-electronics/W25Q512JVFIQ/10244707) | [Bare-board ZIP](manufacturing/2026-11-18/diy-bare/stenosquid-64mb-diy-bare.zip) · [KiCad and fit template](variants/64mb-diy-soic/README.md) | [64 MB BOM](variants/64mb-diy-soic/BOM.csv) | **~$35** |
-o;
 
 ### Parts for one board
 
