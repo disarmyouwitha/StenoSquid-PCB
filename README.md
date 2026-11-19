@@ -34,7 +34,7 @@ These low-profile WSON builds have assembly packages for the flash, decoupling c
 | [KiCad and BOM](pcb/README.md) · [Gerber ZIP](manufacturing/2026-11-18/16mb-silkscreen/16mb-silkscreen-gerbers.zip) · [BOM and placement](manufacturing/2026-11-18/16mb-silkscreen/) | [KiCad and BOM](variants/64mb-enig/README.md) · [Gerber ZIP](manufacturing/2026-11-18/64mb-gold/64mb-gold-gerbers.zip) · [BOM and placement](manufacturing/2026-11-18/64mb-gold/) |
 
 
-## Host wiring and firmware
+## Host wiring
 
 Viewed from above, the contacts run along the bottom with pin 1 on the left.
 
