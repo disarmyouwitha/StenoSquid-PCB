@@ -20,8 +20,8 @@ Both DIY boards use exposed SOIC leads and 0805 passives. Order a bare PCB using
 | Ref. | Qty. | Part |
 |---|---:|---|
 | U1 | 1 | The Winbond flash listed for your PCB above |
-| C1 | 1 | 100 nF X7R ceramic capacitor, 0805. BOM part Yageo `CC0805KRX7R9BB104` |
-| R1 | 1 | 10 kΩ, 1% resistor, 0805. BOM part Yageo `RC0805FR-0710KL` |
+| C1 | 1 | 100 nF X7R ceramic capacitor, 0805. BOM part Yageo [`CC0805KRX7R9BB104`](https://www.digikey.com/en/products/detail/yageo/CC0805KRX7R9BB104/302874) |
+| R1 | 1 | 10 kΩ, 1% resistor, 0805. BOM part Yageo [`RC0805FR-0710KL`](https://www.digikey.com/en/products/detail/yageo/RC0805FR-0710KL/727535) |
 
 
 ## Factory-assembled 16 MB and 64 MB boards
