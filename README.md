@@ -1,12 +1,14 @@
 # Steno Squid PCB
 
-Build a hand-soldered QSPI flash add-on for Javelin stenography on the left half of the **Boardsource Wireless Corne SMT**. Steno Squid sits on top of the switch plate and connects through the eight-contact expansion slot. Choose **16 MB or 64 MB** of flash.
+**ZMK firmware for StenoSquid-PCB!: https://github.com/disarmyouwitha/StenoSquid**
+
+Steno Squid adds 16 MB of QSPI flash for onboard stenography to your **Boardsource Wireless Corne SMT**. Steno Squid sits on top of the switch plate and connects through the eight-contact expansion slot.
 
 <img src="variants/16mb-diy-soic/previews/front.png" alt="16 MB DIY Steno Squid PCB with exposed SOIC leads and Pop silkscreen" width="360">
 
 ## Choose a board
 
-Both DIY boards use exposed SOIC leads and 0805 passives. Use a fine-tip iron, flux and tweezers. Order a bare PCB using the ZIP for your chosen capacity.
+Both DIY boards use exposed SOIC leads and 0805 passives. Order a bare PCB using the ZIP for your chosen capacity.
 
 | Capacity | Flash package | Board files | Parts |
 |---|---|---|---|
@@ -24,8 +26,7 @@ Both DIY boards use exposed SOIC leads and 0805 passives. Use a fine-tip iron, f
 
 ## Factory-assembled 16 MB and 64 MB boards
 
-These low-profile WSON builds have assembly packages for the flash, decoupling capacitor and CS# pull-up. Everything you need to have JLPCB manufacture it!\
-This is much more expensive than the DIY build!
+These low-profile WSON builds have assembly packages for the flash, decoupling capacitor and CS# pull-up. Everything you need to have JLPCB manufacture it! (This was much more expensive than the DIY build!)
 
 | **16 MB · White silkscreen** | **64 MB · Gold ENIG artwork** |
 |---|---|
