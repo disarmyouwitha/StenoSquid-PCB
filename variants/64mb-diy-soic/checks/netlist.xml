@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>steno-squid.kicad_sch</source>
+    <date>2026-11-18T20:47:09</date>
+    <tool>Eeschema 10.0.7</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Steno Squid 64 MB DIY</title>
+        <company/>
+        <rev>D-DIY-64</rev>
+        <date/>
+        <source>steno-squid.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>100nF</value>
+      <footprint>StenoSquid:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="Footprint">StenoSquid:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="StenoSquid" part="Capacitor" description=""/>
+      <property name="Sheetname" value="steno-squid"/>
+      <property name="Sheetfile" value="steno-squid.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7e952e1d-2003-4b23-a132-45e8d4663ea0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J1">
+      <value>1x08 2.54mm / HOST FIT PROVISIONAL</value>
+      <footprint>StenoSquid:PinHeader_1x08_P2.54mm_Vertical</footprint>
+      <fields>
+        <field name="Footprint">StenoSquid:PinHeader_1x08_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="StenoSquid" part="Expansion8" description=""/>
+      <property name="Sheetname" value="steno-squid"/>
+      <property name="Sheetfile" value="steno-squid.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>401e89bc-a3de-4793-a383-5a971fee21d7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R1">
+      <value>10k</value>
+      <footprint>StenoSquid:R_0805_2012Metric</footprint>
+      <fields>
+        <field name="Footprint">StenoSquid:R_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="StenoSquid" part="Resistor" description=""/>
+      <property name="Sheetname" value="steno-squid"/>
+      <property name="Sheetfile" value="steno-squid.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3a29fa79-dcef-4e79-b5b5-35ee1eddcbe4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U1">
+      <value>W25Q512JVFIQ</value>
+      <footprint>StenoSquid:SOIC-16W_7.5x10.3mm_P1.27mm</footprint>
+      <fields>
+        <field name="Footprint">StenoSquid:SOIC-16W_7.5x10.3mm_P1.27mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="StenoSquid" part="W25Q512JV_SOIC16" description=""/>
+      <property name="Sheetname" value="steno-squid"/>
+      <property name="Sheetfile" value="steno-squid.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>661342d2-aef9-4b82-ac9b-7c2a5f37b036</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="11"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="10"/>
+            <pin num="12"/>
+            <pin num="13"/>
+            <pin num="14"/>
+            <pin num="15"/>
+            <pin num="16"/>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="StenoSquid" part="Capacitor">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">Capacitor</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="StenoSquid" part="Expansion8">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Expansion8</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="CS_N" type="passive"/>
+        <pin num="2" name="IO0" type="passive"/>
+        <pin num="3" name="IO3" type="passive"/>
+        <pin num="4" name="IO1" type="passive"/>
+        <pin num="5" name="VCC_SW" type="power_out"/>
+        <pin num="6" name="GND" type="power_out"/>
+        <pin num="7" name="CLK" type="passive"/>
+        <pin num="8" name="IO2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="StenoSquid" part="Resistor">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">Resistor</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="StenoSquid" part="W25Q512JV_SOIC16">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">W25Q512JV</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="IO3" type="bidirectional"/>
+        <pin num="2" name="VCC" type="power_in"/>
+        <pin num="3" name="RESET#" type="input"/>
+        <pin num="4" name="NC" type="no_connect"/>
+        <pin num="5" name="NC" type="no_connect"/>
+        <pin num="6" name="DNU" type="no_connect"/>
+        <pin num="7" name="CS#" type="input"/>
+        <pin num="8" name="IO1" type="bidirectional"/>
+        <pin num="9" name="IO2" type="bidirectional"/>
+        <pin num="10" name="GND" type="power_in"/>
+        <pin num="11" name="DNU" type="no_connect"/>
+        <pin num="12" name="NC" type="no_connect"/>
+        <pin num="13" name="NC" type="no_connect"/>
+        <pin num="14" name="NC" type="no_connect"/>
+        <pin num="15" name="IO0" type="bidirectional"/>
+        <pin num="16" name="CLK" type="input"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="StenoSquid">
+      <uri>${KIPRJMOD}/steno-squid.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/CLK" class="Default">
+      <node ref="J1" pin="7" pinfunction="CLK_7" pintype="passive"/>
+      <node ref="U1" pin="16" pinfunction="CLK_16" pintype="input"/>
+    </net>
+    <net code="2" name="/CS_N" class="Default">
+      <node ref="J1" pin="1" pinfunction="CS_N_1" pintype="passive"/>
+      <node ref="R1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="U1" pin="7" pinfunction="CS#_7" pintype="input"/>
+    </net>
+    <net code="3" name="/GND" class="Default">
+      <node ref="C1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="J1" pin="6" pinfunction="GND_6" pintype="power_out"/>
+      <node ref="U1" pin="10" pinfunction="GND_10" pintype="power_in"/>
+    </net>
+    <net code="4" name="/IO0" class="Default">
+      <node ref="J1" pin="2" pinfunction="IO0_2" pintype="passive"/>
+      <node ref="U1" pin="15" pinfunction="IO0_15" pintype="bidirectional"/>
+    </net>
+    <net code="5" name="/IO1" class="Default">
+      <node ref="J1" pin="4" pinfunction="IO1_4" pintype="passive"/>
+      <node ref="U1" pin="8" pinfunction="IO1_8" pintype="bidirectional"/>
+    </net>
+    <net code="6" name="/IO2" class="Default">
+      <node ref="J1" pin="8" pinfunction="IO2_8" pintype="passive"/>
+      <node ref="U1" pin="9" pinfunction="IO2_9" pintype="bidirectional"/>
+    </net>
+    <net code="7" name="/IO3" class="Default">
+      <node ref="J1" pin="3" pinfunction="IO3_3" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="IO3_1" pintype="bidirectional"/>
+    </net>
+    <net code="8" name="/VCC_SW" class="Power,Default">
+      <node ref="C1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="J1" pin="5" pinfunction="VCC_SW_5" pintype="power_out"/>
+      <node ref="R1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="VCC_2" pintype="power_in"/>
+      <node ref="U1" pin="3" pinfunction="RESET#_3" pintype="input"/>
+    </net>
+    <net code="9" name="unconnected-(U1-DNU-Pad6)" class="Default">
+      <node ref="U1" pin="6" pinfunction="DNU_6" pintype="no_connect"/>
+    </net>
+    <net code="10" name="unconnected-(U1-DNU-Pad11)" class="Default">
+      <node ref="U1" pin="11" pinfunction="DNU_11" pintype="no_connect"/>
+    </net>
+    <net code="11" name="unconnected-(U1-NC-Pad4)" class="Default">
+      <node ref="U1" pin="4" pinfunction="NC_4" pintype="no_connect"/>
+    </net>
+    <net code="12" name="unconnected-(U1-NC-Pad5)" class="Default">
+      <node ref="U1" pin="5" pinfunction="NC_5" pintype="no_connect"/>
+    </net>
+    <net code="13" name="unconnected-(U1-NC-Pad12)" class="Default">
+      <node ref="U1" pin="12" pinfunction="NC_12" pintype="no_connect"/>
+    </net>
+    <net code="14" name="unconnected-(U1-NC-Pad13)" class="Default">
+      <node ref="U1" pin="13" pinfunction="NC_13" pintype="no_connect"/>
+    </net>
+    <net code="15" name="unconnected-(U1-NC-Pad14)" class="Default">
+      <node ref="U1" pin="14" pinfunction="NC_14" pintype="no_connect"/>
+    </net>
+  </nets>
+</export>

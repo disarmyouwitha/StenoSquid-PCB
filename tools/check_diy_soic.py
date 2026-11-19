@@ -1,12 +1,11 @@
-"""Validate the DIY hand-solderable SOIC-8 edition (variants/16mb-diy-soic).
+"""Validate either DIY hand-solderable SOIC edition.
 
 This is a package-aware sibling of validate.py: it reuses the same ERC/DRC/
 netlist/header-position checks, but replaces the WSON-specific assumptions
-(pad 9 = exposed GND pad, C2/R2 present) with the SOIC-8 contract from the
-DIY handoff spec. It also asserts the six original WSON/ENIG projects are
+(pad 9 = exposed GND pad, C2/R2 present) with the selected SOIC package contract. It also asserts the six original WSON/ENIG projects are
 untouched, so this variant can never silently drift them.
 
-Usage: python3 tools/check_diy_soic.py [path to variants/16mb-diy-soic]
+Usage: python3 tools/check_diy_soic.py [path to DIY project]
 """
 from pathlib import Path
 import hashlib
@@ -58,25 +57,47 @@ def pad_net(reference, number):
     raise AssertionError((reference, number))
 
 
-# --- 1. Footprint contract: exactly 8 numbered SMD pads on U1, no pad 9,
-#     208 mil wide-body footprint (not the 150 mil narrow one), 1.27 mm pitch,
-#     visible pin-1 marker.
+# Winbond package-specific pin assignments, keyed by the host signal.
+package = interface.get('flash_package', 'SOIC-8')
+contracts = {
+    'SOIC-8': (16, 'SOIC-8_5.3x5.3mm_P1.27mm', 8, (1, 5, 7, 2, 8, 4, 6, 3)),
+    'SOIC-16': (64, 'SOIC-16W_7.5x10.3mm_P1.27mm', 16, (7, 15, 1, 8, 2, 10, 16, 9)),
+}
+capacity, footprint_name, lead_count, flash_pins = contracts[package]
 u1_pads = pads('U1')
 numbers = sorted(int(re.search(r'\(pad "(\d+)"', n)[1]) for n in u1_pads)
-assert numbers == list(range(1, 9)), f'U1 must have exactly pads 1-8, got {numbers}'
+assert numbers == list(range(1, lead_count + 1)), numbers
 u1_fpid = re.search(r'\(footprint "([^"]+)"', footprints['U1'])[1]
-assert u1_fpid == 'StenoSquid:SOIC-8_5.3x5.3mm_P1.27mm', u1_fpid
-pad_pos = {int(re.search(r'\(pad "(\d+)"', n)[1]): float(re.search(r'\(at [-\d.]+ ([-\d.]+)', n)[1]) for n in u1_pads}
-left_col_y = sorted(pad_pos[n] for n in (1, 2, 3, 4))
-pitches = [round(b - a, 3) for a, b in zip(left_col_y, left_col_y[1:])]
-assert all(abs(p - 1.27) < 1e-6 for p in pitches), pitches
-assert '(fp_poly' in footprints['U1'] and '"F.SilkS"' in footprints['U1'], 'missing pin-1 marker on U1'
+assert u1_fpid == f'StenoSquid:{footprint_name}', u1_fpid
+land = (output / 'footprints/StenoSquid.pretty' / f'{footprint_name}.kicad_mod').read_text()
 
-# --- 2. Net integrity: exact U1 pin <-> J1 pin <-> signal map from the spec.
-expected = {
-    1: ('CS_N', 1), 2: ('IO1', 4), 3: ('IO2', 8), 4: ('GND', 6),
-    5: ('IO0', 2), 6: ('CLK', 7), 7: ('IO3', 3), 8: ('VCC_SW', 5),
-}
+def geometry(pad_nodes):
+    return [(re.search(r'\(pad "(\d+)"', p)[1],
+             *(re.search(r'\(' + field + r' ([^)]*)\)', p)[1]
+               for field in ('at', 'size', 'layers'))) for p in pad_nodes]
+
+assert geometry(u1_pads) == geometry([n for _, _, n in nodes(land) if kind(n) == 'pad'])
+pad_pos = {int(re.search(r'\(pad "(\d+)"', n)[1]):
+           float(re.search(r'\(at [-\d.]+ ([-\d.]+)', n)[1]) for n in u1_pads}
+for start in (1, lead_count // 2 + 1):
+    ys = sorted(pad_pos[n] for n in range(start, start + lead_count // 2))
+    assert all(abs(b - a - 1.27) < 1e-6 for a, b in zip(ys, ys[1:])), ys
+assert any(kind(n) == 'fp_poly' and '(layer "F.SilkS")' in n
+           for _, _, n in nodes(footprints['U1'])), 'missing pin-1 marker on U1'
+
+signals = ('CS_N', 'IO0', 'IO3', 'IO1', 'VCC_SW', 'GND', 'CLK', 'IO2')
+expected = {pin: (signal, j1) for j1, (pin, signal) in enumerate(zip(flash_pins, signals), 1)}
+assert [(c['flash_pad'], c['signal'], c['position']) for c in interface['contacts']] == [
+    (pin, signal, j1) for pin, (signal, j1) in expected.items()]
+if package == 'SOIC-16':
+    assert pad_net('U1', 3) == 'VCC_SW'
+    assert ('U1', '3') in members['VCC_SW']
+    for pin in (4, 5, 6, 11, 12, 13, 14):
+        signal = pad_net('U1', pin)
+        assert signal.startswith('unconnected-'), (pin, signal)
+        assert members[signal] == {('U1', str(pin))}
+        assert f'(net "{signal}")' not in '\n'.join(
+            n for _, _, n in nodes(board) if kind(n) in ('segment', 'via', 'zone'))
 for u1_pin, (signal, j1_pin) in expected.items():
     assert pad_net('U1', u1_pin) == signal, (u1_pin, signal)
     assert pad_net('J1', j1_pin) == signal, (j1_pin, signal)
@@ -129,7 +150,7 @@ assert base_edges == this_edges, 'DIY board outline must match the shared baseli
 #     intentional artwork copper (this is the low-cost silkscreen edition).
 f_silk_text = {re.search(r'\(gr_text "([^"]+)"', n)[1]
                for _, _, n in nodes(board) if kind(n) == 'gr_text' and '(layer "F.SilkS")' in n}
-assert 'STENO SQUID' in f_silk_text and '16 MB' in f_silk_text
+assert 'STENO SQUID' in f_silk_text and f'{capacity} MB' in f_silk_text
 assert not [n for _, _, n in nodes(board) if kind(n) == 'gr_poly' and '(layer "F.Cu")' in n], \
     'no intentional artwork copper on the DIY edition'
 assert not [n for _, _, n in nodes(board) if kind(n) == 'gr_poly' and '(layer "F.Mask")' in n]
@@ -150,6 +171,7 @@ report = {
     'unconnected_items': len(drc['unconnected_items']),
     'schematic_parity_issues': len(drc['schematic_parity']),
     'u1_footprint': u1_fpid,
+    'capacity_bytes': capacity * 1024 * 1024,
     'u1_pad_count': len(u1_pads),
     'c2_r2_present': False,
     'all_eight_contacts_verified_against_schematic_and_PCB': True,
@@ -171,5 +193,5 @@ report = {
                          output / 'steno-squid.kicad_pro', output / 'steno-squid.kicad_dru']},
 }
 (output / 'validation.json').write_text(json.dumps(report, indent=2) + '\n')
-print('ERC, DRC, unconnected, parity all zero. SOIC-8 pad contract, net map, '
+print(f'ERC, DRC, unconnected, parity all zero. {package} pad contract, net map, '
       'power network and outline all verified; six original projects confirmed untouched.')

@@ -28,6 +28,6 @@ The build command replaces the generated CAD in both directories. Preserve any m
 
 The owner approved the shared outline on 2026-11-17: **1.5 mm total removed from the original 46.32 mm length**, leaving **44.82 mm**, with **R5.35 far-end corners**. Header centres, electrical routing and this project's artwork/finish are preserved. Final populated fit, powered and RF testing remain pending.
 
-## DIY hand-solderable option
+## DIY hand-solderable options
 
-[16mb-diy-soic](16mb-diy-soic/README.md) is a separate, independent 16 MB project — not a capacity variant — built for assembly with a soldering iron instead of a hot plate: a **SOIC-8 208 mil Winbond W25Q128JVSIQ** replaces the WSON-8 flash, C1/R1 move to **0805**, and C2/R2 are omitted entirely (not just DNP). It shares this group's outline, header position and host net map, fully rerouted around the wider SOIC footprint, and validates with its own [tools/check_diy_soic.py](../tools/check_diy_soic.py) rather than `tools/validate.py` (which assumes a WSON pad 9 and C2/R2). It does not use `tools/build_capacity_variants.py` and is not touched by it.
+[16 MB SOIC-8](16mb-diy-soic/README.md) and [64 MB SOIC-16](64mb-diy-soic/README.md) use exposed flash leads and 0805 passives. Both share the same outline and host net map as the WSON boards. The 64 MB project uses the wide W25Q512JVFIQ with its own routing and pin map. The [DIY validator](../tools/check_diy_soic.py) checks both packages.
