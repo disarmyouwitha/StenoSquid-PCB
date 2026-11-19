@@ -26,7 +26,7 @@ Both DIY boards use exposed SOIC leads and 0805 passives. Order a bare PCB using
 
 ## Factory-assembled 16 MB and 64 MB boards
 
-These low-profile WSON builds have assembly packages for the flash, decoupling capacitor and CS# pull-up. Everything you need to have JLPCB manufacture it! (This was [much more expensive](https://github.com/disarmyouwitha/StenoSquid-PCB/blob/main/manufacturing/2026-11-18/cart-preview.jpg) than the DIY build!)
+These low-profile WSON builds have assembly packages for the flash, decoupling capacitor and CS# pull-up. Everything you need to have JLPCB manufacture it for you! (This was [much more expensive](https://github.com/disarmyouwitha/StenoSquid-PCB/blob/main/manufacturing/2026-11-18/cart-preview.jpg) than the DIY build!)
 
 | **16 MB · White silkscreen** | **64 MB · Gold ENIG artwork** |
 |---|---|
