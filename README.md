@@ -1,46 +1,58 @@
-# StenoSquid-PCB
+# Steno Squid PCB
 
-**ZMK firmware for StenoSquid-PCB!: https://github.com/disarmyouwitha/StenoSquid**
+Build a hand-soldered QSPI flash add-on for Javelin stenography on the left half of the **Boardsource Wireless Corne SMT**. Steno Squid sits on top of the switch plate and connects through the eight-contact expansion slot. Choose **16 MB or 64 MB** of flash.
 
-Steno Squid adds 16 MB of QSPI flash for Javelin stenography to the left half of the Boardsource Wireless Corne SMT. It is an independent community accessory designed to sit flush on top of the switch plate.
+<img src="variants/16mb-diy-soic/previews/front.png" alt="16 MB DIY Steno Squid PCB with exposed SOIC leads and Pop silkscreen" width="360">
 
-<img src="pcb/previews/front-pop.png" alt="Steno Squid PCB with Pop on the front silkscreen" width="420">
+## Choose a DIY board
 
-[KiCad project](pcb/steno-squid.kicad_pro) · [Actual-size fit template](pcb/previews/plate-fit-1to1.svg) · [STEP model](pcb/steno-squid.step) · [BOM](pcb/BOM.csv)
+Both DIY boards use exposed SOIC leads and 0805 passives. Use a fine-tip iron, flux and tweezers. Order a bare PCB using the ZIP for your chosen capacity.
 
-**Larger-capacity options:** complete [32 MB and 64 MB KiCad drafts](variants/README.md) use a shared 8 × 6 mm WSON footprint and the same eight host contacts. Choose the matching BOM for the desired capacity. The 16 MB baseline below retains its original footprint. [Package and power review](docs/capacity-variants.md)
-
-**DIY hand-solderable options:** [16 MB SOIC-8](variants/16mb-diy-soic/README.md) and [64 MB SOIC-16](variants/64mb-diy-soic/README.md) use exposed flash leads and 0805 passives. Both share the Rev D outline and eight host contacts.
-
-## Hardware
-
-- Rev D uses a **21.78 × 44.82 mm approved outline with no ears or USB notch**, R5.35 corners away from the header, R1 header-end corners and 1.0 mm board thickness. The switch-facing edge keeps a net 1.12 mm trim from the original full-ear outline; the pin-8 edge is widened 0.88 mm so its silkscreen gap matches the one at pin 1. The opposite edge and all header centres stay fixed. Components face up, with STENO SQUID silkscreened above Pop and the 16 MB flash capacity below it.
-- Eight soldered pins mate with the host sockets through the plate slot. Viewed from above with USB-C at the top, the contact row is at the bottom and pin 1 is on the left. The owner confirmed all eight template contacts align and checked that their socket stack allows the daughterboard to sit flush on the plate. The 2.54 mm pitch and nominal 2.20 mm pin-1 offset are retained. [Fit record](docs/plate-geometry.md)
-- The W25Q128JVPIQ WSON flash, 100 nF decoupling capacitor C1 and 10 kΩ CS pull-up R1 are fitted. The optional bulk capacitor C2 and bleed resistor R2 start unpopulated. The breadboard rail test determines whether either is needed.
-- The 0.40 mm supply path from the header through C1 to the flash stays on the top copper layer. Ground pours on both layers now extend under the whole board, including the Pop artwork area, for a uniform soldermask finish; the Pop artwork itself dropped its 6 small splat dots. An [ENIG gold-artwork variant](variants/enig/README.md) exposes Pop and the two remaining splats as isolated gold copper behind a 1 mm keepout halo, while this baseline board keeps Pop, STENO SQUID and 16 MB as plain silkscreen for lower-cost manufacture. The same gold treatment is also available for the [32 MB](variants/32mb-enig/README.md) and [64 MB](variants/64mb-enig/README.md) capacity options.
-
-## Host interface
-
-| Contact | Host GPIO or rail | Flash signal | Flash pad |
+| Capacity | Flash package | Board files | Parts |
 |---|---|---|---|
-| 1 | P0.07 | CS# | 1 |
-| 2 | P0.21 | IO0 | 5 |
-| 3 | P0.12 | IO3 | 7 |
-| 4 | P0.23 | IO1 | 2 |
-| 5 | VCC switched by P0.31 | VCC | 8 |
-| 6 | GND | GND | 4 |
-| 7 | P0.19 | CLK | 6 |
-| 8 | P0.05 | IO2 | 3 |
+| **16 MB** | Winbond W25Q128JVSIQ, SOIC-8 (208 mil) | [Bare-board ZIP](manufacturing/2026-11-18/diy-bare/stenosquid-16mb-diy-bare.zip) · [KiCad and fit template](variants/16mb-diy-soic/README.md) | [16 MB BOM](variants/16mb-diy-soic/BOM.csv) |
+| **64 MB** | Winbond W25Q512JVFIQ, SOIC-16 (300 mil) | [Bare-board ZIP](manufacturing/2026-11-18/diy-bare/stenosquid-64mb-diy-bare.zip) · [KiCad and fit template](variants/64mb-diy-soic/README.md) | [64 MB BOM](variants/64mb-diy-soic/BOM.csv) |
 
-Use this map for the Adafruit flash breakout proof of concept. The left expansion header serves QSPI. The right half can retain its display. The firmware's `Boardsource-*` builds cover the Boardsource board: the default and no-display halves, the logging left and both flash probes. They build in CI, and runtime testing is pending. [Boardsource host documentation](https://boardsource.xyz/blogs/guides/wireless-smt-corne-docs) · [Firmware builds](https://github.com/disarmyouwitha/StenoSquid/actions/workflows/build.yml)
+### Parts for one board
 
-## Prototype status
+| Ref. | Qty. | Part |
+|---|---:|---|
+| U1 | 1 | The Winbond flash listed for your PCB above |
+| C1 | 1 | 100 nF X7R ceramic capacitor, 0805. BOM part Yageo `CC0805KRX7R9BB104` |
+| R1 | 1 | 10 kΩ, 1% resistor, 0805. BOM part Yageo `RC0805FR-0710KL` |
+| J1 | 1 set | Eight solder pins on 2.54 mm pitch. Match the pins to your host sockets and plate stack |
 
-KiCad reports zero ERC, DRC, unconnected items and schematic-parity issues with every ERC and DRC category enabled. Paper-template header alignment and socket stack are owner-checked; final populated-board fit, power and Bluetooth performance remain to be verified. [CAD validation](pcb/validation.json)
+## Build and check
 
-1. Use the revised fit template at 100% to check the trimmed edge and solid top with keycaps and USB plug fitted. Header alignment and the owner's socket stack are confirmed; record the exact socket part and mating pin length before procurement. Verify the final populated-board assembly.
-2. Check the switched rail on USB and battery. Measure voltage under load, control polarity, shared loads and discharge with the breakout before deciding whether to populate R2 or C2.
-3. Identify the host antenna and check its specified clearance against the plate, pins and daughterboard. Compare host and split Bluetooth performance with the module fitted and removed under the same conditions.
-4. Review the WSON land pattern and stencil with the assembler. On the prototype, confirm flash ID, quad mode, readback and dictionary integrity across power cycles.
+1. Print your board’s fit template at **100%** and verify the scale bar. The PCB is **21.78 × 44.82 mm**. The owner checked all eight paper-template contacts and a flush socket stack. Check your assembled stack, keycaps and USB plug. The 64 MB SOIC can stand up to 2.64 mm above the PCB. [Fit record](docs/plate-geometry.md)
+2. Align the chip’s pin-1 mark with the PCB marker. Tack a corner, check alignment and solder the remaining leads. Solder C1, R1 and the eight mating pins. Inspect for bridges and check continuity and for a VCC-to-GND short before connecting to the host.
+3. Check the switched rail under load on USB and battery. Read the flash JEDEC ID, verify quad reads and writes, and check data retention across a power cycle. The 64 MB chip requires firmware configured for its capacity and four-byte addressing. [Power and flash checks](docs/capacity-variants.md)
+4. Check final populated-board clearance and compare Bluetooth with the board fitted and removed. KiCad validation covers ERC, DRC and schematic parity. Final populated fit, switched-rail qualification and Bluetooth performance remain open. [Electrical and RF review](docs/design-review.md)
 
-[Pre-order checklist](docs/pre-order-checklist.md) · [Mounting and CAD notes](pcb/README.md) · [Electrical and RF review](docs/design-review.md) · [Source credits and license status](ATTRIBUTION.md) · [Design history](docs/history.md)
+## Host wiring and firmware
+
+Viewed from above with USB-C at the top, the contacts run along the bottom with pin 1 on the left.
+
+| Contact | Host GPIO or rail | Signal |
+|---|---|---|
+| 1 | P0.07 | CS# |
+| 2 | P0.21 | IO0 |
+| 3 | P0.12 | IO3 |
+| 4 | P0.23 | IO1 |
+| 5 | VCC switched by P0.31 | VCC |
+| 6 | GND | GND |
+| 7 | P0.19 | CLK |
+| 8 | P0.05 | IO2 |
+
+Use the Boardsource build for 16 MB. The 64 MB boards require firmware support for their JEDEC ID, capacity and four-byte addressing. The left expansion header serves QSPI, and the right half can retain its display. [Steno Squid ZMK firmware](https://github.com/disarmyouwitha/StenoSquid)
+
+[All production variants](variants/README.md) · [Design history](docs/history.md) · [Source credits and license status](ATTRIBUTION.md)
+
+## Factory-assembled 16 MB and 64 MB boards
+
+These low-profile WSON builds have assembly packages for the flash, decoupling capacitor and CS# pull-up. Fit the eight mating pins by hand. C2 and R2 start unpopulated. The assembly packages record a 1.6 mm fabrication thickness.
+
+| **16 MB · White silkscreen** | **64 MB · Gold ENIG artwork** |
+|---|---|
+| <img src="pcb/previews/front-pop.png" alt="16 MB WSON PCB with white Pop silkscreen" width="230"> | <img src="variants/64mb-enig/previews/front-pop.png" alt="64 MB WSON PCB with exposed gold Pop artwork" width="230"> |
+| [KiCad and BOM](pcb/README.md) · [Gerber ZIP](manufacturing/2026-11-18/16mb-silkscreen/16mb-silkscreen-gerbers.zip) · [BOM and placement](manufacturing/2026-11-18/16mb-silkscreen/) | [KiCad and BOM](variants/64mb-enig/README.md) · [Gerber ZIP](manufacturing/2026-11-18/64mb-gold/64mb-gold-gerbers.zip) · [BOM and placement](manufacturing/2026-11-18/64mb-gold/) |

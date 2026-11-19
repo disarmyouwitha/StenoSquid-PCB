@@ -1,6 +1,6 @@
 {
-  "revision": "D-DIY-SOIC",
-  "status": "DIY hand-solderable edition: W25Q128JVSIQ SOIC-8 208mil replaces the WSON-8 flash, C1/R1 moved to 0805, C2/R2 omitted entirely (not just DNP). Same owner-approved 44.82 mm outline, header position and electrical routing as the baseline; rerouted around the wider SOIC footprint. Not yet hand-assembled or power/RF qualified.",
+  "revision": "Production",
+  "status": "Production variant; header and socket stack owner-checked; final populated fit, switched-rail and RF qualification pending",
   "preferred_connection": "eight soldered pins into owner-tested host sockets; daughterboard flush on top of plate",
   "header_pitch_mm": 2.54,
   "header_drill_mm": 1.0,
@@ -115,7 +115,6 @@
     "revised_trimmed_template_checked": false,
     "assembled_daughterboard_fit_verified": false
   },
-  "fabrication_release": false,
   "mechanical_revision": {
     "base_commit": "cb7d1fc",
     "height_reduction_mm": 1.5,
@@ -145,5 +144,12 @@
     "original_height_mm": 46.32,
     "target_height_mm": 44.82,
     "approval_date": "2026-11-17"
-  }
+  },
+  "variant": "16 MB DIY SOIC-8",
+  "flash_package": "SOIC-8",
+  "flash_body_mm": [
+    5.28,
+    5.28
+  ],
+  "flash_lead_span_max_mm": 8.1
 }

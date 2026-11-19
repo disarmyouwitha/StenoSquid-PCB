@@ -1,6 +1,6 @@
 {
-  "revision": "D-DIY-64",
-  "status": "Routed 64 MiB DIY draft. SOIC-16 flash with 0805 passives and the Rev D host interface. Physical fit and powered bring-up pending.",
+  "revision": "Production",
+  "status": "Production variant; header and socket stack owner-checked; final populated fit, switched-rail and RF qualification pending",
   "preferred_connection": "eight soldered pins into owner-tested host sockets; daughterboard flush on top of plate",
   "header_pitch_mm": 2.54,
   "header_drill_mm": 1.0,
@@ -115,7 +115,6 @@
     "revised_trimmed_template_checked": false,
     "assembled_daughterboard_fit_verified": false
   },
-  "fabrication_release": false,
   "mechanical_revision": {
     "base_commit": "cb7d1fc",
     "height_reduction_mm": 1.5,
@@ -166,5 +165,6 @@
     12,
     13,
     14
-  ]
+  ],
+  "variant": "64 MB DIY SOIC-16"
 }

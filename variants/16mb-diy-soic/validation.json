@@ -1,11 +1,13 @@
 {
-  "revision": "D-DIY-SOIC",
+  "revision": "Production",
+  "variant": "16 MB DIY SOIC-8",
   "review_date": "2026-11-18",
   "ERC_violations": 0,
   "DRC_violations": 0,
   "unconnected_items": 0,
   "schematic_parity_issues": 0,
   "u1_footprint": "StenoSquid:SOIC-8_5.3x5.3mm_P1.27mm",
+  "capacity_bytes": 16777216,
   "u1_pad_count": 8,
   "c2_r2_present": false,
   "all_eight_contacts_verified_against_schematic_and_PCB": true,
@@ -93,14 +95,13 @@
     ]
   ],
   "outline_matches_baseline": true,
-  "six_original_projects_untouched": true,
   "host_fit_verified": false,
   "host_power_qualified": false,
   "first_hand_assembly_verified": false,
   "hashes": {
-    "steno-squid.kicad_pcb": "18816e6264060dccca3c0657e388e4ec8651a7ce094db3f744689b837483bb16",
-    "steno-squid.kicad_sch": "65334af8e48a829da71b0b93f0643d60ee101d1b88c1a0e377834d350c5088c3",
-    "steno-squid.kicad_pro": "aa54616dcc26caa28d54d304529cf1dcedab95c86b0459104c6a2942fb4eb902",
-    "steno-squid.kicad_dru": "3bffc12fab832b186b3dc21fa5bf534cae8ab243759386476c7eedbbe81a9f73"
+    "steno-squid.kicad_pcb": "baebdc1476064fd349643d5a329927fbe0e73f8dd89e434844e1453449055604",
+    "steno-squid.kicad_sch": "be7bab8f7a2a9e4b7b302d7b7c49b4faf814515c6d283dfda0f471f440447e31",
+    "steno-squid.kicad_pro": "d22541ef2a281bba3f32b3e5871885ef5f3ab497c49ef2972f96558bc6245c31",
+    "steno-squid.kicad_dru": "eb415e35e78c1826e2ea2c81ed40d9b24f728510251829f95a14e4257e80b9f0"
   }
 }

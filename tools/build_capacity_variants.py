@@ -1,8 +1,7 @@
-"""Derive the 32/64 MB drafts from pcb/ without touching the 16 MB Rev D baseline.
+"""Rebuild the 64 MB WSON silkscreen layout from the 16 MB WSON project.
 
 Run with normal Python, then tools/check_capacity_variants.py with KiCad installed.
-Package E dimensions: Winbond W25Q256JV Rev G p85 and W25Q512JV Rev G p88.
-This deliberately builds a shared 8x6 mm WSON layout, not the SOIC breadboard part.
+Package E dimensions: Winbond W25Q512JV Rev G p88.
 """
 from pathlib import Path
 import csv
@@ -18,10 +17,8 @@ BASE = ROOT / 'pcb'
 OLD = 'WSON-8_6x5mm_P1.27mm_EP3.4x4.3mm'
 NEW = 'WSON-8_8x6mm_P1.27mm_EP3.4x4.3mm'
 MODEL = 'WSON-8_8x6mm_EP3.4x4.3mm.step'
-DATASHEETS = {
-    32: 'https://www.mouser.com/datasheet/2/949/w25q256jv_spi_revg_08032017-1489574.pdf',
-    64: 'https://www.mouser.com/datasheet/2/949/Winbond_W25Q512JV_Datasheet-3240039.pdf',
-}
+DATASHEET = 'https://www.mouser.com/datasheet/2/949/Winbond_W25Q512JV_Datasheet-3240039.pdf'
+VARIANT = '64 MB WSON Silkscreen'
 
 def replace_children(text, fn):
     for a, b, child in reversed(list(nodes(text))):
@@ -33,7 +30,7 @@ def replace_children(text, fn):
 def grow_package(fp):
     fp = fp.replace(OLD, NEW).replace('WSON-8_6x5mm_EP3.4x4.3mm.step', MODEL)
     fp = fp.replace('Winbond W25Q128JV package P. Body 6x5mm',
-                    'Winbond W25Q256JV / W25Q512JV package E. Body 8x6mm')
+                    'Winbond W25Q512JV package E. Body 8x6mm')
     def grow_child(child):
         # Only footprint-local graphics, properties and pads; do not move its board origin.
         if kind(child) not in ('property', 'fp_line', 'fp_circle', 'pad'):
@@ -61,9 +58,9 @@ def grow_step(text):
     return re.sub(r"CARTESIAN_POINT\('',\(([-\d.Ee+]+),([-\d.Ee+]+),([-\d.Ee+]+)\)\)", point,
                   text.replace('6x5mm', '8x6mm'))
 
-def build(size):
+def build():
     base_interface=json.loads((BASE/'interface.json').read_text())
-    out = ROOT / 'variants' / ('%dmb' % size)
+    out = ROOT / 'variants' / '64mb'
     for sub in ('checks', 'previews', 'models', 'footprints/StenoSquid.pretty'):
         (out / sub).mkdir(parents=True, exist_ok=True)
     for filename in ('steno-squid.kicad_pro', 'steno-squid.kicad_dru', 'sym-lib-table', 'fp-lib-table'):
@@ -74,29 +71,25 @@ def build(size):
     (out/'footprints/StenoSquid.pretty'/ (NEW+'.kicad_mod')).write_text(
         grow_package((BASE/'footprints/StenoSquid.pretty'/(OLD+'.kicad_mod')).read_text()))
     (out/'models'/MODEL).write_text(grow_step((BASE/'models/WSON-8_6x5mm_EP3.4x4.3mm.step').read_text()))
-    part = 'W25Q%dJVEIQ' % (size*8)
-    symbol = 'W25Q%dJV' % (size*8)
-    revision = 'D-%dMB' % size
+    part = 'W25Q512JVEIQ'
+    symbol = 'W25Q512JV'
+    old_title = 'Steno Squid ' + base_interface['variant']
+    title = 'Steno Squid ' + VARIANT
     for filename in ('steno-squid.kicad_sch', 'steno-squid.kicad_sym'):
         content = (BASE/filename).read_text().replace('W25Q128JVPIQ', part).replace('W25Q128JV', symbol)
-        content = content.replace(OLD, NEW).replace('(rev "%s")'%base_interface['revision'], '(rev "%s")'%revision)
-        content = content.replace('Steno Squid - 8-contact QSPI electrical proposal',
-                                  'Steno Squid - %d MB QSPI draft' % size)
+        content = content.replace(OLD, NEW).replace(old_title, title)
         (out/filename).write_text(content)
     interface = base_interface.copy()
-    interface.update(revision=revision, flash_ordering_code=part+' / WSON-8 8x6 mm',
-                     flash_body_mm=[8,6], capacity_bytes=size*1024*1024,
-                     jedec_id='EF4019' if size==32 else 'EF4020',
-                     baseline='rev-d electrical design plus owner-selected full-length no-ears fit update, 2026-11-16',
-                     status='routed capacity option; header template and socket stack owner-checked; powered, RF and assembled daughterboard qualification pending',
-                     datasheet=DATASHEETS[size])
+    interface.update(variant=VARIANT, flash_ordering_code=part+' / WSON-8 8x6 mm',
+                     flash_body_mm=[8,6], capacity_bytes=64*1024*1024,
+                     jedec_id='EF4020', datasheet=DATASHEET)
     (out/'interface.json').write_text(json.dumps(interface,indent=2)+'\n')
     with (BASE/'BOM.csv').open() as f:
         reader=csv.DictReader(f); fields=reader.fieldnames; bom=list(reader)
     u=next(r for r in bom if r['Reference']=='U1')
-    lcsc={32:'C2682312',64:'C3034691'}[size]
+    lcsc='C3034691'
     url='https://jlcpcb.com/partdetail/WinbondElec-%s/%s' % (part,lcsc)
-    u.update(Value='%dMbit (%d MB) QSPI NOR' % (size*8,size), Prototype_MPN=part,
+    u.update(Value='512Mbit (64 MB) QSPI NOR', Prototype_MPN=part,
              Footprint='WSON-8 8x6mm P1.27mm EP3.4x4.3mm', Source=url,
              Notes='Package E; 0.8mm max; Extended catalog candidate; stock and stencil review pending',
              LCSC_Part=lcsc,Assembly_Source=url)
@@ -109,8 +102,7 @@ def build(size):
             if r['Reference'] in ('U1','C1','R1'):
                 writer.writerow([r['Prototype_MPN'],r['Reference'],r['Footprint'],r['LCSC_Part']])
 
-    # Shared placement and routing. The larger body needs new escapes; merely
-    # stretching Rev D's tracks creates shorts at the left pad bank.
+    # The larger body needs different trace routing at the left pad bank.
     placements={'C1':(41.3,60.095),'C2':(40.8,57.8),'R1':(27.5,64),'R2':(30,57.5)}
     def update(child):
         if kind(child)=='footprint':
@@ -128,10 +120,10 @@ def build(size):
             child=child.replace('(at 30 56.5 0)', '(at 30 56 0)')
             child=child.replace('(at 39 56.85 0)', '(at 40.8 56.35 0)')
             child=child.replace('(at 41.3 61.5 0)', '(at 43.4 61.5 0)')
-            child=child.replace('"STENO SQUID"','"STENO SQUID %dMB"' % size)
+            child=child.replace('(gr_text "16 MB"', '(gr_text "64 MB"')
         return child
     board=replace_children((BASE/'steno-squid.kicad_pcb').read_text(),update)
-    board=board.replace('(rev "%s")'%base_interface['revision'], '(rev "%s")'%revision)
+    board=board.replace(old_title, title)
     added=[]
     def ident(s):
         return str(uuid.uuid5(uuid.NAMESPACE_URL,'StenoSquid-capacity-layout/'+s))
@@ -173,5 +165,4 @@ def build(size):
     print(out)
 
 if __name__=='__main__':
-    for size in (32,64):
-        build(size)
+    build()

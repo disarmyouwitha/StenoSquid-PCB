@@ -1,13 +1,11 @@
-# Plate-mounted Steno Squid — 64 MB, ENIG gold-artwork variant
+# Steno Squid 64 MB WSON · gold ENIG
 
-[KiCad project](steno-squid.kicad_pro) · [Front](previews/front-pop.png) · [Back](previews/back.png) · [1:1 fit template](previews/plate-fit-1to1.svg) · [STEP](steno-squid.step) · [BOM](BOM.csv) · [Validation](validation.json)
+[KiCad project](steno-squid.kicad_pro) · [BOM](BOM.csv) · [Front](previews/front-pop.png) · [Back](previews/back.png) · [1:1 fit template](previews/plate-fit-1to1.svg) · [STEP](steno-squid.step) · [Validation](validation.json) · [Assembly package](../../manufacturing/2026-11-18/64mb-gold/)
 
-This is the [64 MB capacity board](../64mb/README.md) with one cosmetic change: Pop and the two remaining splats (the 6 small splat dots are removed from the shared artwork, same as the baseline) are exposed, isolated front copper with a matching front soldermask opening, instead of front silkscreen. Under ENIG finish that exposed copper renders gold. A 1 mm no-copper/no-via/no-track keepout halo surrounds the shapes (including inside the eye sockets) so the front ground pour stays clear of them; outside that halo the ground pour extends under the whole board exactly as it does on the 16/32/64 MB silkscreen boards, for a uniform soldermask finish. STENO SQUID and 64 MB stay plain white silkscreen.
+This production variant uses a Winbond **W25Q512JVEIQ** in a 8 × 6 mm WSON-8 package, with a 100 nF C1 and 10 kΩ R1. Leave C2 and R2 unpopulated and fit J1 manually. The [matching finish option](../64mb/README.md) uses the same header positions, component placement and signal routing.
 
-Electrically and mechanically this board is identical to [64mb](../64mb/README.md): same 21.78 × 44.82 mm outline, same header position, same routing, same WSON-8 8×6 mm footprint and component placement (shared with [32mb](../32mb/README.md)). Only the Pop/splat treatment and finish differ, so it exists as a separate higher-cost option alongside the strictly-silkscreen capacity board rather than replacing it. It shares the same gold-artwork geometry as the [16 MB ENIG board](../enig/README.md) and the [32 MB ENIG board](../32mb-enig/README.md).
+Pop and the two splats use isolated exposed copper with a matching soldermask opening and a 1 mm copper keepout. The ENIG finish makes these shapes gold. The capacity and STENO SQUID labels use white silkscreen.
 
-KiCad reports zero ERC, DRC, unconnected items and schematic-parity issues with every ERC and DRC category enabled. [Electrical and RF review](../../docs/design-review.md) · [Capacity-option package/power review](../../docs/capacity-variants.md)
+The board uses the shared **21.78 × 44.82 mm** outline, R5.35 far-end corners, R1 header-end corners and fixed header centres. The CAD specifies 1.0 mm nominal thickness. The owner checked paper-template alignment and a flush socket stack. Final populated fit, switched-rail qualification and Bluetooth performance remain pending. [Fit record](../../docs/plate-geometry.md) · [Package and power review](../../docs/capacity-variants.md)
 
-Regenerate the fit template with `python3 tools/make_fit_template.py variants/64mb-enig` from the repo root after any mechanical edit. Final populated-board fit, powered, RF and assembled-daughterboard qualification remain pending, same as the other capacity boards.
-
-The owner approved the shared outline on 2026-11-17: **1.5 mm total removed from the original 46.32 mm length**, leaving **44.82 mm**, with **R5.35 far-end corners**. Header centres, electrical routing and this project's artwork/finish are preserved. Final populated fit, powered and RF testing remain pending.
+The assembly package records a 1.6 mm fabrication thickness. Check pin engagement against the thickness of your board.

@@ -1,5 +1,5 @@
 Reference,Quantity,Value,Manufacturer,Prototype_MPN,Footprint,Population,Source,Notes,LCSC_Part,Assembly_Source
 U1,1,512 Mbit (64 MiB) QSPI NOR,Winbond,W25Q512JVFIQ,SOIC-16 300 mil P1.27mm,Fit by hand,https://www.digikey.com/en/products/detail/winbond-electronics/W25Q512JVFIQ/10244707,"2.7–3.6 V; gull-wing leads; pin 3 tied high, NC/DNU isolated.",C2962011,
-C1,1,100nF X7R 50V,Yageo,CC0805KRX7R9BB104,0805 2012 metric,Fit by hand,https://www.digikey.com/en/products/detail/yageo/CC0805KRX7R9BB104/302874,"Close to U1 pin 8 and its ground return, as in the WSON baseline; 0805 chosen for hand-solder accessibility over the production 0603.",,
-R1,1,10k 1%,Yageo,RC0805FR-0710KL,0805 2012 metric,Fit by hand,https://www.digikey.com/en/products/detail/yageo/RC0805FR-0710KL/727535,CS pull-up to switched VCC; 0805 chosen for hand-solder accessibility over the production 0603.,,
+C1,1,100nF X7R 50V,Yageo,CC0805KRX7R9BB104,0805 2012 metric,Fit by hand,https://www.digikey.com/en/products/detail/yageo/CC0805KRX7R9BB104/302874,Decouples the flash supply.,C49678,https://jlcpcb.com/partdetail/Yageo-CC0805KRX7R9BB104/C49678
+R1,1,10k 1%,Yageo,RC0805FR-0710KL,0805 2012 metric,Fit by hand,https://www.digikey.com/en/products/detail/yageo/RC0805FR-0710KL/727535,Pulls CS# up to switched VCC.,C84376,https://jlcpcb.com/partdetail/RC0805FR-0710KL/C84376
 J1,1,Eight bare solder pins,TBD,Owner-tested socket/pin stack; exact MPN TBD,1x08 P2.54mm 1.0mm drill,Fit manually,,Owner checked the socket stack with the shared outline. Recheck the populated 64 MiB board on host.,,

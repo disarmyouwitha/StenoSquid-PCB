@@ -83,8 +83,10 @@ project = json.loads((output / 'steno-squid.kicad_pro').read_text())
 assert any(item['netclass'] == 'Power' and item['pattern'] == '/VCC_SW'
            for item in project['net_settings']['netclass_patterns'])
 assert '(constraint track_width (min 0.4mm))' in (output / 'steno-squid.kicad_dru').read_text()
-assert '(rev "' + interface['revision'] + '")' in board
-assert '(rev "' + interface['revision'] + '")' in (output / 'steno-squid.kicad_sch').read_text()
+schematic = (output / 'steno-squid.kicad_sch').read_text()
+for cad in (board, schematic):
+    assert f'(rev "{interface["revision"]}")' in cad
+    assert f'(title "Steno Squid {interface["variant"]}")' in cad
 
 # Header centres are fixed by the owner-confirmed fit; trimming the outline must
 # never translate J1 to recenter it on the narrower PCB.
@@ -106,6 +108,7 @@ if 'board_bounds_kicad_mm' in interface:
 
 report = {
     'revision': interface['revision'],
+    'variant': interface['variant'],
     'review_date': drc['date'].split('T')[0],
     'ERC_violations': len(erc_issues),
     'DRC_violations': len(drc['violations']),

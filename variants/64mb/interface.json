@@ -1,6 +1,6 @@
 {
-  "revision": "D-64MB",
-  "status": "Owner-approved 44.82 mm outline; header and socket stack owner-checked; final populated fit, power and RF qualification pending",
+  "revision": "Production",
+  "status": "Production variant; header and socket stack owner-checked; final populated fit, switched-rail and RF qualification pending",
   "preferred_connection": "eight soldered pins into owner-tested host sockets; daughterboard flush on top of plate",
   "header_pitch_mm": 2.54,
   "header_drill_mm": 1.0,
@@ -125,14 +125,12 @@
     "revised_trimmed_template_checked": false,
     "assembled_daughterboard_fit_verified": false
   },
-  "fabrication_release": false,
   "flash_body_mm": [
     8,
     6
   ],
   "capacity_bytes": 67108864,
   "jedec_id": "EF4020",
-  "baseline": "rev-d electrical design plus owner-selected full-length no-ears fit update, 2026-11-16",
   "datasheet": "https://www.mouser.com/datasheet/2/949/Winbond_W25Q512JV_Datasheet-3240039.pdf",
   "mechanical_revision": {
     "base_commit": "cb7d1fc",
@@ -163,5 +161,6 @@
     "original_height_mm": 46.32,
     "target_height_mm": 44.82,
     "approval_date": "2026-11-17"
-  }
+  },
+  "variant": "64 MB WSON Silkscreen"
 }

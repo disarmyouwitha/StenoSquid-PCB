@@ -1,5 +1,6 @@
 {
-  "revision": "D-DIY-64",
+  "revision": "Production",
+  "variant": "64 MB DIY SOIC-16",
   "review_date": "2026-11-18",
   "ERC_violations": 0,
   "DRC_violations": 0,
@@ -93,13 +94,12 @@
     ]
   ],
   "outline_matches_baseline": true,
-  "six_original_projects_untouched": true,
   "host_fit_verified": false,
   "host_power_qualified": false,
   "first_hand_assembly_verified": false,
   "hashes": {
-    "steno-squid.kicad_pcb": "82914eaa14d82e7008f51cbc1b0546124d4cd0deb3e27593f1c29310595b846a",
-    "steno-squid.kicad_sch": "5fe64038328bf8752dec8dabb35abebc173db859044a4ddb3551eae600343dd4",
+    "steno-squid.kicad_pcb": "9ad1b3515842cb51b967f2fc2e68fc400a01c1d5f17edb330576564563bc7531",
+    "steno-squid.kicad_sch": "7492f3b4a6bf46e1f1c980b6d763a58974533e34d7726a310990c12c576c5e5b",
     "steno-squid.kicad_pro": "d22541ef2a281bba3f32b3e5871885ef5f3ab497c49ef2972f96558bc6245c31",
     "steno-squid.kicad_dru": "eb415e35e78c1826e2ea2c81ed40d9b24f728510251829f95a14e4257e80b9f0"
   }

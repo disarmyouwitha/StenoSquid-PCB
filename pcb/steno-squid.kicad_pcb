@@ -8,9 +8,9 @@
 	)
 	(paper "A4")
 	(title_block
-		(title "Steno Squid - plate-mounted QSPI flash")
+		(title "Steno Squid 16 MB WSON Silkscreen")
 		(date "2026-11-13")
-		(rev "D")
+		(rev "Production")
 	)
 	(layers
 		(0 "F.Cu" signal)
@@ -131,7 +131,7 @@
 		(layer "F.Cu")
 		(uuid "1b985ca2-9446-4c64-92c8-c474361ad298")
 		(at 34.2 62)
-		(descr "Winbond W25Q128JV package P. Body 6x5mm, maximum height 0.8mm. Prototype lands require assembler review.")
+		(descr "Winbond W25Q128JV package P. Body 6x5mm, maximum height 0.8mm. Confirm land pattern with assembler.")
 		(property "Reference" "U1"
 			(at 0 -3.4 0)
 			(layer "F.SilkS")

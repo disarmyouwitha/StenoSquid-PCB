@@ -10,7 +10,7 @@ Updated 2026-11-16 after the owner's physical template and socket-stack check.
 | Silkscreen | Visible labels are at least 1.0 mm high with 0.15 mm strokes. Footprint lines use 0.15 mm. The project enforces 0.15 mm silkscreen clearance. |
 | Pop silkscreen | Imported the centered-gaze SVG. All eleven ink regions remain connected within each region after a 0.15 mm diameter erosion check. |
 | Supply width | Added a Power netclass and a custom DRC rule enforcing 0.40 mm on VCC_SW. A temporary 0.20 mm supply segment was rejected by the rule. |
-| Revision | The schematic, board title block, interface and validation identify D, with D-32MB and D-64MB capacity options. The existing `rev-d` Git tag remains the earlier electrical freeze. |
+| Board identity | Each schematic, board title block, interface and validation report names its production variant. |
 | Outline and host fit | Owner confirmed eight-contact paper alignment and a flush socket stack. Applied the full-length no-ears outline, 2 mm switch-side trim and recentered artwork to all capacities. Header coordinates and the opposite edge stay fixed. |
 | Portable netlist | Validation removes the absolute machine path from the exported schematic source field. |
 | Flash model | Added a local STEP model with its exposed-pad face extended to 3.4 × 4.3 mm. |
@@ -23,10 +23,10 @@ CAD reports, validation hashes, STEP, previews and the actual-size fit template 
 
 ## Physical checks and assembly quote
 
-- Header template alignment and the owner's socket stack are confirmed. Record the exact socket MPN and mating pin length. Recheck the revised 2 mm trim and solid top with USB and keycaps fitted, then confirm the fabricated, populated assembly. The 1.7 mm pads and 1.0 mm drills are retained. [Fit record](plate-geometry.md)
+- Header template alignment and the owner's socket stack are confirmed. Record the exact socket MPN and mating pin length. Recheck the switch-facing edge and solid top with USB and keycaps fitted, then confirm the fabricated, populated assembly. The 1.7 mm pads and 1.0 mm drills are retained. [Fit record](plate-geometry.md)
 - Keep the ground pour near the suspected antenna for the first prototype. Compare both Bluetooth links with the Squid fitted and removed. The earlier cutback is available in [design history](history.md).
 - Check the switched supply on USB and battery, including load voltage and fall time. Keep C2 and R2 unpopulated for the breadboard test.
-- Confirm the WSON stencil and exposed-pad paste coverage with the assembler. Arrange rails or a carrier for the 20.9 mm wide rounded outline. [Assembly notes](design-review.md#assembly-handling-and-panelization)
+- Confirm the WSON stencil and exposed-pad paste coverage with the assembler. Arrange rails or a carrier for the 21.78 mm wide rounded outline. [Assembly notes](design-review.md#assembly-handling-and-panelization)
 - Test flash ID, quad reads and dictionary integrity across power cycles and sleep.
 
 IO2 and IO3 use the host's internal pull-ups while QSPI is active. If the rail test calls for hand-fitting R2, inspect for solder bridges to the adjacent supply trace.
@@ -39,4 +39,4 @@ The capacitor and resistor catalog entries match the existing BOM manufacturer p
 
 ## Approved length update — 2026-11-17
 
-The owner selected -1.5 mm total from the original 46.32 mm outline. All six silkscreen/ENIG projects now share 21.78 × 44.82 mm with R5.35 far-end and R1 header-end corners. Headers, component placements and signal tracks remain fixed. Reports, STEP models, front/back previews and red 1:1 fit templates are regenerated for each project. Fabrication release remains pending powered, RF and final assembly qualification.
+The owner selected -1.5 mm total from the original 46.32 mm outline. All six production variants now share 21.78 × 44.82 mm with R5.35 far-end and R1 header-end corners. Headers, component placements and signal tracks remain fixed. Reports, STEP models, front/back previews and red 1:1 fit templates are regenerated for each project. Switched-rail, RF and final populated-board qualification remain pending.

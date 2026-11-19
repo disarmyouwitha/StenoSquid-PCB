@@ -3,7 +3,7 @@
 	(generator "pcbnew")
 	(generator_version "10.0")
 	(layer "F.Cu")
-	(descr "Winbond W25Q128JV package P. Body 6x5mm, maximum height 0.8mm. Prototype lands require assembler review.")
+	(descr "Winbond W25Q128JV package P. Body 6x5mm, maximum height 0.8mm. Confirm land pattern with assembler.")
 	(property "Reference" "REF**"
 		(at 0 -3.4 0)
 		(layer "F.SilkS")

@@ -3,11 +3,11 @@
 **Approved outline:** all six PCB projects use 21.78 × 44.82 mm, exactly 1.5 mm shorter than the original 46.32 mm, with R5.35 far-end corners and fixed headers. Owner approved on 2026-11-17.
 
 
-This review describes the 16 MB Rev D baseline. The complete [32 MB and 64 MB drafts](../variants/README.md) have a separate [package and power review](capacity-variants.md), including the 64 MB chip's higher read-current limit.
+The routing and land-pattern details below describe the 16 MB silkscreen WSON board. The SOIC layouts and the 64 MB flash have a separate [package and power review](capacity-variants.md).
 
 ## Mechanical basis
 
-The daughterboard sits on top of the left Choc switch plate, with eight pins mating to host sockets through the plate slot. On 2026-11-16 the owner confirmed all eight paper-template contacts align on the delivered host and checked that their socket stack allows a flush-on-plate board. Rev D now uses the selected full-length no-ears shape and keeps the opposite edge and header centres fixed. The switch-facing (pin-8) edge, initially cut 2 mm, is now widened 0.88 mm from that cut so its silkscreen gap matches pin 1's, for a net 1.12 mm trim; the local ground pour on both copper layers refills to the new edge automatically. Pop is recentered without changing the artwork shape. Final populated-board fit, keycap/USB clearance with the revised outline and the exact connector procurement details remain to be checked. [Fit record](plate-geometry.md) · [Board and fit template](../pcb/README.md)
+The daughterboard sits on top of the left Choc switch plate, with eight pins mating to host sockets through the plate slot. On 2026-11-16 the owner confirmed all eight paper-template contacts align on the delivered host and checked that their socket stack allows a flush-on-plate board. The production outline has no ears and keeps the opposite edge and header centres fixed. The switch-facing (pin-8) edge, initially cut 2 mm, is now widened 0.88 mm from that cut so its silkscreen gap matches pin 1's, for a net 1.12 mm trim; the local ground pour on both copper layers refills to the new edge automatically. Pop is recentered without changing the artwork shape. Final populated-board fit, keycap/USB clearance with the revised outline and the exact connector procurement details remain to be checked. [Fit record](plate-geometry.md) · [Board and fit template](../pcb/README.md)
 
 ## Circuit and routing
 
@@ -33,11 +33,11 @@ Finish active writes before power removal. Put signal GPIOs into a safe state to
 
 The stock left matrix uses different GPIOs from the expansion signals. Keep that matrix unchanged. The upstream board currently enables SPI2 for nice!view on P0.23 SCK, P0.12 MOSI and P0.19 CS. The left QSPI build must release that display interface and give these pins to QSPI. The right display uses its own half's pins and can keep its display configuration. The tested Boardsource firmware uses the same QSPI assignments in its active and sleep states. The `Boardsource-*` firmware builds, including the logging left and both probes, build in CI. [Boardsource firmware CI](https://github.com/disarmyouwitha/StenoSquid/actions/workflows/build.yml) [Upstream board definition](https://github.com/boardsource/wireless-corne_zmk_config/tree/master/boards/boardsource/blecorne)
 
-## Fabrication and prototype strategy
+## WSON assembly and bring-up
 
-Use black solder mask and white silkscreen for the baseline (lower-cost) finish, or build from the [ENIG variant](../variants/enig/README.md) for a gold-exposed Pop treatment on the same copper design. Confirm 1.0 mm thickness with the assembler and selected connector. C1 and R1 have assembly catalog numbers in the BOM. Confirm stock when quoting. Assemble flash, C1 and R1 on the front. Leave C2 and R2 empty initially. Inspect orientation and shorts, verify supply behavior, then read JEDEC ID and SFDP before programming the dictionary. Confirm host contact alignment, plate fit and RF clearance before the first fabrication release.
+Use black solder mask and white silkscreen for the baseline (lower-cost) finish, or build from the [ENIG variant](../variants/enig/README.md) for a gold-exposed Pop treatment on the same copper design. Confirm 1.0 mm thickness with the assembler and selected connector. C1 and R1 have assembly catalog numbers in the BOM. Confirm stock when quoting. Assemble flash, C1 and R1 on the front. Leave C2 and R2 empty initially. Inspect orientation and shorts, verify supply behavior, then read JEDEC ID and SFDP before programming the dictionary. Check host contact alignment, populated-board fit and RF clearance on the assembly.
 
-The public repository contains native CAD, reports, BOM candidates, STEP and previews. Manufacturing Gerbers are deferred until the fit and host supply checks. All ERC and DRC categories are enabled and the current report contains no ignored categories. Passing ERC/DRC establishes the reported CAD checks, while compatibility, signal integrity and firmware behavior still require the prototype.
+The repository contains native CAD, review artifacts and existing [factory assembly packages](../README.md#factory-assembled-16-mb-and-64-mb-boards). All ERC and DRC categories are enabled. Populated-board fit, switched-rail qualification and Bluetooth performance require assembled hardware.
 
 ## Optional discharge resistor
 

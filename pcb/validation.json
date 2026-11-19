@@ -1,6 +1,7 @@
 {
-  "revision": "D",
-  "review_date": "2026-11-17",
+  "revision": "Production",
+  "variant": "16 MB WSON Silkscreen",
+  "review_date": "2026-11-18",
   "ERC_violations": 0,
   "DRC_violations": 0,
   "unconnected_items": 0,
@@ -97,8 +98,8 @@
   "host_fit_verified": false,
   "host_power_qualified": false,
   "hashes": {
-    "steno-squid.kicad_pcb": "a3c7296c1dc843f35bd8eed666fca5346959568d13defb56f681c55b0dd4c5f3",
-    "steno-squid.kicad_sch": "8cc91a08d12d8546d7c5ef37d489d3f5fa98d677d55afa6670d132cbd1df5d5d",
+    "steno-squid.kicad_pcb": "fec120aab25ec6687e671e23e304700ac2cb7b7b68b0f7325cd7ee341803bd8f",
+    "steno-squid.kicad_sch": "07523209510edf209aeef0f4b8cb99c7888c2c16fc4da21176d6f0502a182249",
     "steno-squid.kicad_pro": "d22541ef2a281bba3f32b3e5871885ef5f3ab497c49ef2972f96558bc6245c31",
     "steno-squid.kicad_dru": "eb415e35e78c1826e2ea2c81ed40d9b24f728510251829f95a14e4257e80b9f0",
     "models/WSON-8_6x5mm_EP3.4x4.3mm.step": "866abd97df7c1c3fd876c65898f89a8bad08b450c483ff7aa630ce27bf53b452"
@@ -107,10 +108,8 @@
   "baseline_outline_preserved": false,
   "baseline_pop_artwork_preserved": true,
   "footprint_pad_geometry_matches_local_library": true,
-  "fabrication_release": false,
-  "electrical_baseline_tag": "rev-d",
-  "mechanical_update_date": "2026-11-17",
-  "baseline_board_sha256": "a3c7296c1dc843f35bd8eed666fca5346959568d13defb56f681c55b0dd4c5f3",
+  "mechanical_update_date": "2026-11-18",
+  "baseline_board_sha256": "fec120aab25ec6687e671e23e304700ac2cb7b7b68b0f7325cd7ee341803bd8f",
   "mechanical_revision": {
     "base_commit": "cb7d1fc",
     "height_reduction_mm": 1.5,

@@ -8,9 +8,9 @@
 	)
 	(paper "A4")
 	(title_block
-		(title "Steno Squid - plate-mounted QSPI flash")
+		(title "Steno Squid 16 MB DIY SOIC-8")
 		(date "2026-11-13")
-		(rev "D")
+		(rev "Production")
 	)
 	(layers
 		(0 "F.Cu" signal)

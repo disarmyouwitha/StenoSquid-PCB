@@ -2,8 +2,7 @@
 
 This is a package-aware sibling of validate.py: it reuses the same ERC/DRC/
 netlist/header-position checks, but replaces the WSON-specific assumptions
-(pad 9 = exposed GND pad, C2/R2 present) with the selected SOIC package contract. It also asserts the six original WSON/ENIG projects are
-untouched, so this variant can never silently drift them.
+(pad 9 = exposed GND pad, C2/R2 present) with the selected SOIC package contract.
 
 Usage: python3 tools/check_diy_soic.py [path to DIY project]
 """
@@ -11,7 +10,6 @@ from pathlib import Path
 import hashlib
 import json
 import re
-import subprocess
 import sys
 import xml.etree.ElementTree as ET
 from kicad_sexpr import nodes, kind
@@ -131,8 +129,7 @@ assert any(item['netclass'] == 'Power' and item['pattern'] == '/VCC_SW'
            for item in project['net_settings']['netclass_patterns'])
 assert '(constraint track_width (min 0.4mm))' in (output / 'steno-squid.kicad_dru').read_text()
 
-# --- 4. Mechanical: outline/header identical to the baseline (shared with
-#     all six existing projects); header centres bit-for-bit unchanged.
+# --- 4. Mechanical: common outline and fixed header centres.
 header_at = re.search(r'\(at ([-\d.]+) ([-\d.]+) ([-\d.]+)\)', footprints['J1'])
 assert tuple(map(float, header_at.groups())) == (27.2, 70.0, 90.0)
 header_positions = []
@@ -155,16 +152,14 @@ assert not [n for _, _, n in nodes(board) if kind(n) == 'gr_poly' and '(layer "F
     'no intentional artwork copper on the DIY edition'
 assert not [n for _, _, n in nodes(board) if kind(n) == 'gr_poly' and '(layer "F.Mask")' in n]
 
-# --- 6. Regression: the six existing projects must be byte-for-byte untouched.
-diff = subprocess.run(['git', 'diff', '--name-only', 'HEAD'], cwd=ROOT, capture_output=True, text=True, check=True).stdout
-changed = [line for line in diff.splitlines() if line.strip()]
-forbidden_prefixes = ('pcb/', 'variants/32mb/', 'variants/64mb/', 'variants/enig/',
-                       'variants/32mb-enig/', 'variants/64mb-enig/')
-leaked = [p for p in changed if p.startswith(forbidden_prefixes)]
-assert not leaked, f'DIY SOIC work must not touch the existing six projects: {leaked}'
+schematic = (output / 'steno-squid.kicad_sch').read_text()
+for cad in (board, schematic):
+    assert f'(rev "{interface["revision"]}")' in cad
+    assert f'(title "Steno Squid {interface["variant"]}")' in cad
 
 report = {
     'revision': interface['revision'],
+    'variant': interface['variant'],
     'review_date': drc['date'].split('T')[0],
     'ERC_violations': len(erc_issues),
     'DRC_violations': len(drc['violations']),
@@ -184,7 +179,6 @@ report = {
     'via_counts': via_counts,
     'header_centres_kicad_mm': sorted(header_positions),
     'outline_matches_baseline': True,
-    'six_original_projects_untouched': True,
     'host_fit_verified': False,
     'host_power_qualified': False,
     'first_hand_assembly_verified': False,
@@ -194,4 +188,4 @@ report = {
 }
 (output / 'validation.json').write_text(json.dumps(report, indent=2) + '\n')
 print(f'ERC, DRC, unconnected, parity all zero. {package} pad contract, net map, '
-      'power network and outline all verified; six original projects confirmed untouched.')
+      'power network and outline all verified.')

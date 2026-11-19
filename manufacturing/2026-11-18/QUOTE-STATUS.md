@@ -1,6 +1,6 @@
 # JLCPCB cart — 2026-11-18
 
-Quotes saved; no order placed or payment made.
+This record captures the saved quotes before checkout. The owner subsequently confirmed fabrication. The manifests retain their original quote-stage metadata.
 
 | Variant | Finish | Thickness | Made | Assembled | Merchandise |
 |---|---|---|---|---|---|

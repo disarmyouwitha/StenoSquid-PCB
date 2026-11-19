@@ -102,6 +102,6 @@ for key,value in {'OUTLINE':'\n'.join(shapes),'PARTS':'\n'.join(parts),'CONTACTS
                   'BOARD_SIZE':' × '.join('%g'%v for v in interface['module_outline_mm']),
                   'FIT_NOTE':('Locked: -1.5 mm total; far-end radius R5.35' if interface.get('mechanical_revision') else
                               '16 MB candidate: 0.75 mm shorter; plate radius R5.35' if interface.get('mechanical_candidate')
-                              else 'Rev D / full length / no ears')}.items():
+                              else 'Full length / no ears')}.items():
     svg=svg.replace(key,value)
 (project/'previews/plate-fit-1to1.svg').write_text(svg)

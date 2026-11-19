@@ -1,6 +1,6 @@
 {
-  "revision": "D",
-  "status": "Owner-approved 44.82 mm outline; header and socket stack owner-checked; final populated fit, power and RF qualification pending",
+  "revision": "Production",
+  "status": "Production variant; header and socket stack owner-checked; final populated fit, switched-rail and RF qualification pending",
   "preferred_connection": "eight soldered pins into owner-tested host sockets; daughterboard flush on top of plate",
   "header_pitch_mm": 2.54,
   "header_drill_mm": 1.0,
@@ -125,7 +125,6 @@
     "revised_trimmed_template_checked": false,
     "assembled_daughterboard_fit_verified": false
   },
-  "fabrication_release": false,
   "finish": {
     "type": "ENIG gold-exposed artwork",
     "exposed_shapes": "Pop + 2 splats (front copper, no net, own F.Mask opening)",
@@ -162,5 +161,6 @@
     "original_height_mm": 46.32,
     "target_height_mm": 44.82,
     "approval_date": "2026-11-17"
-  }
+  },
+  "variant": "16 MB WSON ENIG"
 }
