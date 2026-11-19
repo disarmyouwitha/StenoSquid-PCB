@@ -10,10 +10,12 @@ Steno Squid adds 16 MB of QSPI flash for onboard stenography to your **Boardsour
 
 Both DIY boards use exposed SOIC leads and 0805 passives. Order a bare PCB using the ZIP for your chosen capacity.
 
-| Capacity | Flash package | Board files | Parts |
-|---|---|---|---|
-| **16 MB** | Winbond W25Q128JVSIQ, SOIC-8 (208 mil) | [Bare-board ZIP](manufacturing/2026-11-18/diy-bare/stenosquid-16mb-diy-bare.zip) · [KiCad and fit template](variants/16mb-diy-soic/README.md) | [16 MB BOM](variants/16mb-diy-soic/BOM.csv) |
-| **64 MB** | Winbond W25Q512JVFIQ, SOIC-16 (300 mil) | [Bare-board ZIP](manufacturing/2026-11-18/diy-bare/stenosquid-64mb-diy-bare.zip) · [KiCad and fit template](variants/64mb-diy-soic/README.md) | [64 MB BOM](variants/64mb-diy-soic/BOM.csv) |
+| Capacity | Flash package | Board files | Parts | Est. per build (USD) |
+|---|---|---|---|---:|
+| **16 MB** | Winbond W25Q128JVSIQ, SOIC-8 (208 mil) | [Bare-board ZIP](manufacturing/2026-11-18/diy-bare/stenosquid-16mb-diy-bare.zip) · [KiCad and fit template](variants/16mb-diy-soic/README.md) | [16 MB BOM](variants/16mb-diy-soic/BOM.csv) | **~$7** |
+| **64 MB** | Winbond W25Q512JVFIQ, SOIC-16 (300 mil) | [Bare-board ZIP](manufacturing/2026-11-18/diy-bare/stenosquid-64mb-diy-bare.zip) · [KiCad and fit template](variants/64mb-diy-soic/README.md) | [64 MB BOM](variants/64mb-diy-soic/BOM.csv) | **~$17** |
+
+Each estimate includes one PCB at $1.07 from a $5.34 five-board run, plus the flash chip, capacitor and resistor. If you buy the full PCB batch and parts for one board, budget about **$11 for 16 MB** or **$21 for 64 MB** before shipping, tax and header hardware. [PCB order](manufacturing/2026-11-18/diy-bare/pcb_costs.jpg) · [16 MB parts cart](manufacturing/2026-11-18/diy-bare/parts_costs.jpg) · [64 MB flash price](https://www.digikey.com/en/products/detail/winbond-electronics/W25Q512JVFIQ/10244707)
 
 ### Parts for one board
 
