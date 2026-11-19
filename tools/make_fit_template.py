@@ -32,7 +32,10 @@ for _,_,node in nodes(board):
 assert shapes, 'Edge.Cuts must contain a board outline'
 parts=[]
 contact_pads=[]
-sizes={'U1':tuple(json.loads((project/'interface.json').read_text()).get('flash_body_mm',[6,5])),'R1':(1.6,.8),'C1':(1.6,.8),'C2':(1.6,.8),'R2':(1.6,.8)}
+passive_size = (2.0, 1.25) if interface.get('passive_footprint', '').startswith('0805') else (1.6, .8)
+flash_width, flash_length = interface.get('flash_body_mm', [6, 5])
+flash_width = interface.get('flash_lead_span_max_mm', flash_width)
+sizes = {'U1': (flash_width, flash_length), **dict.fromkeys(('R1', 'C1', 'C2', 'R2'), passive_size)}
 for _,_,node in nodes(board):
     if kind(node)!='footprint': continue
     ref=re.search(r'\(property "Reference" "(\w+)"',node)[1]
