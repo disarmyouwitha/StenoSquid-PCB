@@ -9,6 +9,6 @@ Steno Squid is an independent community accessory for the Boardsource Wireless C
 
 ## Artwork and project license
 
-Pop is the Steno Squid mascot on the current PCB. The earlier Inkling fan illustration drew on Nintendo’s *Splatoon*. [Editable Pop artwork](artwork/pop-centered-gaze-silkscreen.svg) · [Earlier artwork](artwork/inkling-silkscreen.svg)
+Pop is the Steno Squid mascot on the current PCB. The Inkling fan illustration drew on Nintendo’s *Splatoon*. [Editable Pop artwork](artwork/pop-centered-gaze-silkscreen.svg)
 
 The original Steno Squid hardware design has no published redistribution license.
