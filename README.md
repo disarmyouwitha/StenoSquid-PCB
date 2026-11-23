@@ -49,3 +49,9 @@ Viewed from above, the contacts run along the bottom with pin 1 on the left.
 | 6 | GND | GND |
 | 7 | P0.19 | CLK |
 | 8 | P0.05 | IO2 |
+
+## License
+
+StenoSquid-PCB is open-source hardware licensed under the [CERN Open Hardware Licence Version 2 - Permissive (CERN-OHL-P-2.0)](LICENSE).
+
+You are free to manufacture, modify, and sell these boards, subject to the license terms. Third-party artwork and firmware retain their respective rights and licenses.
