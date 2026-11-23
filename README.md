@@ -2,7 +2,8 @@
 
 **ZMK firmware for StenoSquid-PCB!: https://github.com/disarmyouwitha/StenoSquid**
 
-Steno Squid adds 16 MB (or 64MB) of flash for onboard stenography to your **Boardsource Wireless Corne SMT**. Steno Squid sits on top of the switch plate and connects through the eight-contact expansion slot.
+Steno Squid adds 16 MB (or 64MB) of flash for onboard stenography to your **Boardsource Wireless Corne SMT**.\
+Steno Squid sits on top of the switch plate and connects through the eight-contact expansion slot.
 
 <img src="variants/16mb-diy-soic/previews/front.png" alt="16 MB DIY Steno Squid PCB with exposed SOIC leads and Pop silkscreen" width="360">
 
