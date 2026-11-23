@@ -54,4 +54,4 @@ Viewed from above, the contacts run along the bottom with pin 1 on the left.
 
 StenoSquid-PCB is open-source hardware licensed under the [CERN Open Hardware Licence Version 2 - Permissive (CERN-OHL-P-2.0)](LICENSE).
 
-You are free to manufacture, modify, and sell these boards, subject to the license terms. Third-party artwork and firmware retain their respective rights and licenses.
+You are free to manufacture, modify, and sell these boards, subject to the license terms. Third-party artwork retain the respective rights and licenses.
