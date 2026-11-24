@@ -143,14 +143,37 @@ base_edges = [n for _, _, n in nodes(baseline_board) if kind(n) in ('gr_line', '
 this_edges = [n for _, _, n in nodes(board) if kind(n) in ('gr_line', 'gr_arc') and '(layer "Edge.Cuts")' in n]
 assert base_edges == this_edges, 'DIY board outline must match the shared baseline exactly'
 
-# --- 5. Art/manufacturability: plain white silkscreen text present, zero
-#     intentional artwork copper (this is the low-cost silkscreen edition).
+# --- 5. Artwork and finish.
 f_silk_text = {re.search(r'\(gr_text "([^"]+)"', n)[1]
                for _, _, n in nodes(board) if kind(n) == 'gr_text' and '(layer "F.SilkS")' in n}
 assert 'STENO SQUID' in f_silk_text and f'{capacity} MB' in f_silk_text
-assert not [n for _, _, n in nodes(board) if kind(n) == 'gr_poly' and '(layer "F.Cu")' in n], \
-    'no intentional artwork copper on the DIY edition'
-assert not [n for _, _, n in nodes(board) if kind(n) == 'gr_poly' and '(layer "F.Mask")' in n]
+
+
+def artwork(cad, layer):
+    return sorted(re.findall(r'\(xy ([^)]+)\)', n) for _, _, n in nodes(cad)
+                  if kind(n) == 'gr_poly' and f'(layer "{layer}")' in n)
+
+
+finish = interface.get('artwork_finish', 'silkscreen')
+assert finish in ('silkscreen', 'enig')
+if finish == 'enig':
+    diy_base = (ROOT / f'variants/{capacity}mb-diy-soic/steno-squid.kicad_pcb').read_text()
+    wson_gold_dir = 'enig' if capacity == 16 else '64mb-enig'
+    wson_gold = (ROOT / 'variants' / wson_gold_dir / 'steno-squid.kicad_pcb').read_text()
+    assert artwork(board, 'F.Cu') == artwork(board, 'F.Mask') == artwork(diy_base, 'F.SilkS')
+    assert artwork(board, 'F.Cu') and not artwork(board, 'F.SilkS')
+    assert '(copper_finish "ENIG")' in board
+
+    def halos(cad):
+        return [n for _, _, n in nodes(cad) if kind(n) == 'zone' and '(name "Gold Pop halo ' in n]
+
+    assert halos(board) and halos(board) == halos(wson_gold)
+    for object_kind in ('footprint', 'segment', 'via'):
+        assert sorted(n for _, _, n in nodes(board) if kind(n) == object_kind) == sorted(
+            n for _, _, n in nodes(diy_base) if kind(n) == object_kind
+        ), f'Gold edition changed DIY {object_kind} geometry or connectivity'
+else:
+    assert not artwork(board, 'F.Cu') and not artwork(board, 'F.Mask')
 
 schematic = (output / 'steno-squid.kicad_sch').read_text()
 for cad in (board, schematic):
@@ -160,6 +183,7 @@ for cad in (board, schematic):
 report = {
     'revision': interface['revision'],
     'variant': interface['variant'],
+    'artwork_finish': finish,
     'review_date': drc['date'].split('T')[0],
     'ERC_violations': len(erc_issues),
     'DRC_violations': len(drc['violations']),

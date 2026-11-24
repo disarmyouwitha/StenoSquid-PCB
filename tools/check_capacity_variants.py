@@ -18,6 +18,7 @@ CLI=os.environ.get('KICAD_CLI') or shutil.which('kicad-cli') or '/Applications/K
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--only',type=int,choices=(16,64),help='Refresh only this capacity; do not touch other projects')
 parser.add_argument('--finish',choices=('silkscreen','enig'),help='Refresh only projects with this artwork finish')
+parser.add_argument('--diy-only', action='store_true', help='Refresh only hand-solderable SOIC projects')
 parser.add_argument('--checks-only', action='store_true',
                     help='Refresh checks and schematic previews without saving boards or exporting assembly files')
 args=parser.parse_args()
@@ -46,12 +47,16 @@ projects = [
     (64, 'enig', ROOT/'variants/64mb-enig'),
     (16, 'silkscreen', ROOT/'variants/16mb-diy-soic'),
     (64, 'silkscreen', ROOT/'variants/64mb-diy-soic'),
+    (16, 'enig', ROOT/'variants/16mb-diy-soic-enig'),
+    (64, 'enig', ROOT/'variants/64mb-diy-soic-enig'),
 ]
 for size, finish, out in projects:
     if args.only and size != args.only:
         continue
     enig = finish == 'enig'
-    diy = out.name.endswith('diy-soic')
+    diy = '-diy-soic' in out.name
+    if args.diy_only and not diy:
+        continue
     if args.finish and finish != args.finish:
         continue
     before_board=(out/'steno-squid.kicad_pcb').read_text()
@@ -116,8 +121,8 @@ for size, finish, out in projects:
         run(CLI,'pcb','render','--width','1000','--height','1400','--side',side,
             '--quality','high','--use-board-stackup-colors','--background','opaque',
             '--output',out/'previews'/('%s.png'%name),pcb)
-    if enig and size!=16:
+    if enig and size!=16 and not diy:
         shutil.copy2(out/'previews/front.png',out/'previews/front-pop.png')
 
-print(('All six production variants' if not args.only and not args.finish else 'Selected production variants')
+print(('All production variants' if not (args.only or args.finish or args.diy_only) else 'Selected production variants')
       + ' passed. No fabrication files generated.')

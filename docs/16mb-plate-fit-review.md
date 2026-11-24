@@ -41,4 +41,4 @@ The plate source was cloned locally to `/Users/nap/Documents/new_code/boardsourc
 
 Print the approved template at 100% and verify the 50 mm bar. The outline is now applied to all current production variants. Final populated-board fit, powered-board and RF qualification remain separate.
 
-Regenerate and validate all six current projects with `python3 tools/check_capacity_variants.py`. The legacy capacity builder recreates placement/routing; use it only when intentionally rebuilding the 64 MB WSON silkscreen layout, not for outline propagation.
+Regenerate and validate all eight current projects with `python3 tools/check_capacity_variants.py`. The legacy capacity builder recreates placement/routing; use it only when intentionally rebuilding the 64 MB WSON silkscreen layout, not for outline propagation.

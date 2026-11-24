@@ -1,6 +1,6 @@
 # Production board plate fit
 
-**Approved outline:** all six PCB projects use 21.78 × 44.82 mm, exactly 1.5 mm shorter than the original 46.32 mm, with R5.35 far-end corners and fixed headers. Owner approved on 2026-11-17.
+**Approved outline:** all eight PCB projects use 21.78 × 44.82 mm, exactly 1.5 mm shorter than the original 46.32 mm, with R5.35 far-end corners and fixed headers. Owner approved on 2026-11-17.
 
 
 On 2026-11-16 the owner fitted the full-length paper template to the delivered Boardsource keyboard and confirmed that all eight contacts align. The owner also checked available sockets and reported that the resulting stack allows the daughterboard to sit flush on top of the switch plate. The supplied photos were IMG_5313.heic and IMG_5311.HEIC. These are owner-reported physical checks, not a test of a fabricated, populated StenoSquid board.

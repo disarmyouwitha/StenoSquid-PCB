@@ -39,4 +39,4 @@ The capacitor and resistor catalog entries match the existing BOM manufacturer p
 
 ## Approved length update — 2026-11-17
 
-The owner selected -1.5 mm total from the original 46.32 mm outline. All six production variants now share 21.78 × 44.82 mm with R5.35 far-end and R1 header-end corners. Headers, component placements and signal tracks remain fixed. Reports, STEP models, front/back previews and red 1:1 fit templates are regenerated for each project. Switched-rail, RF and final populated-board qualification remain pending.
+The owner selected -1.5 mm total from the original 46.32 mm outline. All eight production variants now share 21.78 × 44.82 mm with R5.35 far-end and R1 header-end corners. Headers, component placements and signal tracks remain fixed. Reports, STEP models, front/back previews and red 1:1 fit templates are regenerated for each project. Switched-rail, RF and final populated-board qualification remain pending.

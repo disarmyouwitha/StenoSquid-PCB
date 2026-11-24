@@ -1,0 +1,107 @@
+{
+  "revision": "Production",
+  "variant": "64 MB DIY SOIC-16 ENIG",
+  "artwork_finish": "enig",
+  "review_date": "2026-11-24",
+  "ERC_violations": 0,
+  "DRC_violations": 0,
+  "unconnected_items": 0,
+  "schematic_parity_issues": 0,
+  "u1_footprint": "StenoSquid:SOIC-16W_7.5x10.3mm_P1.27mm",
+  "capacity_bytes": 67108864,
+  "u1_pad_count": 16,
+  "c2_r2_present": false,
+  "all_eight_contacts_verified_against_schematic_and_PCB": true,
+  "configured_ignored_DRC_categories": [],
+  "configured_ignored_ERC_categories": [],
+  "supply_minimum_width_rule_mm": 0.4,
+  "copper_track_lengths_mm": {
+    "/IO3": 18.527,
+    "/VCC_SW": 27.359,
+    "/CS_N": 15.795,
+    "/IO1": 9.635,
+    "/IO2": 9.874,
+    "/GND": 5.503,
+    "/IO0": 22.012,
+    "/CLK": 19.238
+  },
+  "minimum_track_widths_mm": {
+    "/IO3": 0.25,
+    "/VCC_SW": 0.4,
+    "/CS_N": 0.25,
+    "/IO1": 0.25,
+    "/IO2": 0.25,
+    "/GND": 0.25,
+    "/IO0": 0.25,
+    "/CLK": 0.25
+  },
+  "track_segment_counts": {
+    "/IO3": 6,
+    "/VCC_SW": 14,
+    "/CS_N": 7,
+    "/IO1": 4,
+    "/IO2": 5,
+    "/GND": 5,
+    "/IO0": 8,
+    "/CLK": 5
+  },
+  "via_counts": {
+    "/IO3": 1,
+    "/IO1": 1,
+    "/IO2": 1,
+    "/GND": 6,
+    "/IO0": 2
+  },
+  "header_centres_kicad_mm": [
+    [
+      1,
+      27.2,
+      70.0
+    ],
+    [
+      2,
+      29.74,
+      70.0
+    ],
+    [
+      3,
+      32.28,
+      70.0
+    ],
+    [
+      4,
+      34.82,
+      70.0
+    ],
+    [
+      5,
+      37.36,
+      70.0
+    ],
+    [
+      6,
+      39.9,
+      70.0
+    ],
+    [
+      7,
+      42.44,
+      70.0
+    ],
+    [
+      8,
+      44.98,
+      70.0
+    ]
+  ],
+  "outline_matches_baseline": true,
+  "host_fit_verified": false,
+  "host_power_qualified": false,
+  "first_hand_assembly_verified": false,
+  "hashes": {
+    "steno-squid.kicad_pcb": "1be700138d92ad1cde80e295e28a3bd0912e2545457ae010dbeb9452eb3af5d5",
+    "steno-squid.kicad_sch": "7ba256315528e7ff7985c59b9996ab0d57dcddd3794647def4d4b0ef492ccc47",
+    "steno-squid.kicad_pro": "d22541ef2a281bba3f32b3e5871885ef5f3ab497c49ef2972f96558bc6245c31",
+    "steno-squid.kicad_dru": "eb415e35e78c1826e2ea2c81ed40d9b24f728510251829f95a14e4257e80b9f0"
+  }
+}

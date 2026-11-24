@@ -1,6 +1,6 @@
 # Electrical, mechanical and RF review
 
-**Approved outline:** all six PCB projects use 21.78 × 44.82 mm, exactly 1.5 mm shorter than the original 46.32 mm, with R5.35 far-end corners and fixed headers. Owner approved on 2026-11-17.
+**Approved outline:** all eight PCB projects use 21.78 × 44.82 mm, exactly 1.5 mm shorter than the original 46.32 mm, with R5.35 far-end corners and fixed headers. Owner approved on 2026-11-17.
 
 
 The routing and land-pattern details below describe the 16 MB silkscreen WSON board. The SOIC layouts and the 64 MB flash have a separate [package and power review](capacity-variants.md).
