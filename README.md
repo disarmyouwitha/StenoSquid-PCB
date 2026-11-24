@@ -16,15 +16,6 @@ Both DIY boards use exposed SOIC leads and 0805 passives. Order a bare PCB using
 | **16 MB** | [Winbond W25Q128JVSIQ, SOIC-8 (208 mil)](https://www.digikey.com/en/products/detail/winbond-electronics/W25Q128JVSIQ-TR/5803944) | [White silkscreen ZIP](manufacturing/2026-11-18/diy-bare/stenosquid-16mb-diy-bare.zip) · [KiCad and fit template](variants/16mb-diy-soic/README.md) | [16 MB BOM](variants/16mb-diy-soic/BOM.csv) | **~$25** |
 | **64 MB** | [Winbond W25Q512JVFIQ, SOIC-16 (300 mil)](https://www.digikey.com/en/products/detail/winbond-electronics/W25Q512JVFIQ/10244707) | [White silkscreen ZIP](manufacturing/2026-11-18/diy-bare/stenosquid-64mb-diy-bare.zip) · [KiCad and fit template](variants/64mb-diy-soic/README.md) | [64 MB BOM](variants/64mb-diy-soic/BOM.csv) | **~$35** |
 
-### DIY gold ENIG option
-
-The gold editions use the same SOIC flash, 0805 parts, and routing as the white silkscreen boards. For either gold ZIP, select **black solder mask and ENIG surface finish** in the fabrication quote. The prices above are for the white silkscreen builds.
-
-| **16 MB DIY · Gold ENIG** | **64 MB DIY · Gold ENIG** |
-|---|---|
-| <img src="variants/16mb-diy-soic-enig/previews/front.png" alt="16 MB DIY Steno Squid with gold Pop artwork" width="230"> | <img src="variants/64mb-diy-soic-enig/previews/front.png" alt="64 MB DIY Steno Squid with gold Pop artwork" width="230"> |
-| [Bare-board ZIP](manufacturing/diy-enig/stenosquid-16mb-diy-enig-bare.zip) · [KiCad and BOM](variants/16mb-diy-soic-enig/README.md) | [Bare-board ZIP](manufacturing/diy-enig/stenosquid-64mb-diy-enig-bare.zip) · [KiCad and BOM](variants/64mb-diy-soic-enig/README.md) |
-
 ### Parts for one board
 
 | Ref. | Qty. | Part |
